@@ -1,0 +1,17 @@
+const INVITO_CONFIG = {
+  nomeFesteggiato: "Leonardo",
+  eta: "5 anni",
+  titolo: "Compleanno di Leonardo",
+  sottotitolo: "Sei invitato a una festa giurassica super speciale!",
+  descrizione1: "Ti aspettiamo per festeggiare insieme",
+  descrizione2: "i 5 anni di Leonardo",
+  mese: "Maggio",
+  giorno: "18",
+  anno: "2026",
+  giornoSettimana: "Domenica",
+  ora: "16:30",
+  testoFinale: "Preparati tra dinosauri, giochi e tanto divertimento!",
+  whatsappNumero: "3288111873",
+  whatsappMessaggio: "Ciao! Confermo la presenza al compleanno",
+  indirizzoMaps: "Via Mombarcaro 49 Torino",
+};

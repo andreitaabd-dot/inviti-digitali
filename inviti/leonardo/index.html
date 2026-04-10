@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Invito</title>
+
+  <!-- 🔥 META WHATSAPP -->
+  <meta property="og:title" content="Invito compleanno Leonardo" />
+  <meta property="og:description" content="Apri l’invito digitale e conferma la presenza" />
+  <meta property="og:image" content="https://andreitaabd-dot.github.io/intito-leonardo/inviti/leonardo/preview.jpg" />
+  <meta property="og:url" content="https://andreitaabd-dot.github.io/intito-leonardo/inviti/leonardo/" />
+  <meta property="og:type" content="website" />
+
+  <!-- opzionale ma consigliato -->
+  <meta name="description" content="Invito digitale" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <audio id="bgMusic" loop>
+    <source src="" type="audio/mpeg" />
+  </audio>
+
+  <div class="confetti-layer"></div>
+
+  <!-- COVER -->
+  <section id="cover" class="screen">
+    <div class="cover-content">
+
+      <div class="top-decoration">
+        <img src="" alt="Immagine decorativa invito" class="dino-top" />
+      </div>
+
+      <div class="envelope-wrapper">
+        <div class="envelope" id="envelope">
+          <div class="envelope-glow"></div>
+          <img id="envelopeImg" class="envelope-img" />
+        </div>
+      </div>
+
+      <button id="openBtn" class="open-btn"></button>
+    </div>
+  </section>
+
+  <!-- INVITO -->
+  <section id="invite" class="screen hidden">
+    <div class="invite-card">
+      <div class="invite-inner">
+
+        <h1 id="titolo"></h1>
+
+        <p class="subtitle" id="sottotitolo"></p>
+
+        <div class="main-text">
+          <p id="desc1"></p>
+          <p class="name-highlight" id="desc2"></p>
+        </div>
+
+        <div class="event-date">
+          <div class="line"></div>
+
+          <div class="date-center">
+            <span class="month" id="mese"></span>
+            <span class="day" id="giorno"></span>
+            <span class="year" id="anno"></span>
+          </div>
+
+          <div class="line"></div>
+        </div>
+
+        <div class="event-info">
+          <div class="info-box">
+            <span id="giornoSettimana"></span>
+          </div>
+
+          <div class="info-box">
+            <span id="ora"></span>
+          </div>
+        </div>
+
+        <p class="footer-text" id="testoFinale"></p>
+
+        <div class="actions">
+          <a id="btnWhatsapp" class="circle-action" target="_blank" rel="noopener noreferrer">
+            <span class="icon">📞</span>
+            <span class="action-text">Conferma</span>
+          </a>
+
+          <a id="btnMaps" class="circle-action" target="_blank" rel="noopener noreferrer">
+            <span class="icon">📍</span>
+            <span class="action-text">Mappa</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
