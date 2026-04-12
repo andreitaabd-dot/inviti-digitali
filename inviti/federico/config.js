@@ -42,7 +42,7 @@ const INVITO_CONFIG = {
 
   decorazioneTop: {
     immagine: "dino.png",
-    left: "30%",
+    left: "0%",
     top: "-140px",
     width: "120px"
   }
