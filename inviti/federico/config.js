@@ -44,7 +44,7 @@ const INVITO_CONFIG = {
     immagine: "dino.png",
     left: "30%",
     top: "-140px",
-    width: "180px"
+    width: "120px"
   }
 };
 
