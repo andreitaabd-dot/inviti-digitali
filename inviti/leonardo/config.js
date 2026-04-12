@@ -1,16 +1,21 @@
 const INVITO_CONFIG = {
   nomeFesteggiato: "Leonardo",
   eta: "4 anni",
+
   titolo: "Compleanno di Leonardo",
   sottotitolo: "Sei invitato a una festa giurassica super speciale!",
+
   descrizione1: "Ti aspettiamo per festeggiare insieme",
   descrizione2: "i 4 anni di Leonardo",
+
   mese: "Maggio",
   giorno: "18",
   anno: "2026",
   giornoSettimana: "Domenica",
   ora: "16:30",
+
   testoFinale: "Preparati tra dinosauri, giochi e tanto divertimento!",
+
   whatsappNumero: "393881769329",
   whatsappMessaggio: "Ciao! Confermo la presenza al compleanno",
   indirizzoMaps: "Via Mombarcaro 49 Torino",
@@ -33,7 +38,6 @@ const INVITO_CONFIG = {
     fontTesto: "Georgia, serif"
   },
 
-  sfondo: "bg.jpg",
   envelope: "envelope.png",
 
   decorazioneTop: {
