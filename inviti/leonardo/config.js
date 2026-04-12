@@ -11,7 +11,7 @@ const INVITO_CONFIG = {
   giornoSettimana: "Domenica",
   ora: "16:30",
   testoFinale: "Preparati tra dinosauri, giochi e tanto divertimento!",
-  whatsappNumero: "3881769329",
+  whatsappNumero: "393881769329",
   whatsappMessaggio: "Ciao! Confermo la presenza al compleanno",
   indirizzoMaps: "Via Mombarcaro 49 Torino",
 
