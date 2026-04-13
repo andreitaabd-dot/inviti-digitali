@@ -185,38 +185,25 @@ function createSparkles() {
   document.body.appendChild(container);
 }
 
-function createDiscoLights() {
-  const container = document.createElement("div");
-  container.className = "disco-layer";
-
-  for (let i = 0; i < 4; i++) {
-    const beam = document.createElement("div");
-    beam.className = "disco-beam";
-    beam.style.left = `${10 + i * 25}%`;
-    beam.style.animationDelay = `${i * 0.8}s`;
-    container.appendChild(beam);
-  }
-
-  document.body.appendChild(container);
-}
-
 function initOpenAnimation() {
   if (!openBtn) {
     return;
   }
 
   const envelope = document.getElementById("envelope");
+  const flash = document.getElementById("flash");
 
   openBtn.addEventListener("click", () => {
     openBtn.disabled = true;
 
-    // 👉 musica parte SUBITO al click (fondamentale)
     if (music) {
       music.currentTime = 0;
       music.play().catch(() => {
         console.log("Audio bloccato");
       });
     }
+
+    invite.classList.remove("hidden");
 
     if (envelope) {
       envelope.classList.add("open");
@@ -227,10 +214,18 @@ function initOpenAnimation() {
     }, 1300);
 
     setTimeout(() => {
+      if (flash) {
+        flash.classList.add("active");
+      }
+    }, 1300);
+
+    setTimeout(() => {
       cover.classList.add("hidden");
-      invite.classList.remove("hidden");
-      invite.classList.add("fade-in");
-    }, 2400);
+
+      if (flash) {
+        flash.classList.remove("active");
+      }
+    }, 1600);
   });
 }
 
@@ -248,15 +243,25 @@ function initIntroVideo() {
     const durata = introVideo.duration * 1000;
 
     setTimeout(() => {
-      // 👉 mostra subito la cover sotto
+      const flash = document.getElementById("flash");
+
+      // 👉 mostra la cover sotto
       cover.classList.remove("hidden");
 
-      // 👉 poi fai sparire il video
+      // 👉 fai partire insieme dissolvenza video + flash
       introVideo.classList.add("video-hide");
+
+      if (flash) {
+        flash.classList.add("active");
+      }
 
       setTimeout(() => {
         introVideo.classList.add("hidden");
-      }, 1200);
+
+        if (flash) {
+          flash.classList.remove("active");
+        }
+      }, 600);
 
     }, durata);
   };
@@ -290,7 +295,22 @@ function applyTheme() {
   }
 }
 
+function unlockAudioOnFirstTouch() {
+  if (!music) return;
+
+  const unlock = () => {
+    music.muted = false;
+    music.play().catch(() => {});
+    document.removeEventListener("touchstart", unlock);
+    document.removeEventListener("click", unlock);
+  };
+
+  document.addEventListener("touchstart", unlock, { once: true });
+  document.addEventListener("click", unlock, { once: true });
+}
+
 applyConfig();
 initEffects();
 initOpenAnimation();
 initIntroVideo();
+unlockAudioOnFirstTouch();

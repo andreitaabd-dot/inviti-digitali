@@ -23,7 +23,8 @@ const INVITO_CONFIG = {
   immagini: {
     copertina: "dino.png",
     sfondo: "bg-dino.jpg",
-    musica: "music.mp3"
+   musica: "music.mp3"
+    // musica: ""
   },
 
   effetti: ["sparkles", "confetti"],
@@ -41,6 +42,7 @@ const INVITO_CONFIG = {
   envelope: "envelope.png",
 
   introVideo: "intro.mp4",
+  // introVideo: "",
 
   decorazioneTop: {
     immagine: "dino.png",
