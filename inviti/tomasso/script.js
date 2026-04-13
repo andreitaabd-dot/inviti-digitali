@@ -228,9 +228,19 @@ function initOpenAnimation() {
       invite.classList.add("fade-in");
 
       if (music) {
-        music.play().catch(() => {
-          console.log("Autoplay bloccato dal dispositivo");
-        });
+        music.currentTime = 0;
+
+        const playAudio = () => {
+          music.play().catch(() => {
+            console.log("Audio bloccato");
+          });
+        };
+
+        if (music.readyState >= 2) {
+          playAudio();
+        } else {
+          music.addEventListener("canplaythrough", playAudio, { once: true });
+        }
       }
     }, 2400);
   });
