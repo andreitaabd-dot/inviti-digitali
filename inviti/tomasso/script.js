@@ -210,12 +210,16 @@ function initOpenAnimation() {
   openBtn.addEventListener("click", () => {
     openBtn.disabled = true;
 
-    if (envelope) {
-      envelope.classList.add("open");
+    // 👉 musica parte SUBITO al click (fondamentale)
+    if (music) {
+      music.currentTime = 0;
+      music.play().catch(() => {
+        console.log("Audio bloccato");
+      });
     }
 
-    if (window.bgMusic) {
-      window.bgMusic.play();
+    if (envelope) {
+      envelope.classList.add("open");
     }
 
     setTimeout(() => {
@@ -226,22 +230,6 @@ function initOpenAnimation() {
       cover.classList.add("hidden");
       invite.classList.remove("hidden");
       invite.classList.add("fade-in");
-
-      if (music) {
-        music.currentTime = 0;
-
-        const playAudio = () => {
-          music.play().catch(() => {
-            console.log("Audio bloccato");
-          });
-        };
-
-        if (music.readyState >= 2) {
-          playAudio();
-        } else {
-          music.addEventListener("canplaythrough", playAudio, { once: true });
-        }
-      }
     }, 2400);
   });
 }
@@ -272,17 +260,6 @@ function initIntroVideo() {
 
     }, durata);
   };
-}
-
- function initMusica() {
-  if (!INVITO_CONFIG.immagini.musica) return;
-
-  const audio = new Audio(INVITO_CONFIG.immagini.musica);
-  audio.loop = true;
-  audio.volume = 0.5;
-
-  // salva globale
-  window.bgMusic = audio;
 }
 
 function applyTheme() {
@@ -317,4 +294,3 @@ applyConfig();
 initEffects();
 initOpenAnimation();
 initIntroVideo();
-initMusica();
