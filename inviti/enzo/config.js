@@ -45,10 +45,7 @@ const INVITO_CONFIG = {
   // introVideo: "",
 
   decorazioneTop: {
-    immagine: "dino.png",
-    left: "0%",
-    top: "-160px",
-    width: "120px"
+
   }
 };
 
