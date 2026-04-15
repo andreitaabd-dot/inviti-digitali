@@ -1,5 +1,5 @@
 const INVITO_CONFIG = {
-  nomeFesteggiato: "Federico",
+  nomeFesteggiato: "Enzo",
   eta: "2 anni",
 
   titolo: "Compleanno di Enzo",
