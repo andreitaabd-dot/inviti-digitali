@@ -1,12 +1,12 @@
 const INVITO_CONFIG = {
-  nomeFesteggiato: "Federico",
+  nomeFesteggiato: "Tomasso",
   eta: "2 anni",
 
   titolo: "Compleanno di Tomasso",
   sottotitolo: "Sei invitato a una festa super speciale!",
 
   descrizione1: "Ti aspettiamo per festeggiare insieme",
-  descrizione2: "i 2 anni di Tomasso",
+  descrizione2: "i 3 anni di Tomasso",
 
   mese: "Agosto",
   giorno: "15",
@@ -23,7 +23,7 @@ const INVITO_CONFIG = {
   immagini: {
     copertina: "dino.png",
     sfondo: "bg-dino.jpg",
-   musica: "music.mp3"
+    musica: "music.mp3"
     // musica: ""
   },
 
@@ -45,10 +45,7 @@ const INVITO_CONFIG = {
   // introVideo: "",
 
   decorazioneTop: {
-    immagine: "dino.png",
-    left: "0%",
-    top: "-160px",
-    width: "120px"
+
   }
 };
 

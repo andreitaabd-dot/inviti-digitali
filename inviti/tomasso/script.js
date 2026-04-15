@@ -63,13 +63,19 @@ function applyImages() {
   const coverImage = document.querySelector(".dino-top");
   const deco = INVITO_CONFIG.decorazioneTop || {};
 
-  if (coverImage && deco.immagine) {
+  if (coverImage) {
+  if (deco.immagine) {
     coverImage.src = deco.immagine;
 
     if (deco.left) coverImage.style.left = deco.left;
     if (deco.top) coverImage.style.top = deco.top;
     if (deco.width) coverImage.style.width = deco.width;
+
+    coverImage.style.display = "block";
+  } else {
+    coverImage.style.display = "none";
   }
+}
 
  const inviteInner = document.querySelector(".invite-inner");
   const sfondo = INVITO_CONFIG.sfondo || immagini.sfondo;
