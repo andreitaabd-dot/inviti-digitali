@@ -6,7 +6,7 @@ const INVITO_CONFIG = {
   sottotitolo: "Sei invitato a una festa super speciale!",
 
   descrizione1: "Ti aspettiamo per festeggiare insieme",
-  descrizione2: "i 2 anni di Federico",
+  descrizione2: "i 3 anni di Federico",
 
   mese: "Agosto",
   giorno: "15",
@@ -23,10 +23,11 @@ const INVITO_CONFIG = {
   immagini: {
     copertina: "dino.png",
     sfondo: "bg-dino.jpg",
-    musica: "music.mp3"
+   // musica: "music.mp3"
+     musica: ""
   },
 
-  effetti: ["sparkles", "confetti"],
+  effetti: ["sparkles", "confetti",  "balloons"],
 
   testoBottoneApri: "Tocca qui per aprire",
 
@@ -40,11 +41,11 @@ const INVITO_CONFIG = {
 
   envelope: "envelope.png",
 
+  // introVideo: "intro.mp4",
+   introVideo: "",
+
   decorazioneTop: {
-    immagine: "dino.png",
-    left: "0%",
-    top: "-160px",
-    width: "120px"
+
   }
 };
 

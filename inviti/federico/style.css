@@ -570,3 +570,40 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+#introVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 9999;
+}
+
+#introVideo {
+  transition: opacity 1.2s ease;
+}
+
+#introVideo.video-hide {
+  opacity: 0;
+}
+
+.flash-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.9), rgba(255,255,255,0.4));
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+.flash-overlay.active {
+  animation: flashEffect 0.8s ease-out;
+}
+
+@keyframes flashEffect {
+  0% { opacity: 0; }
+  40% { opacity: 1; }
+  100% { opacity: 0; }
+}
