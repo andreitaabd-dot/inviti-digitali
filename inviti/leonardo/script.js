@@ -63,13 +63,19 @@ function applyImages() {
   const coverImage = document.querySelector(".dino-top");
   const deco = INVITO_CONFIG.decorazioneTop || {};
 
-  if (coverImage && deco.immagine) {
+  if (coverImage) {
+  if (deco.immagine) {
     coverImage.src = deco.immagine;
 
     if (deco.left) coverImage.style.left = deco.left;
     if (deco.top) coverImage.style.top = deco.top;
     if (deco.width) coverImage.style.width = deco.width;
+
+    coverImage.style.display = "block";
+  } else {
+    coverImage.style.display = "none";
   }
+}
 
  const inviteInner = document.querySelector(".invite-inner");
   const sfondo = INVITO_CONFIG.sfondo || immagini.sfondo;
@@ -96,6 +102,27 @@ function applyImages() {
       source.src = immagini.musica;
       music.load();
     }
+  }
+
+  // 👉 SFONDO SOLO AREA TESTO (NUOVO)
+  if (inviteInner && immagini.sfondo) {
+    inviteInner.style.background =
+      `linear-gradient(
+        180deg,
+        rgba(255,255,255,0.95) 0%,
+        rgba(255,255,255,0.92) 40%,
+        rgba(255,255,255,0.85) 70%,
+        rgba(255,255,255,0.80) 100%
+      ),
+      url("${immagini.sfondo}") center/cover no-repeat`;
+  }
+
+  const introVideo = document.getElementById("introVideo");
+  const introSource = document.getElementById("introSource");
+
+  if (introVideo && introSource && INVITO_CONFIG.introVideo) {
+    introSource.src = INVITO_CONFIG.introVideo;
+    introVideo.load();
   }
 }
 
@@ -164,30 +191,25 @@ function createSparkles() {
   document.body.appendChild(container);
 }
 
-function createDiscoLights() {
-  const container = document.createElement("div");
-  container.className = "disco-layer";
-
-  for (let i = 0; i < 4; i++) {
-    const beam = document.createElement("div");
-    beam.className = "disco-beam";
-    beam.style.left = `${10 + i * 25}%`;
-    beam.style.animationDelay = `${i * 0.8}s`;
-    container.appendChild(beam);
-  }
-
-  document.body.appendChild(container);
-}
-
 function initOpenAnimation() {
   if (!openBtn) {
     return;
   }
 
   const envelope = document.getElementById("envelope");
+  const flash = document.getElementById("flash");
 
   openBtn.addEventListener("click", () => {
     openBtn.disabled = true;
+
+    if (music) {
+      music.currentTime = 0;
+      music.play().catch(() => {
+        console.log("Audio bloccato");
+      });
+    }
+
+    invite.classList.remove("hidden");
 
     if (envelope) {
       envelope.classList.add("open");
@@ -198,17 +220,57 @@ function initOpenAnimation() {
     }, 1300);
 
     setTimeout(() => {
-      cover.classList.add("hidden");
-      invite.classList.remove("hidden");
-      invite.classList.add("fade-in");
-
-      if (music) {
-        music.play().catch(() => {
-          console.log("Autoplay bloccato dal dispositivo");
-        });
+      if (flash) {
+        flash.classList.add("active");
       }
-    }, 2400);
+    }, 1300);
+
+    setTimeout(() => {
+      cover.classList.add("hidden");
+
+      if (flash) {
+        flash.classList.remove("active");
+      }
+    }, 1600);
   });
+}
+
+function initIntroVideo() {
+  const introVideo = document.getElementById("introVideo");
+
+  if (!introVideo || !INVITO_CONFIG.introVideo || INVITO_CONFIG.introVideo.trim() === "") {
+    cover.classList.remove("hidden");
+    return;
+  }
+
+  introVideo.classList.remove("hidden");
+
+  introVideo.onloadedmetadata = () => {
+    const durata = introVideo.duration * 1000;
+
+    setTimeout(() => {
+      const flash = document.getElementById("flash");
+
+      // 👉 mostra la cover sotto
+      cover.classList.remove("hidden");
+
+      // 👉 fai partire insieme dissolvenza video + flash
+      introVideo.classList.add("video-hide");
+
+      if (flash) {
+        flash.classList.add("active");
+      }
+
+      setTimeout(() => {
+        introVideo.classList.add("hidden");
+
+        if (flash) {
+          flash.classList.remove("active");
+        }
+      }, 600);
+
+    }, durata);
+  };
 }
 
 function applyTheme() {
@@ -239,6 +301,22 @@ function applyTheme() {
   }
 }
 
+function unlockAudioOnFirstTouch() {
+  if (!music) return;
+
+  const unlock = () => {
+    music.muted = false;
+    music.play().catch(() => {});
+    document.removeEventListener("touchstart", unlock);
+    document.removeEventListener("click", unlock);
+  };
+
+  document.addEventListener("touchstart", unlock, { once: true });
+  document.addEventListener("click", unlock, { once: true });
+}
+
 applyConfig();
 initEffects();
 initOpenAnimation();
+initIntroVideo();
+unlockAudioOnFirstTouch();

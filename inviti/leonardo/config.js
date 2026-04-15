@@ -1,20 +1,20 @@
 const INVITO_CONFIG = {
   nomeFesteggiato: "Leonardo",
-  eta: "4 anni",
+  eta: "2 anni",
 
   titolo: "Compleanno di Leonardo",
-  sottotitolo: "Sei invitato a una festa giurassica super speciale!",
+  sottotitolo: "Sei invitato a una festa super speciale!",
 
   descrizione1: "Ti aspettiamo per festeggiare insieme",
-  descrizione2: "i 4 anni di Leonardo",
+  descrizione2: "i 3 anni di Leonardo",
 
-  mese: "Maggio",
-  giorno: "18",
+  mese: "Agosto",
+  giorno: "15",
   anno: "2026",
   giornoSettimana: "Domenica",
-  ora: "16:30",
+  ora: "10:30",
 
-  testoFinale: "Preparati tra dinosauri, giochi e tanto divertimento!",
+  testoFinale: "Preparati per giochi e tanto divertimento!",
 
   whatsappNumero: "393881769329",
   whatsappMessaggio: "Ciao! Confermo la presenza al compleanno",
@@ -23,28 +23,29 @@ const INVITO_CONFIG = {
   immagini: {
     copertina: "dino.png",
     sfondo: "bg-dino.jpg",
-    musica: "music.mp3"
+    //musica: "music.mp3"
+    musica: ""
   },
 
-  effetti: ["confetti", "balloons", "sparkles"],
+  effetti: ["sparkles", "confetti"],
 
   testoBottoneApri: "Tocca qui per aprire",
 
   tema: {
-    colorePrimario: "#8ecb75",
-    coloreSecondario: "#f2dfaa",
-    coloreTesto: "#5b4636",
+    colorePrimario: "#e53935",   // rosso
+    coloreSecondario: "#ffd54f", // giallo
+    coloreTesto: "#2c2c2c",
     fontTitolo: "Georgia, serif",
     fontTesto: "Georgia, serif"
   },
 
   envelope: "envelope.png",
 
+  //introVideo: "intro.mp4",
+   introVideo: "",
+
   decorazioneTop: {
-    immagine: "dino.png",
-    left: "30%",
-    top: "-100px",
-    width: "180px"
+
   }
 };
 
