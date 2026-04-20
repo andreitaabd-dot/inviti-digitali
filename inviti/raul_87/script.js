@@ -17,6 +17,17 @@ function setLink(id, href) {
   }
 }
 
+const tapHint = document.getElementById("tapAudioHint");
+
+function hideTapHint() {
+  if (tapHint) {
+    tapHint.classList.add("hidden");
+  }
+}
+
+document.addEventListener("touchstart", hideTapHint, { once: true });
+document.addEventListener("click", hideTapHint, { once: true });
+
 function applyConfig() {
   setText("titolo", INVITO_CONFIG.titolo);
   setText("sottotitolo", INVITO_CONFIG.sottotitolo);
@@ -253,6 +264,8 @@ function initIntroVideo() {
 
       // 👉 mostra la cover sotto
       cover.classList.remove("hidden");
+
+      hideTapHint();
 
       // 👉 fai partire insieme dissolvenza video + flash
       introVideo.classList.add("video-hide");
