@@ -256,52 +256,81 @@ function initOpenAnimation() {
 
 function initIntroVideo() {
   const introVideo = document.getElementById("introVideo");
+  const flash = document.getElementById("flash");
 
   if (!introVideo || !INVITO_CONFIG.introVideo || INVITO_CONFIG.introVideo.trim() === "") {
     cover.classList.remove("hidden");
     return;
   }
 
-  introVideo.classList.remove("hidden");
+  let introGestita = false;
+  let timeoutIntro = null;
+
+  const mostraCoverESaltaVideo = () => {
+    if (introGestita) return;
+    introGestita = true;
+
+    cover.classList.remove("hidden");
+    hideTapHint();
+
+    introVideo.classList.add("video-hide");
+
+    if (flash) {
+      flash.classList.add("active");
+    }
+
+    setTimeout(() => {
+      introVideo.pause();
+      introVideo.classList.add("hidden");
+
+      if (flash) {
+        flash.classList.remove("active");
+      }
+    }, 600);
+  };
+
+  const programmaFineVideo = () => {
+    if (timeoutIntro) {
+      clearTimeout(timeoutIntro);
+    }
+
+    const durata = isFinite(introVideo.duration) && introVideo.duration > 0
+      ? introVideo.duration * 1000
+      : 5000;
+
+    timeoutIntro = setTimeout(() => {
+      mostraCoverESaltaVideo();
+    }, durata);
+  };
 
   const tryPlayIntro = () => {
-    introVideo.play().catch(() => {
-      cover.classList.remove("hidden");
-      introVideo.classList.add("hidden");
-    });
+    introVideo.play()
+      .then(() => {
+        programmaFineVideo();
+      })
+      .catch(() => {
+        mostraCoverESaltaVideo();
+      });
   };
+
+  introVideo.classList.remove("hidden");
+
+  introVideo.addEventListener("loadedmetadata", () => {
+    tryPlayIntro();
+  }, { once: true });
+
+  introVideo.addEventListener("ended", () => {
+    mostraCoverESaltaVideo();
+  }, { once: true });
 
   document.addEventListener("touchstart", tryPlayIntro, { once: true });
   document.addEventListener("click", tryPlayIntro, { once: true });
 
-  introVideo.onloadedmetadata = () => {
-    const durata = introVideo.duration * 1000;
-
-    setTimeout(() => {
-      const flash = document.getElementById("flash");
-
-      // 👉 mostra la cover sotto
-      cover.classList.remove("hidden");
-
-      hideTapHint();
-
-      // 👉 fai partire insieme dissolvenza video + flash
-      introVideo.classList.add("video-hide");
-
-      if (flash) {
-        flash.classList.add("active");
-      }
-
-      setTimeout(() => {
-        introVideo.classList.add("hidden");
-
-        if (flash) {
-          flash.classList.remove("active");
-        }
-      }, 600);
-
-    }, durata);
-  };
+  setTimeout(() => {
+    if (introVideo.paused) {
+      mostraCoverESaltaVideo();
+    }
+  }, 2500);
 }
 
 function applyTheme() {
