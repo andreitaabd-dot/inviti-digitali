@@ -264,6 +264,16 @@ function initIntroVideo() {
 
   introVideo.classList.remove("hidden");
 
+  const tryPlayIntro = () => {
+    introVideo.play().catch(() => {
+      cover.classList.remove("hidden");
+      introVideo.classList.add("hidden");
+    });
+  };
+
+  document.addEventListener("touchstart", tryPlayIntro, { once: true });
+  document.addEventListener("click", tryPlayIntro, { once: true });
+
   introVideo.onloadedmetadata = () => {
     const durata = introVideo.duration * 1000;
 
