@@ -327,13 +327,25 @@ function unlockAudioOnFirstTouch() {
 
   const unlock = () => {
     music.muted = false;
-    music.play().catch(() => {});
-    document.removeEventListener("touchstart", unlock);
-    document.removeEventListener("click", unlock);
+
+    const playPromise = music.play();
+
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          console.log("Audio partito");
+        })
+        .catch(() => {
+          console.log("Tentativo audio fallito, riprovo...");
+          setTimeout(() => {
+            music.play().catch(() => {});
+          }, 300);
+        });
+    }
   };
 
-  document.addEventListener("touchstart", unlock, { once: true });
-  document.addEventListener("click", unlock, { once: true });
+  document.addEventListener("touchstart", unlock);
+  document.addEventListener("click", unlock);
 }
 
 const btnDresscode = document.getElementById("btnDresscode");
