@@ -43,9 +43,6 @@ const INVITO_CONFIG = {
   introVideo: "intro.mp4",
 
   decorazioneTop: {
-    immagine: "dino.png", // poi lo cambiamo con i bimbi
-    left: "50%",
-    top: "-180px",
-    width: "140px"
+   
   }
 };
