@@ -2,7 +2,7 @@ const INVITO_CONFIG = {
   nomeFesteggiato: "Famiglia Revellino",
   eta: "",
 
-  titolo: "Maschietto o Femmina?",
+  titolo: "Maschieo o Femmina?",
   sottotitolo: "Un momento speciale da vivere insieme",
 
   descrizione1: "Unisciti a noi per scoprire",
