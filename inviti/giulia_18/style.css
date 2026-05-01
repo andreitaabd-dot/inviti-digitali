@@ -249,6 +249,11 @@ line-height: 0.9;
    margin-top: -6px;
 }
 
+.month,
+.year {
+  line-height: 1;
+}
+
 
 .line {
   flex: 1;
@@ -257,10 +262,12 @@ line-height: 0.9;
 }
 
 .date-center {
-  min-width: 120px;
+   min-width: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 0;
 }
 
 
