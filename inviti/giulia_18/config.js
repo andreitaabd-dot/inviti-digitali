@@ -5,7 +5,7 @@ const INVITO_CONFIG = {
   titolo: "Giulia",
   sottotitolo: "Ti aspetto per festeggiare insieme",
 
-  descrizione1: "Preparati a una serata elegante e indimenticabile",
+ // descrizione1: "Preparati a una serata elegante e indimenticabile",
   descrizione2: "18 anni di Giulia",
 
   mese: "Giugno",
