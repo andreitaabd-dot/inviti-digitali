@@ -3,7 +3,7 @@ const INVITO_CONFIG = {
   eta: "18 anni",
 
   titolo: "Giulia",
-  sottotitolo: "Ti aspetto per festeggiare insieme",
+  sottotitolo: "Sei invitato a una festa speciale",
 
   descrizione1: "Ti aspetto per una serata speciale",
   descrizione2: "18 anni di Giulia",
@@ -47,8 +47,8 @@ const INVITO_CONFIG = {
 
     decorazioneTop: {
     immagine: "dino.png",
-    left: "30%",
-    top: "-55px",
-    width: "120px"
+    left: "20%",
+    top: "-130px",
+    width: "210px"
   }
 };
