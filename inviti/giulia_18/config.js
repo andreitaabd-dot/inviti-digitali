@@ -2,11 +2,11 @@ const INVITO_CONFIG = {
   nomeFesteggiato: "Giulia",
   eta: "18 anni",
 
-  titolo: "Giulia \n 18 anni",
- // sottotitolo: "Ti aspetto per festeggiare insieme",
+  titolo: "Giulia",
+  sottotitolo: "Ti aspetto per festeggiare insieme",
 
  // descrizione1: "Preparati a una serata elegante e indimenticabile",
-  //descrizione2: "18 anni di Giulia",
+  descrizione2: "18 anni di Giulia",
 
   mese: "Giugno",
   giorno: "21",
@@ -14,7 +14,7 @@ const INVITO_CONFIG = {
   giornoSettimana: "Domenica",
   ora: "20:30",
 
- // testoFinale: "Ti aspetto per creare ricordi indimenticabili.\nAttendo con piacere una tua conferma.",
+  testoFinale: "Ti aspetto per creare ricordi indimenticabili.\nAttendo con piacere una tua conferma.",
 
   whatsappNumero: "393923683555",
   whatsappMessaggio: "Ciao! Confermo la mia presenza ai 18 anni di Giulia",
