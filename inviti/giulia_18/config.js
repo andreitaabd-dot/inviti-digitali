@@ -14,7 +14,7 @@ const INVITO_CONFIG = {
   giornoSettimana: "Domenica",
   ora: "20:30",
 
-  testoFinale: "Ti aspetto per creare ricordi indimenticabili.\nAttendo con piacere una tua conferma.",
+ // testoFinale: "Ti aspetto per creare ricordi indimenticabili.\nAttendo con piacere una tua conferma.",
 
   whatsappNumero: "393923683555",
   whatsappMessaggio: "Ciao! Confermo la mia presenza ai 18 anni di Giulia",
