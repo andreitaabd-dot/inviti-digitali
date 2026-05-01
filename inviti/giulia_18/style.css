@@ -193,21 +193,23 @@ body {
 
 h1 {
   color: #c99d1a;
-
-  line-height: 1.1;
   margin-top: 0;
 
+line-height: 0.9;
+  margin-bottom: 8px;
 
   font-size: 4.2rem;
-  margin-bottom: 10px;
 
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: none;
+
+   white-space: pre-line;
 }
 
 .subtitle {
+  margin: 0 auto 6px;
   
   line-height: 1.5;
 
@@ -215,14 +217,16 @@ h1 {
   color: #6b5a40;
 
    font-size: 20px;
-  margin: 0 auto 14px;
+ 
 }
 
 .main-text {
   font-size: 18px;
   line-height: 1.7;
-   margin-bottom: 14px;
+  
   color: #5c4f3d;
+
+  margin-bottom: 0;
 }
 
 .name-highlight {
@@ -239,11 +243,12 @@ h1 {
 .event-date {
   display: flex;
   align-items: center;
-  gap: 14px;
- 
-
-   margin: 14px 0 8px;
+  
+   margin: 4px 0 2px;
+  gap: 8px;
+   margin-top: -6px;
 }
+
 
 .line {
   flex: 1;
@@ -258,37 +263,56 @@ h1 {
   align-items: center;
 }
 
-.month,
+
 .year {
-  font-size: 18px;
+ 
+  color: #7a674c;
+
+  font-size: 24px;
+  margin-top: -6px;
+}
+
+
+.month {
+  font-size: 24px;
+  margin-bottom: -6px;
   color: #7a674c;
 }
 
 .day {
-  line-height: 1;
+
   color: #c99d1a;
-  margin: 4px 0;
+ 
   font-weight: 700;
 
    font-size: 82px;
+
+   font-size: 92px;
+  line-height: 0.9;
+  margin: 0;
 }
 
 .event-info {
   display: flex;
   justify-content: center;
-  gap: 18px;
-  margin: 10px 0 22px;
+
   flex-wrap: wrap;
+
+  margin: 2px 0 12px;
+  gap: 10px;
 }
 
 .info-box {
   min-width: 120px;
-  padding: 10px 14px;
+ 
   border-top: 2px solid #d4af37;
   border-bottom: 2px solid #d4af37;
   color: #6d5a42;
-  font-size: 17px;
+
   font-weight: 500;
+
+   padding: 6px 10px;
+  font-size: 22px;
 }
 
 .footer-text {
@@ -296,8 +320,9 @@ h1 {
   color: #5d4f3c;
 
   margin: 10px auto 18px;
-  font-size: 16px;
-  line-height: 1.4;
+ 
+  font-size: 20px;
+  line-height: 1.35;
 }
 
 .actions {
