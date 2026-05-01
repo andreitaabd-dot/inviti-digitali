@@ -3,9 +3,9 @@ const INVITO_CONFIG = {
   eta: "18 anni",
 
   titolo: "Giulia",
-  sottotitolo: "Sei invitato a una festa speciale",
+  sottotitolo: "Ti aspetto per festeggiare insieme",
 
-  descrizione1: "Ti aspetto per una serata speciale",
+  descrizione1: "Preparati a una serata elegante e indimenticabile",
   descrizione2: "18 anni di Giulia",
 
   mese: "Giugno",
