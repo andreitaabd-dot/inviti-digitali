@@ -16,7 +16,7 @@ const INVITO_CONFIG = {
 
   testoFinale: "Sarà un momento speciale da condividere insieme!",
 
-  whatsappNumero: "393277849274",
+  whatsappNumero: "393881769329",
   whatsappMessaggio: "Ciao! Confermo la presenza al compleanno di Raul",
   indirizzoMaps: "Via Mombarcaro 49 Torino",
 
