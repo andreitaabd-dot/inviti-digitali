@@ -3,317 +3,453 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Invitaciones WOW</title>
 
   <style>
-  * {
-    box-sizing: border-box;
-  }
 
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #2f2f2f;
-    text-align: center;
-    background:
-      linear-gradient(rgba(255, 248, 240, 0.88), rgba(255, 248, 240, 0.92)),
-      url('https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat fixed;
-  }
-
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 50px 20px 70px;
-  }
-
-  .hero {
-    background: rgba(255, 255, 255, 0.82);
-    backdrop-filter: blur(4px);
-    border-radius: 28px;
-    padding: 40px 24px;
-    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.10);
-    margin-bottom: 36px;
-  }
-
-  h1 {
-    font-size: 44px;
-    margin: 0 0 14px;
-    color: #d86b1f;
-    letter-spacing: 0.5px;
-  }
-
-  .subtitle {
-    font-size: 20px;
-    line-height: 1.6;
-    max-width: 760px;
-    margin: 0 auto 28px;
-  }
-
-  .cta {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 15px 26px;
-    border-radius: 999px;
-    background: #25D366;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.25);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(37, 211, 102, 0.30);
-  }
-
-  .section-box {
-    background: rgba(255, 255, 255, 0.86);
-    backdrop-filter: blur(4px);
-    border-radius: 28px;
-    padding: 36px 22px 42px;
-    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
-  }
-
-  .section-title {
-    font-size: 30px;
-    margin: 0 0 14px;
-    color: #2f2f2f;
-  }
-
-  .section-text {
-    max-width: 760px;
-    margin: 0 auto 26px;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #5d5d5d;
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 22px;
-    margin-top: 26px;
-  }
-
-  .card {
-    background: white;
-    border-radius: 24px;
-    padding: 28px 22px;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
-    text-align: left;
-    border: 1px solid rgba(0, 0, 0, 0.04);
-  }
-
-  .card h3 {
-    margin-top: 14px;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #d86b1f;
-    text-align: center;
-  }
-
-  .price {
-    font-size: 34px;
-    font-weight: bold;
-    margin: 12px 0 18px;
-    color: #2f2f2f;
-    text-align: center;
-  }
-
-  .card p {
-    font-size: 16px;
-    line-height: 1.7;
-    margin: 0;
-    color: #555;
-  }
-
-  .final-note {
-    margin-top: 34px;
-    font-size: 17px;
-    line-height: 1.6;
-    color: #5b5b5b;
-  }
-
-  .footer {
-    margin-top: 36px;
-    font-size: 15px;
-    color: #666;
-  }
-
-  .video-box {
-    position: relative;
-    overflow: hidden;
-    border-radius: 16px;
-  }
-
-  .video-box video,
-  .video-box img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 16px;
-    display: block;
-  }
-
-  .watermark {
-    position: absolute;
-    bottom: 8px;
-    right: 10px;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.85);
-    background: rgba(0, 0, 0, 0.38);
-    padding: 4px 8px;
-    border-radius: 8px;
-    font-weight: bold;
-    pointer-events: none;
-  }
-
-  @media (max-width: 768px) {
-    .container {
-      padding: 30px 16px 50px;
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
     }
 
-    .hero,
-    .section-box {
-      padding: 28px 18px;
-      border-radius: 22px;
+    body{
+      font-family: Arial, sans-serif;
+      color:white;
+      overflow-x:hidden;
+
+      background:
+        radial-gradient(circle at top left, rgba(255,90,150,0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(0,229,255,0.10), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(255,140,60,0.10), transparent 30%),
+        linear-gradient(135deg,#111827 0%, #1e1b4b 40%, #312e81 75%, #1f2937 100%);
     }
 
-    h1 {
-      font-size: 34px;
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:30px 18px 80px;
     }
 
-    .subtitle {
-      font-size: 18px;
+    /* HERO */
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+
+      background:rgba(255,255,255,0.10);
+
+      backdrop-filter: blur(12px);
+
+      border-radius:34px;
+
+      padding:38px 28px;
+
+      border:1px solid rgba(255,255,255,0.12);
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.20),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+
+      text-align:center;
+
+      margin-bottom:35px;
     }
 
-    .section-title {
-      font-size: 26px;
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:300px;
+      height:300px;
+      background:rgba(255,255,255,0.06);
+      border-radius:50%;
+      top:-120px;
+      right:-100px;
+      filter:blur(20px);
     }
 
-    .price {
-      font-size: 30px;
+    .logo{
+      width:240px;
+      max-width:70%;
+      margin-bottom:12px;
+
+      filter:
+        drop-shadow(0 10px 25px rgba(0,0,0,0.25));
     }
 
-    .cta {
-      width: 100%;
-      max-width: 320px;
+    h1{
+      font-size:54px;
+      margin-bottom:10px;
+      font-weight:800;
+      letter-spacing:1px;
     }
 
-    .video-box video,
-    .video-box img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 16px;
-      display: block;
+    .gradient-text{
+      background: linear-gradient(
+        90deg,
+        #ffffff,
+        #7dd3fc,
+        #c4b5fd,
+        #ff9ac6,
+        #ffffff
+      );
+
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
-  }
 
-  .card {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
+    .subtitle{
+      font-size:21px;
+      line-height:1.7;
+      max-width:780px;
+      margin:auto;
+      opacity:0.96;
+    }
 
-  .card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
-  }
-</style>
+    .hero-buttons{
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-top:24px;
+    }
+
+    .cta{
+      padding:16px 28px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:bold;
+      font-size:18px;
+      transition:0.25s;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .cta-whatsapp{
+      background:#25D366;
+      color:white;
+
+      box-shadow:0 12px 30px rgba(37,211,102,0.35);
+    }
+
+    .cta-whatsapp:hover{
+      transform:translateY(-3px) scale(1.03);
+    }
+
+    .cta-social{
+      background:rgba(255,255,255,0.14);
+      color:white;
+      border:1px solid rgba(255,255,255,0.12);
+    }
+
+    .cta-social:hover{
+      background:rgba(255,255,255,0.20);
+      transform:translateY(-3px);
+    }
+
+    /* SECTION */
+
+    .section{
+      background:rgba(255,255,255,0.10);
+
+      backdrop-filter: blur(12px);
+
+      border-radius:34px;
+
+      padding:42px 24px;
+
+      border:1px solid rgba(255,255,255,0.12);
+
+      box-shadow:0 20px 50px rgba(0,0,0,0.15);
+    }
+
+    .section-title{
+      font-size:38px;
+      text-align:center;
+      margin-bottom:18px;
+    }
+
+    .section-text{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 35px;
+      line-height:1.7;
+      font-size:18px;
+      opacity:0.95;
+    }
+
+    /* CARDS */
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:24px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.14);
+
+      border:1px solid rgba(255,255,255,0.15);
+
+      border-radius:28px;
+
+      padding:28px 22px;
+
+      transition:0.25s;
+
+      box-shadow:0 14px 35px rgba(0,0,0,0.16);
+    }
+
+    .card:hover{
+      transform:translateY(-6px) scale(1.02);
+    }
+
+    .card h3{
+      text-align:center;
+      font-size:28px;
+      margin-bottom:12px;
+    }
+
+    .price{
+      text-align:center;
+      font-size:44px;
+      font-weight:bold;
+      margin-bottom:20px;
+
+      color:#ffd166;
+    }
+
+    .card p{
+      line-height:1.8;
+      font-size:16px;
+      opacity:0.96;
+    }
+
+    /* VIDEO */
+
+    .video-card{
+      text-decoration:none;
+      color:white;
+    }
+
+    .video-card video{
+      width:100%;
+      border-radius:18px;
+      margin-top:16px;
+      display:block;
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .final-note{
+      text-align:center;
+      margin-top:40px;
+      font-size:18px;
+      line-height:1.7;
+    }
+
+    .footer{
+      text-align:center;
+      margin-top:22px;
+      opacity:0.8;
+      font-size:14px;
+    }
+
+    @media(max-width:768px){
+
+      h1{
+        font-size:40px;
+      }
+
+      .subtitle{
+        font-size:18px;
+      }
+
+      .section-title{
+        font-size:30px;
+      }
+
+      .hero{
+        padding:34px 20px;
+      }
+
+      .section{
+        padding:34px 18px;
+      }
+
+      .cta{
+        width:100%;
+        justify-content:center;
+      }
+    }
+
+  </style>
 </head>
+
 <body>
-  <div class="container">
 
-    <div class="hero">
-      <h1>Invitaciones WOW</h1>
-      <p class="subtitle">
-        Creamos invitaciones digitales personalizadas para compartir por WhatsApp,
-        perfectas para cumpleaños, baby shower, bautizos, comuniones, 18 años
-        y muchas otras ocasiones especiales.
-      </p>
+<div class="container">
 
-      <a class="cta" href="https://wa.me/393881769329?text=Hola!%20Quisiera%20informaci%C3%B3n%20sobre%20una%20invitaci%C3%B3n%20digital">
-        Escríbeme por WhatsApp
+  <section class="hero">
+
+    <img src="logo.jpg" class="logo" alt="Invitaciones WOW">
+
+    <h1 class="gradient-text">
+      Invitaciones WOW
+    </h1>
+
+    <p class="subtitle">
+      Creamos invitaciones digitales animadas para compartir por WhatsApp.
+      Una experiencia original y sorprendente para cumpleaños,
+      baby shower, bautizos, comuniones, 18 años y cualquier evento especial.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a
+        class="cta cta-whatsapp"
+        href="https://wa.me/393881769329?text=Hola!%20Quisiera%20información%20sobre%20una%20invitación%20digital"
+        target="_blank"
+      >
+        💬 Escríbeme por WhatsApp
       </a>
+
+      <a
+        class="cta cta-social"
+        href="https://www.facebook.com/initiwow"
+        target="_blank"
+      >
+        📘 Facebook
+      </a>
+
+      <a
+        class="cta cta-social"
+        href="https://www.tiktok.com/@invitiwow.com"
+        target="_blank"
+      >
+        🎵 TikTok
+      </a>
+
     </div>
 
-    <div class="section-box">
-      <h2 class="section-title">Elige tu invitación</h2>
-      <p class="section-text">
-        Cada invitación se personaliza con temática, textos, detalles del evento y enlaces listos
-        para confirmar la asistencia o abrir la ubicación en Google Maps.
-      </p>
+  </section>
 
-      <div class="cards">
-        <div class="card">
-          <h3>Invitación Base</h3>
-          <div class="price">25 Soles</div>
-          <p>
-            Se ve directamente el sobre y, al hacer clic, se abre la invitación digital.
-            Incluye confirmación por WhatsApp y botón de Maps para llegar al lugar del evento.
-          </p>
+  <section class="section">
+
+    <h2 class="section-title">
+      Elige tu invitación
+    </h2>
+
+    <p class="section-text">
+      Cada invitación es personalizada con temática,
+      textos, animaciones, confirmación por WhatsApp y ubicación en Google Maps.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <h3>Invitación Base</h3>
+
+        <div class="price">
+          25 Soles
         </div>
 
-        <div class="card">
-          <h3>Invitación Premium</h3>
-          <div class="price">30 Soles</div>
-          <p>
-            Todo lo que incluye la invitación base, pero además con un pequeño video al inicio
-            antes de la apertura del sobre, para que el efecto sea aún más especial.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Invitación Video</h3>
-          <div class="price">40 Soles</div>
-          <p>
-            Versión con video personalizado como protagonista de la experiencia.
-            Ideal para quienes quieren una invitación más impactante, original y llamativa.
-          </p>
-        </div>
-      </div>
-
-      <h2 class="section-title" style="margin-top:40px;">Ejemplos de invitaciones</h2>
-
-      <p class="section-text">
-        Mira los distintos paquetes en vista previa.
-      </p>
-
-      <div class="cards">
-
-        <a href="inviti/demo/base/preview.mp4" class="card" style="text-decoration:none;">
-          <h3 style="text-align:center;">Invitación Base</h3>
-          <video autoplay muted loop playsinline controls style="width:100%; border-radius:16px; margin-bottom:12px; display:block;">
-            <source src="inviti/demo/base/preview.mp4" type="video/mp4">
-          </video>
-        </a>
-
-        <a href="inviti/demo/premium/preview.mp4" class="card" style="text-decoration:none;">
-          <h3 style="text-align:center;">Invitación Premium</h3>
-          <video autoplay muted loop playsinline controls style="width:100%; border-radius:16px; margin-bottom:12px; display:block;">
-            <source src="inviti/demo/premium/preview.mp4" type="video/mp4">
-          </video>
-        </a>
-
-        <a href="inviti/demo/video/preview.mp4" class="card" style="text-decoration:none;">
-          <h3 style="text-align:center;">Invitación Video</h3>
-          <video autoplay muted loop playsinline controls style="width:100%; border-radius:16px; margin-bottom:12px; display:block;">
-            <source src="inviti/demo/video/preview.mp4" type="video/mp4">
-          </video>
-        </a>
+        <p>
+          Apertura animada del sobre e invitación digital completa.
+          Incluye confirmación por WhatsApp y botón de Maps.
+        </p>
 
       </div>
 
-      <p class="final-note">
-        Para hacer tu pedido solo necesito: nombre, edad o tipo de evento, fecha, hora, lugar y la temática que deseas.
-      </p>
+      <div class="card">
 
-      <p class="footer">
-        Invitaciones digitales personalizadas, fáciles de compartir y pensadas para sorprender.
-      </p>
+        <h3>Invitación Premium</h3>
+
+        <div class="price">
+          30 Soles
+        </div>
+
+        <p>
+          Incluye un pequeño video introductorio antes de abrir el sobre
+          para crear un efecto aún más emocionante.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Invitación Video</h3>
+
+        <div class="price">
+          40 Soles
+        </div>
+
+        <p>
+          Experiencia completamente en video,
+          más cinematográfica y súper impactante.
+        </p>
+
+      </div>
+
     </div>
 
-  </div>
+    <h2 class="section-title" style="margin-top:60px;">
+      Ejemplos de invitaciones
+    </h2>
+
+    <p class="section-text">
+      Mira algunas vistas previas de nuestras invitaciones digitales.
+    </p>
+
+    <div class="cards">
+
+      <a href="inviti/demo/base/preview.mp4" class="card video-card">
+
+        <h3>Invitación Base</h3>
+
+        <video autoplay muted loop playsinline controls>
+          <source src="inviti/demo/base/preview.mp4" type="video/mp4">
+        </video>
+
+      </a>
+
+      <a href="inviti/demo/premium/preview.mp4" class="card video-card">
+
+        <h3>Invitación Premium</h3>
+
+        <video autoplay muted loop playsinline controls>
+          <source src="inviti/demo/premium/preview.mp4" type="video/mp4">
+        </video>
+
+      </a>
+
+      <a href="inviti/demo/video/preview.mp4" class="card video-card">
+
+        <h3>Invitación Video</h3>
+
+        <video autoplay muted loop playsinline controls>
+          <source src="inviti/demo/video/preview.mp4" type="video/mp4">
+        </video>
+
+      </a>
+
+    </div>
+
+    <p class="final-note">
+      Para hacer tu pedido solo necesito:
+      nombre, edad o tipo de evento,
+      fecha, hora, lugar y temática deseada.
+    </p>
+
+    <p class="footer">
+      Invitaciones WOW • Invitaciones digitales animadas personalizadas
+    </p>
+
+  </section>
+
+</div>
+
 </body>
 </html>
