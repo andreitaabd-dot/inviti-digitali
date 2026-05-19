@@ -18,7 +18,7 @@ const INVITO_CONFIG = {
 
   whatsappNumero: "393881769329",
   whatsappMessaggio: "Ciao! Confermo la presenza al compleanno",
-  indirizzoMaps: "Via Mombarcaro 49 Torino",
+  indirizzoMaps: "Corso IV Novembre, 10134 Torino TO",
 
   immagini: {
     copertina: "dino.png",
