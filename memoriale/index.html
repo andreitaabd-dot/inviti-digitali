@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Memoriali Digitali Interattivi | Inviti WOW</title>
+
+  <meta name="description" content="Memoriali digitali interattivi personalizzati per cerimonie funebri, messe di ricordo, anniversari e commemorazioni. Condivisione semplice tramite WhatsApp." />
+
+  <meta name="keywords" content="memoriale digitale, ricordo digitale, necrologio digitale, partecipazione funebre digitale, memoriale online, commemorazione digitale, messa del mese, anniversario scomparsa" />
+
+  <meta property="og:title" content="Memoriali Digitali Interattivi" />
+  <meta property="og:description" content="Un modo elegante e moderno per condividere il ricordo di una persona cara." />
+  <meta property="og:image" content="https://invitiwow.com/memoriali/preview.jpg" />
+  <meta property="og:url" content="https://invitiwow.com/memoriali/" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family: Georgia, "Times New Roman", serif;
+      color:#2f2f2f;
+      overflow-x:hidden;
+
+      background:
+        linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)),
+        url("bg.jpg") center center / cover no-repeat fixed;
+    }
+
+    .container{
+      max-width:1150px;
+      margin:auto;
+      padding:30px 18px 80px;
+    }
+
+    .hero{
+      background:
+        linear-gradient(rgba(255,255,255,0.82), rgba(255,255,255,0.82)),
+        url("bg.jpg") center center / cover no-repeat;
+
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+
+      border:1px solid rgba(160,140,100,0.28);
+      border-radius:34px;
+      padding:54px 28px;
+      text-align:center;
+      margin-bottom:35px;
+
+      box-shadow:
+        0 20px 55px rgba(0,0,0,0.12),
+        inset 0 0 0 1px rgba(255,255,255,0.35);
+    }
+
+    .symbol{
+      width:92px;
+      margin-bottom:18px;
+      opacity:0.95;
+    }
+
+    h1{
+      font-size:54px;
+      color:#4f5d50;
+      margin-bottom:14px;
+      font-weight:600;
+      line-height:1.1;
+    }
+
+    .subtitle{
+      font-size:21px;
+      line-height:1.7;
+      max-width:780px;
+      margin:auto;
+      color:#4a4a4a;
+    }
+
+    .hero-buttons{
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .cta{
+      padding:16px 28px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:bold;
+      font-size:17px;
+      transition:0.25s;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .cta-whatsapp{
+      background:#4f5d50;
+      color:white;
+      box-shadow:0 12px 28px rgba(79,93,80,0.28);
+    }
+
+    .cta-whatsapp:hover{
+      transform:translateY(-3px);
+      background:#3f4b40;
+    }
+
+    .cta-demo{
+      background:rgba(255,255,255,0.72);
+      color:#4f5d50;
+      border:1px solid rgba(79,93,80,0.25);
+    }
+
+    .cta-demo:hover{
+      transform:translateY(-3px);
+      background:white;
+    }
+
+    .section{
+      background:
+        linear-gradient(rgba(255,255,255,0.84), rgba(255,255,255,0.84)),
+        url("bg.jpg") center center / cover no-repeat;
+
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+
+      border-radius:34px;
+      padding:42px 24px;
+      border:1px solid rgba(160,140,100,0.24);
+      box-shadow:0 20px 50px rgba(0,0,0,0.12);
+      margin-bottom:35px;
+    }
+
+    .section-title{
+      font-size:38px;
+      text-align:center;
+      margin-bottom:18px;
+      color:#4f5d50;
+      font-weight:600;
+    }
+
+    .section-text{
+      text-align:center;
+      max-width:800px;
+      margin:0 auto 35px;
+      line-height:1.8;
+      font-size:18px;
+      color:#4a4a4a;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:22px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.72);
+      border:1px solid rgba(160,140,100,0.22);
+      border-radius:26px;
+      padding:28px 22px;
+      box-shadow:0 12px 28px rgba(0,0,0,0.08);
+      transition:0.25s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card h3{
+      font-size:25px;
+      color:#4f5d50;
+      margin-bottom:12px;
+      text-align:center;
+    }
+
+    .card p{
+      line-height:1.8;
+      font-size:16px;
+      color:#4a4a4a;
+      text-align:center;
+    }
+
+    .price{
+      text-align:center;
+      font-size:42px;
+      font-weight:bold;
+      color:#9b7b3d;
+      margin:12px 0 16px;
+    }
+
+    .demo-box{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .demo-box img{
+      width:100%;
+      border-radius:24px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.16);
+      border:1px solid rgba(160,140,100,0.25);
+    }
+
+    .demo-text{
+      font-size:18px;
+      line-height:1.8;
+      color:#4a4a4a;
+    }
+
+    .demo-text strong{
+      color:#4f5d50;
+    }
+
+    .final-note{
+      text-align:center;
+      margin-top:36px;
+      font-size:18px;
+      line-height:1.8;
+      color:#4a4a4a;
+    }
+
+    .footer{
+      text-align:center;
+      margin-top:24px;
+      opacity:0.75;
+      font-size:14px;
+      color:#444;
+    }
+
+    @media(max-width:768px){
+      h1{
+        font-size:38px;
+      }
+
+      .subtitle{
+        font-size:18px;
+      }
+
+      .section-title{
+        font-size:30px;
+      }
+
+      .hero{
+        padding:38px 22px;
+      }
+
+      .section{
+        padding:34px 18px;
+      }
+
+      .cta{
+        width:100%;
+        justify-content:center;
+      }
+
+      .demo-box{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <section class="hero">
+
+    <img src="symbol.png" class="symbol" alt="Memoriale digitale">
+
+    <h1>
+      Memoriali Digitali Interattivi
+    </h1>
+
+    <p class="subtitle">
+      Un modo elegante, semplice e moderno per condividere il ricordo di una persona cara.
+      Una pagina commemorativa personalizzata, pensata per accompagnare le famiglie
+      nei momenti più delicati.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a
+        class="cta cta-whatsapp"
+        href="https://wa.me/393881769329?text=Ciao,%20vorrei%20informazioni%20sui%20Memoriali%20Digitali"
+        target="_blank"
+      >
+        Richiedi informazioni
+      </a>
+
+    </div>
+
+  </section>
+
+  <section class="section">
+
+    <h2 class="section-title">
+      Cos’è un Memoriale Digitale
+    </h2>
+
+    <p class="section-text">
+      È una pagina web commemorativa, personalizzata con foto, testi, musica e informazioni
+      della cerimonia. Può essere condivisa facilmente tramite WhatsApp, email o social,
+      evitando messaggi sparsi e permettendo a parenti e amici di ricevere tutte le informazioni
+      in modo chiaro e immediato.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Per la famiglia</h3>
+        <p>
+          Un ricordo elegante da condividere con parenti e amici, con fotografia,
+          messaggio della famiglia, frase commemorativa e musica di sottofondo.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Per la cerimonia</h3>
+        <p>
+          Include data, ora, luogo, indicazioni Google Maps e possibilità di salvare
+          l’appuntamento direttamente nel calendario.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Per l’impresa</h3>
+        <p>
+          Un servizio moderno da integrare nei vostri pacchetti, senza alcuna gestione tecnica:
+          voi inviate i dati, noi realizziamo il memoriale.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="section">
+
+    <h2 class="section-title">
+      Cosa può includere
+    </h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Foto e ricordo</h3>
+        <p>
+          Fotografia della persona cara, nome, date, messaggio della famiglia
+          e citazioni religiose o laiche.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Musica commemorativa</h3>
+        <p>
+          Possibilità di aggiungere un brano delicato di sottofondo, attivato al primo tocco
+          dell’utente.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Mappe e calendario</h3>
+        <p>
+          Pulsante per aprire Google Maps e pulsante per salvare la cerimonia
+          nel calendario del telefono.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Messaggio alla famiglia</h3>
+        <p>
+          Collegamento diretto a WhatsApp per inviare un pensiero, un messaggio
+          o le proprie condoglianze.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="section">
+
+    <h2 class="section-title">
+      Non solo funerale
+    </h2>
+
+    <p class="section-text">
+      Il Memoriale Digitale può essere utilizzato anche dopo la cerimonia, per mantenere vivo
+      il ricordo e comunicare altri momenti commemorativi.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Messa del settimo giorno</h3>
+        <p>
+          Una pagina semplice da condividere per comunicare data, ora e luogo della celebrazione.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Messa del mese</h3>
+        <p>
+          Un ricordo digitale dedicato alla celebrazione del primo mese dalla scomparsa.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Anniversari</h3>
+        <p>
+          Ideale per il primo anniversario, ricorrenze familiari e commemorazioni annuali.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Ricorrenze speciali</h3>
+        <p>
+          Una pagina dedicata per condividere pensieri, fotografie e momenti di memoria.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="section">
+
+    <h2 class="section-title">
+      Collaborazione con imprese funebri
+    </h2>
+
+    <p class="section-text">
+      I tempi stanno cambiando e sempre più famiglie comunicano tramite smartphone.
+      Offrire un Memoriale Digitale significa proporre un servizio attuale, utile e delicato,
+      capace di valorizzare il vostro lavoro e dare un supporto concreto ai familiari.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Costo riservato</h3>
+        <div class="price">10€</div>
+        <p>
+          Prezzo per ogni memoriale realizzato per imprese funebri e collaboratori.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Libertà di rivendita</h3>
+        <p>
+          Potete includerlo nei vostri pacchetti o proporlo al prezzo che ritenete più opportuno.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Nessun lavoro tecnico</h3>
+        <p>
+          Basta inviare foto, dati e testo. La pagina viene realizzata e consegnata pronta
+          per essere condivisa.
+        </p>
+      </div>
+
+    </div>
+
+    <p class="final-note">
+      Per ricevere una demo o valutare una collaborazione, contattaci direttamente.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a
+        class="cta cta-whatsapp"
+        href="https://wa.me/393881769329?text=Ciao,%20vorrei%20informazioni%20sui%20Memoriali%20Digitali%20per%20imprese%20funebri"
+        target="_blank"
+      >
+        Scrivici su WhatsApp
+      </a>
+
+    </div>
+
+    <p class="footer">
+      Memoriali Digitali • Servizio realizzato da Inviti WOW • 388 176 9329
+    </p>
+
+  </section>
+
+</div>
+
+</body>
+</html>
