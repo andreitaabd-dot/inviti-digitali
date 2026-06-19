@@ -26,8 +26,9 @@ const INVITO_CONFIG = {
      LUOGO / MAPPA
   ========================= */
 
-  luogoNome: "In Sella",
-  indirizzoMaps: "In Sella Verzegnis",
+  luogoNome: "18 anni Gaia",
+ indirizzoMaps: "Di fronte all'Hotel In Sella",
+  mapsLink: "https://maps.app.goo.gl/oErqUw9eD9ZXs8fWA",
 
   /* =========================
      WHATSAPP

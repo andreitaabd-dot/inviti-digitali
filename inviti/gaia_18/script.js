@@ -332,9 +332,13 @@ function applyButtons() {
   const waText = encodeURIComponent(CONFIG.whatsappMessaggio || "");
   const waHref = waNumber ? `https://wa.me/${waNumber}?text=${waText}` : "";
 
-  const mapsHref = CONFIG.indirizzoMaps
-    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONFIG.indirizzoMaps)}`
-    : "";
+  const mapsHref = CONFIG.mapsLink
+  ? CONFIG.mapsLink
+  : (
+      CONFIG.indirizzoMaps
+        ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONFIG.indirizzoMaps)}`
+        : ""
+    );
 
   const calendarHref = buildCalendarLink();
 
