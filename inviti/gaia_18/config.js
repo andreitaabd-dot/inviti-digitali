@@ -26,8 +26,8 @@ const INVITO_CONFIG = {
      LUOGO / MAPPA
   ========================= */
 
-  luogoNome: "Festa di Gaia",
-  indirizzoMaps: "SP1, 6, 33020 Verzegnis UD",
+  luogoNome: "In Sella",
+  indirizzoMaps: "In Sella Verzegnis",
 
   /* =========================
      WHATSAPP
