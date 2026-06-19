@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <title>18 anni Gaia</title>
+
+  <meta property="og:title" content="18 anni Gaia" />
+  <meta property="og:description" content="Apri l’invito digitale e conferma la presenza" />
+  <meta property="og:image" content="preview.jpg" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="website" />
+
+  <meta name="description" content="Invito digitale interattivo" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Allura&family=Alex+Brush&family=Tangerine:wght@400;700&family=Parisienne&family=Sacramento&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Nunito:wght@300;400;600;700&family=Dancing+Script:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- VIDEO INTRO OPZIONALE -->
+  <video id="introVideo" class="hidden" muted playsinline preload="auto">
+    <source id="introSource" src="" type="video/mp4" />
+  </video>
+
+  <!-- ICONA AUDIO -->
+  <div id="tapAudioHint" class="tap-audio-hint hidden">🔊</div>
+
+  <!-- MUSICA -->
+  <audio id="bgMusic" loop preload="auto">
+    <source id="musicSource" src="" type="audio/mpeg" />
+  </audio>
+
+  <!-- EFFETTI -->
+  <div id="effectsRoot"></div>
+
+  <!-- COVER -->
+  <section id="cover" class="screen cover-screen">
+    <div class="cover-card">
+
+      <div id="coverDecorationWrap" class="cover-decoration-wrap hidden">
+        <img id="coverDecoration" class="cover-decoration" alt="Decorazione invito" />
+      </div>
+
+      <div class="envelope-wrapper">
+        <div id="envelope" class="envelope">
+          <div class="envelope-glow"></div>
+          <img id="envelopeImg" class="envelope-img" alt="Busta invito" />
+        </div>
+      </div>
+
+      <button id="openBtn" class="open-btn" type="button">
+        Apri la busta
+      </button>
+
+    </div>
+  </section>
+
+  <!-- INVITO -->
+  <main id="invite" class="screen invite-screen hidden">
+    <article class="invite-card">
+      <div class="invite-inner">
+
+        <h1 id="titolo"></h1>
+        <p id="sottotitolo" class="subtitle"></p>
+
+        <div class="main-text">
+          <p id="descrizione1"></p>
+          <p id="descrizione2" class="name-highlight"></p>
+        </div>
+
+        <div class="event-date">
+          <div class="line"></div>
+
+          <div class="date-center">
+            <span id="mese" class="month"></span>
+            <span id="giorno" class="day"></span>
+            <span id="anno" class="year"></span>
+          </div>
+
+          <div class="line"></div>
+        </div>
+
+        <div class="event-info">
+          <div id="boxGiorno" class="info-box">
+            <span id="giornoSettimana"></span>
+          </div>
+
+          <div id="boxOra" class="info-box">
+            <span id="ora"></span>
+          </div>
+        </div>
+
+        <div id="luogoBox" class="place-box hidden">
+          <strong id="luogoNome"></strong>
+          <span id="indirizzoTesto"></span>
+        </div>
+
+        <p id="testoFinale" class="footer-text"></p>
+
+        <div id="actions" class="actions"></div>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- MODALE DRESS CODE -->
+  <div id="dresscodeModal" class="modal hidden">
+    <div class="modal-backdrop" data-close-modal></div>
+
+    <div class="modal-content">
+      <button class="modal-close" type="button" data-close-modal>×</button>
+      <h2 id="dresscodeTitle"></h2>
+      <p id="dresscodeText"></p>
+      <img id="dresscodeImage" class="modal-image hidden" alt="Dress code" />
+    </div>
+  </div>
+
+  <!-- FLASH TRANSIZIONE -->
+  <div id="flash" class="flash-overlay"></div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
