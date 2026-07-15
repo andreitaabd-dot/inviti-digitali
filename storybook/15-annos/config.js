@@ -153,7 +153,7 @@ const INVITO_CONFIG = {
 
       frase: "Con la bendición de Dios y el amor de nuestra familia...",
 
-      genitori: "Carlos Ramírez y Andrea Bustamante",
+      genitori: "Carlos Ramírez y Maria Lozada",
 
       testo: "Tenemos el honor de invitarlos a celebrar los XV años de nuestra querida hija Valentina.",
 
