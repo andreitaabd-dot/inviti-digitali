@@ -1117,79 +1117,595 @@ h1 {
 }
 
 /* CALICE BRINDISI */
+/* BRINDISI ANIMATO */
 
-.brindis-wrap {
+.brindis-scene {
   width: 100%;
-  height: 190px;
+  max-width: 430px;
+  height: 220px;
   margin: 0 auto 12px;
+
+  position: relative;
 
   display: flex;
   justify-content: center;
   align-items: flex-end;
 
   overflow: visible;
-  position: relative;
 }
 
-.brindis-img {
-  width: 105px;
+/* DUE CALICI */
+
+.glasses-wrap {
+  width: 280px;
+  height: 200px;
+
+  position: relative;
+  z-index: 3;
+}
+
+.toast-glass {
+  position: absolute;
+  bottom: 0;
+
+  width: 96px;
   height: auto;
+
   display: block;
 
   transform-origin: center bottom;
 
   filter:
     drop-shadow(0 10px 14px rgba(0, 0, 0, 0.22))
-    drop-shadow(0 0 10px rgba(255, 255, 255, 0.45));
-
-  animation: brindisChinChin 3.2s ease-in-out infinite;
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.45));
 }
 
-@keyframes brindisChinChin {
+.toast-glass-left {
+  left: 42px;
+
+  animation: toastGlassLeft 3.4s ease-in-out infinite;
+}
+
+.toast-glass-right {
+  right: 42px;
+
+  transform: scaleX(-1);
+
+  animation: toastGlassRight 3.4s ease-in-out infinite;
+}
+
+/* LAMPO QUANDO I CALICI SI TOCCANO */
+
+.toast-flash {
+  position: absolute;
+
+  left: 50%;
+  top: 67px;
+
+  width: 22px;
+  height: 22px;
+
+  z-index: 6;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 245, 190, 0.95) 30%,
+      rgba(255, 255, 255, 0) 72%
+    );
+
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+
+  animation: toastFlash 3.4s ease-in-out infinite;
+}
+
+.toast-flash::before,
+.toast-flash::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 42px;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  transform: translate(-50%, -50%);
+}
+
+.toast-flash::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* CANDELINE SCINTILLANTI */
+
+.sparkler {
+  position: absolute;
+  bottom: 24px;
+
+  width: 22px;
+  height: 150px;
+
+  z-index: 2;
+}
+
+.sparkler-left {
+  left: 6px;
+  transform: rotate(-8deg);
+}
+
+.sparkler-right {
+  right: 6px;
+  transform: rotate(8deg);
+}
+
+.sparkler-stick {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+
+  width: 10px;
+  height: 112px;
+
+  transform: translateX(-50%);
+
+  border-radius: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #111 0%,
+      #fff 18%,
+      #555 38%,
+      #fff 58%,
+      #111 100%
+    );
+
+  border: 1px solid rgba(0, 0, 0, 0.5);
+
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.22),
+    inset 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+.spark-origin {
+  position: absolute;
+
+  left: 50%;
+  top: 27px;
+
+  width: 14px;
+  height: 14px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  box-shadow:
+    0 0 8px #fff,
+    0 0 16px rgba(255, 239, 170, 0.95),
+    0 0 28px rgba(255, 255, 255, 0.85);
+
+  animation: sparkOriginPulse 0.35s ease-in-out infinite alternate;
+}
+
+/* CONTENITORE DELLE SCINTILLE CREATE DAL JAVASCRIPT */
+
+.spark-layer {
+  position: absolute;
+  inset: 0;
+
+  z-index: 7;
+
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* SINGOLA SCINTILLA */
+
+.spark-particle {
+  position: absolute;
+
+  width: var(--spark-size, 4px);
+  height: var(--spark-size, 4px);
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  box-shadow:
+    0 0 5px #fff,
+    0 0 10px rgba(255, 232, 150, 0.95);
+
+  pointer-events: none;
+
+  animation:
+    sparkParticleFly var(--spark-duration, 700ms)
+    ease-out forwards;
+}
+
+/* MOVIMENTO CALICE SINISTRO */
+
+@keyframes toastGlassLeft {
   0%,
+  28%,
   100% {
     transform:
+      translateX(-18px)
       translateY(0)
-      scale(1)
-      rotate(0deg);
+      rotate(-8deg);
   }
 
-  35% {
+  43% {
     transform:
-      translateY(-10px)
-      scale(1.04)
-      rotate(-4deg);
+      translateX(2px)
+      translateY(-5px)
+      rotate(4deg);
   }
 
-  52% {
+  48% {
     transform:
-      translateY(-24px)
-      scale(1.22)
-      rotate(5deg);
+      translateX(4px)
+      translateY(-6px)
+      rotate(6deg);
   }
 
-  64% {
+  54% {
     transform:
-      translateY(-18px)
-      scale(1.16)
+      translateX(-2px)
+      translateY(-3px)
       rotate(1deg);
   }
 
-  78% {
+  68% {
     transform:
-      translateY(-8px)
-      scale(1.05)
-      rotate(-2deg);
+      translateX(-18px)
+      translateY(0)
+      rotate(-8deg);
+  }
+}
+
+/* MOVIMENTO CALICE DESTRO */
+
+@keyframes toastGlassRight {
+  0%,
+  28%,
+  100% {
+    transform:
+      translateX(18px)
+      translateY(0)
+      rotate(8deg)
+      scaleX(-1);
+  }
+
+  43% {
+    transform:
+      translateX(-2px)
+      translateY(-5px)
+      rotate(-4deg)
+      scaleX(-1);
+  }
+
+  48% {
+    transform:
+      translateX(-4px)
+      translateY(-6px)
+      rotate(-6deg)
+      scaleX(-1);
+  }
+
+  54% {
+    transform:
+      translateX(2px)
+      translateY(-3px)
+      rotate(-1deg)
+      scaleX(-1);
+  }
+
+  68% {
+    transform:
+      translateX(18px)
+      translateY(0)
+      rotate(8deg)
+      scaleX(-1);
+  }
+}
+
+/* LAMPO DEL CHIN CHIN */
+
+@keyframes toastFlash {
+  0%,
+  42%,
+  56%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  47% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+
+  51% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
+/* BAGLIORE DELLE CANDELINE */
+
+@keyframes sparkOriginPulse {
+  from {
+    opacity: 0.65;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+}
+
+/* MOVIMENTO DELLE SCINTILLE */
+
+@keyframes sparkParticleFly {
+  0% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      translate(0, 0)
+      scale(1);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      translate(
+        var(--spark-x),
+        var(--spark-y)
+      )
+      scale(0.1);
+  }
+}
+
+/* MOBILE PICCOLI */
+
+@media (max-width: 380px) {
+  .brindis-scene {
+    height: 190px;
+    margin-bottom: 8px;
+  }
+
+  .glasses-wrap {
+    width: 230px;
+    height: 175px;
+  }
+
+  .toast-glass {
+    width: 82px;
+  }
+
+  .toast-glass-left {
+    left: 33px;
+  }
+
+  .toast-glass-right {
+    right: 33px;
+  }
+
+  .toast-flash {
+    top: 59px;
+  }
+
+  .sparkler {
+    bottom: 20px;
+    height: 130px;
+  }
+
+  .sparkler-left {
+  left: 0;
+}
+
+.sparkler-right {
+  right: 0;
+}
+
+  .sparkler-stick {
+    height: 96px;
+  }
+
+  .spark-origin {
+    top: 25px;
+  }
+}
+
+/* CORREZIONE BRINDISI ROSELLA */
+
+.brindis-scene {
+  max-width: 360px;
+  height: 155px;
+
+  /* Elimina lo spazio vuoto sopra */
+  margin: -18px auto 4px;
+
+  align-items: flex-end;
+}
+
+.glasses-wrap {
+  width: 230px;
+  height: 150px;
+}
+
+.toast-glass {
+  width: 78px;
+  bottom: 0;
+}
+
+.toast-glass-left {
+  left: 34px;
+}
+
+.toast-glass-right {
+  right: 34px;
+}
+
+.toast-flash {
+  top: 51px;
+}
+
+/* CANDELINE SOTTILI COME NELLA PREVIEW */
+
+.sparkler {
+  bottom: 8px;
+  width: 12px;
+  height: 150px;
+
+  z-index: 2;
+}
+
+.sparkler-left {
+  left: 6px;
+  transform: rotate(-8deg);
+}
+
+.sparkler-right {
+  right: 6px;
+  transform: rotate(8deg);
+}
+
+.sparkler-stick {
+  width: 6px;
+  height: 105px;
+
+  border-radius: 2px;
+
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #090909 0 4px,
+      #e7e7e7 4px 7px,
+      #555 7px 10px
+    );
+
+  border: 1px solid #111;
+
+  box-shadow:
+    0 3px 7px rgba(0, 0, 0, 0.35),
+    inset 1px 0 2px rgba(255, 255, 255, 0.75);
+}
+
+/* PUNTO DA CUI PARTONO LE SCINTILLE */
+
+.spark-origin {
+  top: 39px;
+
+  width: 7px;
+  height: 7px;
+
+  background: #fff;
+
+  box-shadow:
+    0 0 5px #fff,
+    0 0 10px rgba(255, 245, 195, 1),
+    0 0 18px rgba(255, 255, 255, 0.95);
+}
+
+/* SCINTILLE LUNGHE, NON PALLINI */
+
+.spark-particle {
+  width: var(--spark-size, 2px);
+  height: calc(var(--spark-size, 2px) * 5);
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0),
+      #fff 45%,
+      #fff8ca 100%
+    );
+
+  box-shadow:
+    0 0 4px #fff,
+    0 0 8px rgba(255, 235, 155, 0.95);
+
+  transform-origin: center bottom;
+}
+
+/* NUOVO MOVIMENTO A FONTANA */
+
+@keyframes sparkParticleFly {
+  0% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      translate(0, 0)
+      rotate(var(--spark-angle, 0deg))
+      scaleY(0.6);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      translate(
+        var(--spark-x),
+        var(--spark-y)
+      )
+      rotate(var(--spark-angle, 0deg))
+      scaleY(0.1);
   }
 }
 
 @media (max-width: 380px) {
-  .brindis-wrap {
-    height: 165px;
-    margin-bottom: 8px;
+  .brindis-scene {
+    height: 145px;
+    margin-top: -16px;
   }
 
-  .brindis-img {
-    width: 90px;
+  .glasses-wrap {
+    width: 210px;
+    height: 140px;
   }
+
+  .toast-glass {
+    width: 72px;
+  }
+
+  .toast-glass-left {
+    left: 31px;
+  }
+
+  .toast-glass-right {
+    right: 31px;
+  }
+
+  .toast-flash {
+    top: 47px;
+  }
+
+  .sparkler-left {
+  left: 0;
+}
+
+.sparkler-right {
+  right: 0;
+}
 }

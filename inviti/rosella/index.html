@@ -70,9 +70,42 @@
       <div class="invite-inner">
 
         <!--<h1 id="titolo"></h1>-->
-        <div id="brindisWrap" class="brindis-wrap hidden">
-        <img id="brindisImg" class="brindis-img" alt="Brindisi" />
+        <div id="brindisScene" class="brindis-scene hidden" aria-label="Brindisi animato">
+
+        <!-- CANDELA SINISTRA -->
+        <div class="sparkler sparkler-left">
+          <span class="sparkler-stick"></span>
+          <span id="sparkOriginLeft" class="spark-origin"></span>
+        </div>
+
+        <!-- DUE CALICI -->
+        <div class="glasses-wrap">
+          <img
+            id="glassLeft"
+            class="toast-glass toast-glass-left"
+            alt="Calice champagne"
+          />
+
+          <span class="toast-flash" aria-hidden="true"></span>
+
+          <img
+            id="glassRight"
+            class="toast-glass toast-glass-right"
+            alt="Calice champagne"
+          />
+        </div>
+
+        <!-- CANDELA DESTRA -->
+        <div class="sparkler sparkler-right">
+          <span class="sparkler-stick"></span>
+          <span id="sparkOriginRight" class="spark-origin"></span>
+        </div>
+
+        <!-- QUI VERRANNO CREATE LE SCINTILLE -->
+        <div id="sparkLayer" class="spark-layer" aria-hidden="true"></div>
+
       </div>
+
         <p id="sottotitolo" class="subtitle"></p>
 
         <div class="main-text">

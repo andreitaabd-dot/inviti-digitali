@@ -119,13 +119,6 @@ function applyTexts() {
 function applyImages() {
   const immagini = CONFIG.immagini || {};
 
-  if (immagini.brindis) {
-    setImage("brindisImg", immagini.brindis);
-    show($("brindisWrap"));
-  } else {
-    hide($("brindisWrap"));
-  }
-
   setBackground($("cover"), immagini.sfondoCover || immagini.sfondo || CONFIG.sfondoCover);
   setBackground($("invite"), immagini.sfondoInvito || immagini.sfondo || CONFIG.sfondoInvito);
 
@@ -582,6 +575,75 @@ function initCountdown() {
   window.setInterval(aggiornaConto, 1000);
 }
 
+function creaScintilla(origin) {
+  if (!origin) return;
+
+  const scintilla = document.createElement("span");
+  scintilla.className = "spark-particle";
+
+  const movimentoX = (Math.random() - 0.5) * 100;
+  const movimentoY = -35 - Math.random() * 85;
+
+  const dimensione = 2 + Math.random() * 4;
+  const durata = 500 + Math.random() * 500;
+
+  scintilla.style.left = "50%";
+  scintilla.style.top = "50%";
+
+  scintilla.style.setProperty("--spark-x", `${movimentoX}px`);
+  scintilla.style.setProperty("--spark-y", `${movimentoY}px`);
+  scintilla.style.setProperty("--spark-size", `${dimensione}px`);
+  scintilla.style.setProperty("--spark-duration", `${durata}ms`);
+
+  origin.appendChild(scintilla);
+
+  scintilla.addEventListener("animationend", () => {
+    scintilla.remove();
+  });
+}
+
+function initBrindisAnimato() {
+  const scena = $("brindisScene");
+  const caliceSinistro = $("glassLeft");
+  const caliceDestro = $("glassRight");
+
+  const origineSinistra = $("sparkOriginLeft");
+  const origineDestra = $("sparkOriginRight");
+
+  const immagineCalice = get("immagini.brindis");
+
+  if (
+    !scena ||
+    !caliceSinistro ||
+    !caliceDestro ||
+    !immagineCalice
+  ) {
+    hide(scena);
+    return;
+  }
+
+  caliceSinistro.src = immagineCalice;
+  caliceDestro.src = immagineCalice;
+
+  show(caliceSinistro);
+  show(caliceDestro);
+  show(scena);
+
+  if (scena.dataset.sparklesStarted === "true") return;
+
+  scena.dataset.sparklesStarted = "true";
+
+  window.setInterval(() => {
+    creaScintilla(origineSinistra);
+    creaScintilla(origineDestra);
+
+    if (Math.random() > 0.45) {
+      creaScintilla(origineSinistra);
+      creaScintilla(origineDestra);
+    }
+  }, 120);
+}
+
 function init() {
   applyMeta();
   applyTheme();
@@ -595,6 +657,7 @@ function init() {
   initIntroVideo();
   unlockAudio();
   initCountdown();
+  initBrindisAnimato();
 }
 
 document.addEventListener("DOMContentLoaded", init);
