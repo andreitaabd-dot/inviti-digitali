@@ -575,40 +575,74 @@ function initCountdown() {
   window.setInterval(aggiornaConto, 1000);
 }
 
-function creaScintilla(origin) {
-  if (!origin) return;
 
-  const scintilla = document.createElement("span");
-  scintilla.className = "spark-particle";
+function creaEsplosioneBrindisi() {
+  const contenitore = $("toastBurst");
 
-  const movimentoX = (Math.random() - 0.5) * 100;
-  const movimentoY = -35 - Math.random() * 85;
+  if (!contenitore) return;
 
-  const dimensione = 2 + Math.random() * 4;
-  const durata = 500 + Math.random() * 500;
+  contenitore.innerHTML = "";
 
-  scintilla.style.left = "50%";
-  scintilla.style.top = "50%";
+  /* RAGGI DORATI */
+  const numeroRaggi = 24;
 
-  scintilla.style.setProperty("--spark-x", `${movimentoX}px`);
-  scintilla.style.setProperty("--spark-y", `${movimentoY}px`);
-  scintilla.style.setProperty("--spark-size", `${dimensione}px`);
-  scintilla.style.setProperty("--spark-duration", `${durata}ms`);
+  for (let i = 0; i < numeroRaggi; i++) {
+    const raggio = document.createElement("span");
+    raggio.className = "toast-ray";
 
-  origin.appendChild(scintilla);
+    const angolo =
+      (360 / numeroRaggi) * i +
+      (Math.random() * 8 - 4);
 
-  scintilla.addEventListener("animationend", () => {
-    scintilla.remove();
-  });
+    const lunghezza = 28 + Math.random() * 34;
+    const larghezza = 1 + Math.random() * 1.8;
+    const durata = 850 + Math.random() * 350;
+
+    raggio.style.setProperty("--ray-angle", `${angolo}deg`);
+    raggio.style.setProperty("--ray-length", `${lunghezza}px`);
+    raggio.style.setProperty("--ray-width", `${larghezza}px`);
+    raggio.style.setProperty("--ray-duration", `${durata}ms`);
+
+    contenitore.appendChild(raggio);
+
+    raggio.addEventListener("animationend", () => {
+      raggio.remove();
+    });
+  }
+
+  /* PICCOLI PUNTI LUMINOSI */
+  const numeroPunti = 14;
+
+  for (let i = 0; i < numeroPunti; i++) {
+    const punto = document.createElement("span");
+    punto.className = "toast-dot";
+
+    const angolo = Math.random() * Math.PI * 2;
+    const distanza = 32 + Math.random() * 46;
+
+    const movimentoX = Math.cos(angolo) * distanza;
+    const movimentoY = Math.sin(angolo) * distanza;
+
+    const dimensione = 2 + Math.random() * 4;
+    const durata = 750 + Math.random() * 400;
+
+    punto.style.setProperty("--dot-x", `${movimentoX}px`);
+    punto.style.setProperty("--dot-y", `${movimentoY}px`);
+    punto.style.setProperty("--dot-size", `${dimensione}px`);
+    punto.style.setProperty("--dot-duration", `${durata}ms`);
+
+    contenitore.appendChild(punto);
+
+    punto.addEventListener("animationend", () => {
+      punto.remove();
+    });
+  }
 }
 
 function initBrindisAnimato() {
   const scena = $("brindisScene");
   const caliceSinistro = $("glassLeft");
   const caliceDestro = $("glassRight");
-
-  const origineSinistra = $("sparkOriginLeft");
-  const origineDestra = $("sparkOriginRight");
 
   const immagineCalice = get("immagini.brindis");
 
@@ -625,24 +659,40 @@ function initBrindisAnimato() {
   caliceSinistro.src = immagineCalice;
   caliceDestro.src = immagineCalice;
 
-  show(caliceSinistro);
-  show(caliceDestro);
+  if (scena.dataset.brindisStarted === "true") {
+    show(scena);
+    return;
+  }
+
+  scena.dataset.brindisStarted = "true";
+
+  let timerEsplosione;
+
+  const programmaEsplosione = () => {
+    window.clearTimeout(timerEsplosione);
+
+    /*
+      I calici si toccano circa dopo 1,6 secondi
+      dall'inizio dell'animazione.
+    */
+    timerEsplosione = window.setTimeout(() => {
+      creaEsplosioneBrindisi();
+    }, 1600);
+  };
+
+  caliceSinistro.addEventListener(
+    "animationstart",
+    programmaEsplosione
+  );
+
+  caliceSinistro.addEventListener(
+    "animationiteration",
+    programmaEsplosione
+  );
+
   show(scena);
-
-  if (scena.dataset.sparklesStarted === "true") return;
-
-  scena.dataset.sparklesStarted = "true";
-
-  window.setInterval(() => {
-    creaScintilla(origineSinistra);
-    creaScintilla(origineDestra);
-
-    if (Math.random() > 0.45) {
-      creaScintilla(origineSinistra);
-      creaScintilla(origineDestra);
-    }
-  }, 120);
 }
+
 
 function init() {
   applyMeta();
@@ -658,6 +708,7 @@ function init() {
   unlockAudio();
   initCountdown();
   initBrindisAnimato();
+ 
 }
 
 document.addEventListener("DOMContentLoaded", init);

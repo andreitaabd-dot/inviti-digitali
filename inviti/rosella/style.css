@@ -1709,3 +1709,190 @@ h1 {
   right: 0;
 }
 }
+
+/* EFFETTO CHIN CHIN CON RAGGI */
+
+.brindis-scene {
+  max-width: 360px;
+  height: 145px;
+  margin: -20px auto 4px;
+}
+
+.glasses-wrap {
+  width: 230px;
+  height: 140px;
+  position: relative;
+}
+
+.toast-glass {
+  width: 76px;
+  bottom: 0;
+}
+
+.toast-glass-left {
+  left: 34px;
+}
+
+.toast-glass-right {
+  right: 34px;
+}
+
+.toast-flash {
+  top: 48px;
+  z-index: 10;
+}
+
+/* PUNTO CENTRALE DA CUI ESCONO I RAGGI */
+
+.toast-burst {
+  position: absolute;
+  left: 50%;
+  top: 48px;
+
+  width: 1px;
+  height: 1px;
+
+  z-index: 9;
+  pointer-events: none;
+}
+
+/* SINGOLO RAGGIO CREATO DAL JAVASCRIPT */
+
+.toast-ray {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: var(--ray-width, 2px);
+  height: var(--ray-length, 48px);
+
+  transform-origin: 50% 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #fff4ba 30%,
+      #d8b84d 70%,
+      rgba(216, 184, 77, 0) 100%
+    );
+
+  border-radius: 999px;
+
+  box-shadow:
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 226, 120, 0.9);
+
+  animation:
+    toastRayExpand var(--ray-duration, 900ms)
+    ease-out forwards;
+}
+
+/* PICCOLI PUNTI LUMINOSI */
+
+.toast-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: var(--dot-size, 4px);
+  height: var(--dot-size, 4px);
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 5px #ffffff,
+    0 0 10px rgba(255, 224, 120, 0.95);
+
+  animation:
+    toastDotExpand var(--dot-duration, 900ms)
+    ease-out forwards;
+}
+
+/* I RAGGI PARTONO PICCOLI, CRESCONO E SPARISCONO */
+
+@keyframes toastRayExpand {
+  0% {
+    opacity: 0;
+
+    transform:
+      rotate(var(--ray-angle))
+      scaleY(0.05);
+  }
+
+  18% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.85;
+
+    transform:
+      rotate(var(--ray-angle))
+      scaleY(1);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      rotate(var(--ray-angle))
+      scaleY(1.55);
+  }
+}
+
+/* I PUNTINI SI ALLONTANANO DAL CENTRO */
+
+@keyframes toastDotExpand {
+  0% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      translate(0, 0)
+      scale(0.4);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      translate(
+        var(--dot-x),
+        var(--dot-y)
+      )
+      scale(0.1);
+  }
+}
+
+@media (max-width: 380px) {
+  .brindis-scene {
+    height: 135px;
+    margin-top: -18px;
+  }
+
+  .glasses-wrap {
+    width: 210px;
+    height: 132px;
+  }
+
+  .toast-glass {
+    width: 70px;
+  }
+
+  .toast-glass-left {
+    left: 31px;
+  }
+
+  .toast-glass-right {
+    right: 31px;
+  }
+
+  .toast-flash,
+  .toast-burst {
+    top: 44px;
+  }
+}
