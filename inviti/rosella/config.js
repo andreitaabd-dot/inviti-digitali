@@ -3,12 +3,12 @@ const INVITO_CONFIG = {
      DATI EVENTO
   ========================= */
 
-tipoEvento: "Cumpleaños",
+tipoEvento: "compleanno",
 
 nomeFesteggiato: "Rosella",
 eta: "",
 
-titolo: "Cumpleaños de Rosella",
+titolo: "",
 sottotitolo: "¡Acompáñame a celebrar!",
 
 descrizione1: "Me complace informarte que has sido seleccionado",
@@ -84,7 +84,9 @@ foto: {
 
     preview: "preview.jpg",
 
-    musica: "music.mp3"
+    musica: "music.mp3",
+
+    brindis: "brindis.png"
     // musica: ""
   },
 

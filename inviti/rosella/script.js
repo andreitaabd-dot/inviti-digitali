@@ -119,6 +119,13 @@ function applyTexts() {
 function applyImages() {
   const immagini = CONFIG.immagini || {};
 
+  if (immagini.brindis) {
+    setImage("brindisImg", immagini.brindis);
+    show($("brindisWrap"));
+  } else {
+    hide($("brindisWrap"));
+  }
+
   setBackground($("cover"), immagini.sfondoCover || immagini.sfondo || CONFIG.sfondoCover);
   setBackground($("invite"), immagini.sfondoInvito || immagini.sfondo || CONFIG.sfondoInvito);
 

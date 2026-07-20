@@ -1115,3 +1115,81 @@ h1 {
 
   color: #000;
 }
+
+/* CALICE BRINDISI */
+
+.brindis-wrap {
+  width: 100%;
+  height: 190px;
+  margin: 0 auto 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  overflow: visible;
+  position: relative;
+}
+
+.brindis-img {
+  width: 105px;
+  height: auto;
+  display: block;
+
+  transform-origin: center bottom;
+
+  filter:
+    drop-shadow(0 10px 14px rgba(0, 0, 0, 0.22))
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.45));
+
+  animation: brindisChinChin 3.2s ease-in-out infinite;
+}
+
+@keyframes brindisChinChin {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1)
+      rotate(0deg);
+  }
+
+  35% {
+    transform:
+      translateY(-10px)
+      scale(1.04)
+      rotate(-4deg);
+  }
+
+  52% {
+    transform:
+      translateY(-24px)
+      scale(1.22)
+      rotate(5deg);
+  }
+
+  64% {
+    transform:
+      translateY(-18px)
+      scale(1.16)
+      rotate(1deg);
+  }
+
+  78% {
+    transform:
+      translateY(-8px)
+      scale(1.05)
+      rotate(-2deg);
+  }
+}
+
+@media (max-width: 380px) {
+  .brindis-wrap {
+    height: 165px;
+    margin-bottom: 8px;
+  }
+
+  .brindis-img {
+    width: 90px;
+  }
+}
