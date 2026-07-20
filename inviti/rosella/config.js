@@ -3,7 +3,7 @@ const INVITO_CONFIG = {
      DATI EVENTO
   ========================= */
 
-tipoEvento: "compleanno",
+tipoEvento: "Cumpleaños",
 
 nomeFesteggiato: "Rosella",
 eta: "",
