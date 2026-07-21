@@ -693,6 +693,117 @@ function initBrindisAnimato() {
   show(scena);
 }
 
+function creaFuocoDorato() {
+  const contenitore = $("silverLights");
+
+  if (!contenitore) return;
+
+  const esplosione = document.createElement("div");
+  esplosione.className = "gold-burst";
+
+  /*
+    Manteniamo i fuochi lontani dai bordi
+    per evitare che vengano tagliati.
+  */
+  const posizioneX = 12 + Math.random() * 76;
+  const posizioneY = 10 + Math.random() * 80;
+
+  esplosione.style.setProperty(
+    "--burst-left",
+    `${posizioneX}%`
+  );
+
+  esplosione.style.setProperty(
+    "--burst-top",
+    `${posizioneY}%`
+  );
+
+  /* RAGGI LUNGHI DORATI */
+
+  const numeroRaggi = 20 + Math.floor(Math.random() * 10);
+
+  for (let i = 0; i < numeroRaggi; i++) {
+    const raggio = document.createElement("span");
+    raggio.className = "gold-ray";
+
+    const angolo =
+      (360 / numeroRaggi) * i +
+      (Math.random() * 7 - 3.5);
+
+    const lunghezza = 42 + Math.random() * 65;
+    const larghezza = 1 + Math.random() * 2;
+    const durata = 950 + Math.random() * 500;
+
+    raggio.style.setProperty(
+      "--ray-angle",
+      `${angolo}deg`
+    );
+
+    raggio.style.setProperty(
+      "--ray-length",
+      `${lunghezza}px`
+    );
+
+    raggio.style.setProperty(
+      "--ray-width",
+      `${larghezza}px`
+    );
+
+    raggio.style.setProperty(
+      "--ray-duration",
+      `${durata}ms`
+    );
+
+    esplosione.appendChild(raggio);
+  }
+
+  /* STELLINE ATTORNO AL FUOCO */
+
+  const numeroStelle = 7 + Math.floor(Math.random() * 7);
+
+  for (let i = 0; i < numeroStelle; i++) {
+    const stella = document.createElement("span");
+    stella.className = "gold-star";
+
+    const angolo = Math.random() * Math.PI * 2;
+    const distanza = 45 + Math.random() * 75;
+
+    const movimentoX = Math.cos(angolo) * distanza;
+    const movimentoY = Math.sin(angolo) * distanza;
+
+    const dimensione = 10 + Math.random() * 16;
+    const durata = 900 + Math.random() * 600;
+
+    stella.style.setProperty(
+      "--star-x",
+      `${movimentoX}px`
+    );
+
+    stella.style.setProperty(
+      "--star-y",
+      `${movimentoY}px`
+    );
+
+    stella.style.setProperty(
+      "--star-size",
+      `${dimensione}px`
+    );
+
+    stella.style.setProperty(
+      "--star-duration",
+      `${durata}ms`
+    );
+
+    esplosione.appendChild(stella);
+  }
+
+  contenitore.appendChild(esplosione);
+
+  window.setTimeout(() => {
+    esplosione.remove();
+  }, 1800);
+}
+
 function initSilverLights() {
   const contenitore = $("silverLights");
 
@@ -703,54 +814,31 @@ function initSilverLights() {
   contenitore.dataset.started = "true";
   contenitore.innerHTML = "";
 
-  const numeroLuci = 55;
+  /* Prime esplosioni visibili subito */
 
-for (let i = 0; i < numeroLuci; i++) {
-  const luce = document.createElement("span");
-  luce.className = "silver-light";
+  creaFuocoDorato();
 
-  const posizioneVerticale = Math.random() * 100;
-  const dimensione = 8 + Math.random() * 16;
-  const durata = 5 + Math.random() * 7;
-  const ritardo = -(Math.random() * durata);
-  const onda = -28 + Math.random() * 56;
-  const opacita = 0.75 + Math.random() * 0.25;
+  window.setTimeout(() => {
+    creaFuocoDorato();
+  }, 300);
 
-  luce.style.setProperty(
-    "--light-top",
-    `${posizioneVerticale}%`
-  );
+  window.setTimeout(() => {
+    creaFuocoDorato();
+  }, 650);
 
-  luce.style.setProperty(
-    "--light-size",
-    `${dimensione}px`
-  );
+  /*
+    Fuochi continui, senza lunghi momenti vuoti.
+  */
 
-  luce.style.setProperty(
-    "--light-duration",
-    `${durata}s`
-  );
+  window.setInterval(() => {
+    creaFuocoDorato();
 
-  luce.style.setProperty(
-    "--light-delay",
-    `${ritardo}s`
-  );
-
-  luce.style.setProperty(
-    "--light-wave",
-    `${onda}px`
-  );
-
-  luce.style.setProperty(
-    "--light-opacity",
-    opacita
-  );
-
-  contenitore.appendChild(luce);
+    window.setTimeout(() => {
+      creaFuocoDorato();
+    }, 350 + Math.random() * 300);
+  }, 1050);
 }
 
-
-}
 
 function init() {
   applyMeta();
@@ -766,7 +854,9 @@ function init() {
   unlockAudio();
   initCountdown();
   initBrindisAnimato();
-  initSilverLights();
+
+ initSilverLights();
+
  
 }
 

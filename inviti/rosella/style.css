@@ -1898,140 +1898,249 @@ h1 {
   }
 }
 
-/* LUCI ARGENTATE IN MOVIMENTO */
+/* FUOCHI D'ARTIFICIO DORATI ELEGANTI */
 
 .silver-lights {
   position: fixed;
   inset: 0;
-
   overflow: hidden;
   pointer-events: none;
-
   z-index: 1;
 }
 
-
-/* SINGOLA STELLA ARGENTATA */
-
-.silver-light {
+.gold-burst {
   position: absolute;
-  top: var(--light-top);
+  left: var(--burst-left);
+  top: var(--burst-top);
 
-  width: var(--light-size);
-  height: var(--light-size);
+  width: 1px;
+  height: 1px;
 
-  opacity: 0;
-
-  filter:
-  drop-shadow(0 0 4px rgba(255,255,255,1))
-  drop-shadow(0 0 10px rgba(210,210,210,1))
-  drop-shadow(0 0 18px rgba(170,170,170,0.9))
-  drop-shadow(0 0 28px rgba(130,130,130,0.6));
-
-  animation:
-    silverLightMove var(--light-duration)
-    linear var(--light-delay)
-    infinite;
+  pointer-events: none;
 }
 
-/* PUNTA VERTICALE */
+/* BAGLIORE CENTRALE */
 
-.silver-light::before {
+.gold-burst::before {
   content: "";
 
   position: absolute;
   left: 50%;
   top: 50%;
 
-  width: 2px;
-  height: 100%;
+  width: 20px;
+  height: 20px;
 
   transform: translate(-50%, -50%);
+  border-radius: 50%;
 
-  border-radius: 999px;
+  background:
+    radial-gradient(
+      circle,
+      #ffffff 0%,
+      #fff7c8 25%,
+      #e8bd45 52%,
+      rgba(232, 189, 69, 0) 75%
+    );
 
- background:
-  linear-gradient(
-    to bottom,
-    rgba(255,255,255,0),
-    #d6d6d6 20%,
-    #ffffff 40%,
-    #b8b8b8 50%,
-    #ffffff 60%,
-    #d6d6d6 80%,
-    rgba(255,255,255,0)
-  );
+  box-shadow:
+    0 0 10px #ffffff,
+    0 0 24px rgba(255, 224, 115, 1),
+    0 0 42px rgba(210, 156, 26, 0.85);
+
+  animation: goldBurstCenter 1.35s ease-out forwards;
 }
 
-/* PUNTA ORIZZONTALE */
+/* SINGOLO RAGGIO */
 
-.silver-light::after {
-  content: "";
-
+.gold-ray {
   position: absolute;
   left: 50%;
   top: 50%;
 
-  width: 100%;
-  height: 2px;
+  width: var(--ray-width);
+  height: var(--ray-length);
 
-  transform: translate(-50%, -50%);
+  transform-origin: 50% 0;
 
   border-radius: 999px;
 
   background:
-  linear-gradient(
-    to right,
-    rgba(255,255,255,0),
-    #d6d6d6 20%,
-    #ffffff 40%,
-    #b8b8b8 50%,
-    #ffffff 60%,
-    #d6d6d6 80%,
-    rgba(255,255,255,0)
-  );
+    linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #fff2ad 12%,
+      #e0ae2f 48%,
+      rgba(204, 145, 17, 0.45) 78%,
+      rgba(204, 145, 17, 0) 100%
+    );
+
+  box-shadow:
+    0 0 3px rgba(255, 255, 255, 1),
+    0 0 7px rgba(255, 218, 91, 0.95);
+
+  opacity: 0;
+
+  animation:
+    goldRayExplosion var(--ray-duration)
+    cubic-bezier(.12,.72,.22,1)
+    forwards;
 }
 
-@keyframes silverLightMove {
+/* PICCOLA STELLA DORATA */
+
+.gold-star {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: var(--star-size);
+  height: var(--star-size);
+
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%)
+    translate(var(--star-x), var(--star-y))
+    rotate(45deg)
+    scale(0.2);
+
+  animation:
+    goldStarAppear var(--star-duration)
+    ease-out forwards;
+}
+
+.gold-star::before,
+.gold-star::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+
+  background: linear-gradient(
+    to bottom,
+    #fffbe0,
+    #d8a51f
+  );
+
+  box-shadow:
+    0 0 4px rgba(255,255,255,1),
+    0 0 9px rgba(232,185,57,0.95);
+}
+
+.gold-star::before {
+  width: 2px;
+  height: 100%;
+}
+
+.gold-star::after {
+  width: 100%;
+  height: 2px;
+}
+
+/* ANIMAZIONE DEL CENTRO */
+
+@keyframes goldBurstCenter {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.1);
+  }
+
+  18% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.35);
+  }
+
+  55% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.35);
+  }
+}
+
+/* RAGGI CHE SI ALLUNGANO */
+
+@keyframes goldRayExplosion {
   0% {
     opacity: 0;
 
     transform:
-      translateX(110vw)
-      translateY(0)
-      scale(0.35)
-      rotate(0deg);
+      translate(-50%, 0)
+      rotate(var(--ray-angle))
+      scaleY(0.02);
   }
 
-  10% {
-    opacity: var(--light-opacity);
+  12% {
+    opacity: 1;
   }
 
-  45% {
-    transform:
-      translateX(52vw)
-      translateY(var(--light-wave))
-      scale(1.15)
-      rotate(30deg);
-  }
-
-  75% {
-    opacity: var(--light-opacity);
+  68% {
+    opacity: 1;
 
     transform:
-      translateX(18vw)
-      translateY(calc(var(--light-wave) * -0.5))
-      scale(0.8)
-      rotate(55deg);
+      translate(-50%, 0)
+      rotate(var(--ray-angle))
+      scaleY(1);
   }
 
   100% {
     opacity: 0;
 
     transform:
-      translateX(-20vw)
-      translateY(0)
-      scale(0.2)
-      rotate(85deg);
+      translate(-50%, 0)
+      rotate(var(--ray-angle))
+      scaleY(1.22);
+  }
+}
+
+/* STELLINE CHE APPAIONO ATTORNO */
+
+@keyframes goldStarAppear {
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      translate(
+        calc(var(--star-x) * 0.25),
+        calc(var(--star-y) * 0.25)
+      )
+      rotate(20deg)
+      scale(0.1);
+  }
+
+  35% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      translate(var(--star-x), var(--star-y))
+      rotate(45deg)
+      scale(1);
+  }
+
+  75% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      translate(
+        calc(var(--star-x) * 1.18),
+        calc(var(--star-y) * 1.18)
+      )
+      rotate(80deg)
+      scale(0.3);
   }
 }
