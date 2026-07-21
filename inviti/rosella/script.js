@@ -693,6 +693,64 @@ function initBrindisAnimato() {
   show(scena);
 }
 
+function initSilverLights() {
+  const contenitore = $("silverLights");
+
+  if (!contenitore) return;
+
+  if (contenitore.dataset.started === "true") return;
+
+  contenitore.dataset.started = "true";
+  contenitore.innerHTML = "";
+
+  const numeroLuci = 55;
+
+for (let i = 0; i < numeroLuci; i++) {
+  const luce = document.createElement("span");
+  luce.className = "silver-light";
+
+  const posizioneVerticale = Math.random() * 100;
+  const dimensione = 8 + Math.random() * 16;
+  const durata = 5 + Math.random() * 7;
+  const ritardo = -(Math.random() * durata);
+  const onda = -28 + Math.random() * 56;
+  const opacita = 0.75 + Math.random() * 0.25;
+
+  luce.style.setProperty(
+    "--light-top",
+    `${posizioneVerticale}%`
+  );
+
+  luce.style.setProperty(
+    "--light-size",
+    `${dimensione}px`
+  );
+
+  luce.style.setProperty(
+    "--light-duration",
+    `${durata}s`
+  );
+
+  luce.style.setProperty(
+    "--light-delay",
+    `${ritardo}s`
+  );
+
+  luce.style.setProperty(
+    "--light-wave",
+    `${onda}px`
+  );
+
+  luce.style.setProperty(
+    "--light-opacity",
+    opacita
+  );
+
+  contenitore.appendChild(luce);
+}
+
+
+}
 
 function init() {
   applyMeta();
@@ -708,6 +766,7 @@ function init() {
   unlockAudio();
   initCountdown();
   initBrindisAnimato();
+  initSilverLights();
  
 }
 

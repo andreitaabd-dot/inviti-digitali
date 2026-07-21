@@ -151,7 +151,7 @@ foto: {
      confetti, balloons, sparkles, disco
   ========================= */
 
-  effetti: [ "sparkles"],
+  /*effetti: [ "sparkles"],*/
 
   /* =========================
      PULSANTI
