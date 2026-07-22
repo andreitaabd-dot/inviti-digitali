@@ -2042,7 +2042,9 @@ img {
 
   min-height: calc(100dvh - (var(--module-edge) * 2));
 
-  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   margin: 0;
 
@@ -2055,22 +2057,4 @@ img {
   background-repeat: no-repeat;
 }
 
-/* Elimina le dimensioni particolari che restringevano alcuni moduli */
 
-.hero-card,
-.presentation-card,
-.countdown-card,
-.gallery-card,
-.event-card,
-.itinerary-card,
-.information-card,
-.dresscode-card,
-.rsvp-card,
-.ending-card {
-  width: 100%;
-  max-width: none;
-
-  min-height: calc(100dvh - (var(--module-edge) * 2));
-
-  aspect-ratio: auto;
-}
