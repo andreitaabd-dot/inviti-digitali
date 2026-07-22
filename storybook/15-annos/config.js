@@ -5,23 +5,24 @@ const INVITO_CONFIG = {
      ========================================================== */
 
   meta: {
-    title: "Mis XV Años - Valentina",
-    description: "Estás invitado a celebrar conmigo este día tan especial.",
-    image: "https://invitiwow.com/storybook/valentina15/preview.jpg?v=1",
-    url: "https://invitiwow.com/storybook/15-annos/"
+    title: "I miei 15 anni - Alessia Nahomi Gamboa Castillo",
+    description: "Sei invitato a festeggiare i 15 anni di Alessia Nahomi.",
+    image: "https://invitiwow.com/storybook/alessia_15/preview.jpg?v=1",
+    url: "https://invitiwow.com/storybook/alessia_15/"
   },
 
   /* ==========================================================
      TEMA GRAFICO GENERALE
+     Rosa elegante, non eccessivamente rosa, con oro champagne.
      ========================================================== */
 
   tema: {
-    colorePrimario: "#7c3a63",
-    coloreSecondario: "#d8b86d",
-    coloreTesto: "#3c2d2f",
+    colorePrimario: "#9a536c",
+    coloreSecondario: "#c6a15b",
+    coloreTesto: "#49363c",
 
-    coloreCard: "rgba(255,255,255,0.78)",
-    coloreCardBordo: "rgba(255,255,255,0.30)",
+    coloreCard: "rgba(255,250,247,0.82)",
+    coloreCardBordo: "rgba(255,255,255,0.38)",
 
     fontTitolo: "'Cormorant Garamond', serif",
     fontTesto: "'Poppins', sans-serif",
@@ -32,7 +33,6 @@ const INVITO_CONFIG = {
 
   /* ==========================================================
      VIDEO INTRO
-     Libro che si apre
      ========================================================== */
 
   intro: {
@@ -55,8 +55,7 @@ const INVITO_CONFIG = {
 
   /* ==========================================================
      EFFETTI
-     Valori disponibili:
-     sparkles, confetti, balloons, disco
+     Nessuna farfalla. Solo punti luce delicati.
      ========================================================== */
 
   effetti: [
@@ -67,25 +66,25 @@ const INVITO_CONFIG = {
      DATI GENERALI EVENTO
      ========================================================== */
 
-  evento: {
-    nome: "Valentina",
-    occasione: "Mis XV Años",
+ evento: {
+  nome: "Alessia Nahomi Gamboa Castillo",
+  occasione: "I miei 15 anni",
 
-    giorno: "18",
-    mese: "Octubre",
-    anno: "2026",
-    giornoSettimana: "Sábado",
-    ora: "7:00 PM"
-  },
+  giorno: "3",
+  mese: "ottobre",
+  anno: "2026",
+  giornoSettimana: "Sabato",
+  ora: "15:00"
+},
 
   /* ==========================================================
      WHATSAPP
      ========================================================== */
 
   whatsapp: {
-    numero: "393881769329",
-    messaggio: "Hola, confirmo mi asistencia a los XV años de Valentina.",
-    testoPulsante: "Confirmar asistencia"
+    numero: "393286412593",
+   messaggio: "Ciao, confermo la mia presenza alla festa per i 15 anni di Alessia Nahomi Gamboa Castillo il 3 ottobre.",
+  testoPulsante: "Conferma la presenza"
   },
 
   /* ==========================================================
@@ -93,19 +92,14 @@ const INVITO_CONFIG = {
      ========================================================== */
 
   maps: {
-    nomeLuogo: "Salón Bella Luna",
-    indirizzo: "Av. Los Pinos 456, Lima",
-    link: "https://maps.app.goo.gl/Z6o7ThZQSSUMgUdy6",
-    testoPulsante: "Ver ubicación"
+    nomeLuogo: "Smeraldo Club",
+    indirizzo: "Via Terni, 25, 20814 Varedo MB",
+    link: "https://maps.app.goo.gl/FCpznWX9RDGWR1Mr8",
+    testoPulsante: "Vedi la posizione"
   },
 
   /* ==========================================================
      MODULI
-     Ogni modulo può essere attivato o disattivato.
-     Ogni modulo ha:
-     - sfondo: riempie tutta la sezione
-     - card: sfondo interno del contenuto
-     - animazione: effetto quando entra nello schermo
      ========================================================== */
 
   moduli: {
@@ -119,30 +113,29 @@ const INVITO_CONFIG = {
 
       sfondo: "hero-bg.jpg",
       card: "hero-card.png",
-
       foto: "hero.jpg",
 
-      titolo: "Mis XV Años",
-      nome: "Valentina",
-      frase: "Hay momentos que permanecen para siempre en el corazón.",
+     titolo: "I miei 15 anni",
+nome: "Alessia Nahomi Gamboa Castillo",
+frase: "Un sogno, un’emozione e un giorno indimenticabile da celebrare.",
 
       animazione: "fade",
 
-       stile: {
-        coloreTitolo: "#c89b3c",
-        coloreNome: "#7b285c",
-        coloreTesto: "#452c32",
+      stile: {
+        coloreTitolo: "#c6a15b",
+        coloreNome: "#914f67",
+        coloreTesto: "#49363c",
 
         ombraTitolo: "0 1px 3px rgba(255,255,255,0.9)",
         ombraNome: "0 2px 5px rgba(255,255,255,0.85)",
         ombraTesto: "0 1px 3px rgba(255,255,255,1)",
 
-        sfondoFrase: "rgba(255,255,255,0.72)"
+        sfondoFrase: "rgba(255,250,247,0.76)"
       }
     },
 
     /* ==========================================
-       PERGAMENA / PRESENTAZIONE
+       DEDICA
        ========================================== */
 
     presentazione: {
@@ -151,48 +144,53 @@ const INVITO_CONFIG = {
       sfondo: "presentazione-bg.jpg",
       card: "pergamena.png",
 
-      frase: "Con la bendición de Dios y el amor de nuestra familia...",
+      frase: "Alla nostra amata figlia, nel giorno dei tuoi 15 anni",
+      genitori: "",
 
-      genitori: "Carlos Ramírez y Maria Lozada",
+      testo: "Che questo giorno segni l’inizio di un cammino pieno d’amore, gioia e successi. Sei il nostro orgoglio più grande e ti auguriamo tutta la felicità del mondo. Continua sempre a seguire i tuoi sogni e ricorda che saremo sempre qui per te. Ti amiamo con tutto il cuore.",
+      animazione: "zoom",
 
-      testo: "Tenemos el honor de invitarlos a celebrar los XV años de nuestra querida hija Valentina.",
+      stile: {
+        coloreTitolo: "#914f67",
+        coloreNome: "#914f67",
+        coloreTesto: "#49363c",
+        coloreAccento: "#c6a15b",
 
-      animazione: "zoom"
+        ombraTitolo: "0 1px 3px rgba(255,255,255,0.9)",
+        ombraTesto: "0 1px 2px rgba(255,255,255,0.8)"
+      }
     },
 
     /* ==========================================
        COUNTDOWN
-       ========================================================== */
+       ========================================== */
 
-    countdown: {
-      attivo: true,
+   countdown: {
+    attivo: true,
 
-      sfondo: "countdown-bg.jpg",
-      card: "countdown-card.png",
+    sfondo: "countdown-bg.jpg",
+    card: "countdown-card.png",
 
-      titolo: "Falta muy poco",
+    titolo: "Manca pochissimo",
+    dataEvento: "2026-10-03T15:00:00",
 
-      dataEvento: "2026-10-18T19:00:00",
-
-      etichette: {
-        giorni: "Días",
-        ore: "Horas",
-        minuti: "Minutos",
-        secondi: "Segundos"
-      },
-
-      testoConcluso: "¡El gran día ha llegado!",
-
-      animazione: "fade"
+    etichette: {
+      giorni: "Giorni",
+      ore: "Ore",
+      minuti: "Minuti",
+      secondi: "Secondi"
     },
 
+    testoConcluso: "Il grande giorno è arrivato!",
+    animazione: "fade"
+  },
+
     /* ==========================================
-       GALLERIA
-       Massimo 4 foto
+       GALLERIA DISATTIVATA SU RICHIESTA
        ========================================== */
 
     gallery: {
-      attivo: true,
+      attivo: false,
 
       sfondo: "gallery-bg.jpg",
       card: "gallery-card.png",
@@ -200,26 +198,8 @@ const INVITO_CONFIG = {
       titolo: "Un poco de mi historia",
       testo: "Momentos que guardo para siempre en mi corazón.",
 
-      foto: [
-        "foto1.jpg",
-        "foto2.jpg",
-        "foto3.jpg",
-        "foto4.jpg"
-      ],
-
-      animazione: "slide",
-
-      stile: {
-        coloreTitolo: "#6b4631",
-        coloreTesto: "#3f2f2b",
-        coloreAccento: "#b88a37",
-
-        ombraTitolo: "0 1px 3px rgba(255,255,255,0.95)",
-        ombraTesto: "none",
-
-        sfondoTitolo: "rgba(255,255,255,0.78)",
-        sfondoTesto: "rgba(255,255,255,0.72)"
-      }
+      foto: [],
+      animazione: "slide"
     },
 
     /* ==========================================
@@ -232,8 +212,8 @@ const INVITO_CONFIG = {
       sfondo: "evento-bg.jpg",
       card: "evento-card.png",
 
-      titolo: "Detalles del Evento",
-      testo: "Acompáñanos a celebrar una noche inolvidable.",
+      titolo: "Dettagli dell'evento",
+      testo: "Festeggia con noi questo giorno così speciale.",
 
       mostraData: true,
       mostraOra: true,
@@ -243,15 +223,15 @@ const INVITO_CONFIG = {
       animazione: "fade",
 
       stile: {
-        coloreTitolo: "#6b4631",
-        coloreTesto: "#3f2f2b",
-        coloreAccento: "#b88a37",
+        coloreTitolo: "#914f67",
+        coloreTesto: "#49363c",
+        coloreAccento: "#c6a15b",
 
         ombraTitolo: "0 1px 3px rgba(255,255,255,0.95)",
         ombraTesto: "none",
 
-        sfondoTitolo: "rgba(255,255,255,0.78)",
-        sfondoTesto: "rgba(255,255,255,0.72)"
+        sfondoTitolo: "rgba(255,250,247,0.80)",
+        sfondoTesto: "rgba(255,250,247,0.74)"
       }
     },
 
@@ -265,86 +245,58 @@ const INVITO_CONFIG = {
       sfondo: "itinerary-bg.jpg",
       card: "itinerary-card.png",
 
-      titolo: "Programa",
-      testo: "Estos serán algunos de los momentos especiales de la noche.",
+      titolo: "Programma",
+      testo: "Questi saranno alcuni dei momenti speciali della festa.",
 
       eventi: [
         {
-          ora: "7:00 PM",
-          titolo: "Recepción",
-          descrizione: "Bienvenida de los invitados.",
-          icona: "✨"
+          ora: "16:30",
+          titolo: "Brindisi",
+          descrizione: "Festeggeremo insieme questo momento così speciale.",
+          icona: "🥂"
         },
         {
-          ora: "8:00 PM",
+          ora: "19:00",
           titolo: "Cena",
-          descrizione: "Compartiremos juntos una cena especial.",
+          descrizione: "Condivideremo una cena speciale con familiari e amici.",
           icona: "🍽️"
         },
         {
-          ora: "9:30 PM",
-          titolo: "Vals",
-          descrizione: "El momento más esperado de la noche.",
-          icona: "💃"
-        },
-        {
-          ora: "10:30 PM",
-          titolo: "Hora Loca",
-          descrizione: "Música, baile y mucha diversión.",
+          ora: "20:30",
+          titolo: "È ora di divertirsi",
+          descrizione: "Musica, balli e tanta allegria da vivere insieme.",
           icona: "🎉"
-        },
-        {
-          ora: "11:30 PM",
-          titolo: "Torta",
-          descrizione: "Brindis y corte de la torta.",
-          icona: "🎂"
         }
       ],
 
       animazione: "slide",
 
-       stile: {
-        coloreTitolo: "#6b4631",
-        coloreTesto: "#3f2f2b",
-        coloreAccento: "#b88a37",
+      stile: {
+        coloreTitolo: "#914f67",
+        coloreTesto: "#49363c",
+        coloreAccento: "#c6a15b",
 
         ombraTitolo: "0 1px 3px rgba(255,255,255,0.95)",
         ombraTesto: "none",
 
-        sfondoTitolo: "rgba(255,255,255,0.78)",
-        sfondoTesto: "rgba(255,255,255,0.72)"
+        sfondoTitolo: "rgba(255,250,247,0.80)",
+        sfondoTesto: "rgba(255,250,247,0.74)"
       }
     },
 
     /* ==========================================
-       REGALO
+       LLUVIA DE SOBRES DISATTIVATA SU RICHIESTA
        ========================================== */
 
     gift: {
-      attivo: true,
+      attivo: false,
 
       sfondo: "gift-bg.jpg",
       card: "gift-card.png",
 
       titolo: "Lluvia de Sobres",
-
-      testo: "Tu presencia será nuestro mejor regalo, pero si deseas tener un detalle con Valentina, tendremos una lluvia de sobres.",
-
-      //icona: "✉️",
-
-      animazione: "zoom",
-
-     stile: {
-        coloreTitolo: "#6b4631",
-        coloreTesto: "#3f2f2b",
-        coloreAccento: "#b88a37",
-
-        ombraTitolo: "0 1px 3px rgba(255,255,255,0.95)",
-        ombraTesto: "none",
-
-        sfondoTitolo: "rgba(255,255,255,0.78)",
-        sfondoTesto: "rgba(255,255,255,0.72)"
-      }
+      testo: "",
+      animazione: "zoom"
     },
 
     /* ==========================================
@@ -357,24 +309,21 @@ const INVITO_CONFIG = {
       sfondo: "kids-bg.jpg",
       card: "kids-card.png",
 
-      titolo: "Niños Bienvenidos",
-
-      testo: "Los pequeños también forman parte de esta gran celebración.",
-
-      //icona: "🧸",
+     titolo: "Bambini benvenuti",
+      testo: "Anche i più piccoli fanno parte di questa grande festa.",
 
       animazione: "zoom",
 
-       stile: {
-        coloreTitolo: "#6b4631",
-        coloreTesto: "#3f2f2b",
-        coloreAccento: "#b88a37",
+      stile: {
+        coloreTitolo: "#914f67",
+        coloreTesto: "#49363c",
+        coloreAccento: "#c6a15b",
 
         ombraTitolo: "0 1px 3px rgba(255,255,255,0.95)",
         ombraTesto: "none",
 
-        sfondoTitolo: "rgba(255,255,255,0.78)",
-        sfondoTesto: "rgba(255,255,255,0.72)"
+        sfondoTitolo: "rgba(255,250,247,0.80)",
+        sfondoTesto: "rgba(255,250,247,0.74)"
       }
     },
 
@@ -388,26 +337,25 @@ const INVITO_CONFIG = {
       sfondo: "dresscode-bg.jpg",
       card: "dresscode-card.png",
 
-      titolo: "Dress Code",
-
-      testo: "Vestimenta elegante. Evitar el color rosa, ya que será exclusivo para la quinceañera.",
+      titolo: "",
+      testo: "",
 
       immagine: "dresscode.jpg",
-
+      mostraPulsante: false,
       testoPulsante: "Ver Dress Code",
 
       animazione: "fade",
 
       stile: {
-        coloreTitolo: "#6b4631",
-        coloreTesto: "#3f2f2b",
-        coloreAccento: "#b88a37",
+        coloreTitolo: "#914f67",
+        coloreTesto: "#49363c",
+        coloreAccento: "#c6a15b",
 
         ombraTitolo: "0 1px 3px rgba(255,255,255,0.95)",
         ombraTesto: "none",
 
-        sfondoTitolo: "rgba(255,255,255,0.78)",
-        sfondoTesto: "rgba(255,255,255,0.72)"
+        sfondoTitolo: "rgba(255,250,247,0.80)",
+        sfondoTesto: "rgba(255,250,247,0.74)"
       }
     },
 
@@ -421,12 +369,9 @@ const INVITO_CONFIG = {
       sfondo: "rsvp-bg.jpg",
       card: "rsvp-card.png",
 
-      titolo: "Confirma tu asistencia",
-
-      testo: "Por favor confirma tu asistencia antes del 10 de octubre.",
-
+     titolo: "Conferma la tua presenza",
+testo: "Per favore, conferma la tua presenza entro il 1° settembre.",
       mostraWhatsapp: true,
-
       animazione: "zoom"
     },
 
@@ -439,25 +384,23 @@ const INVITO_CONFIG = {
 
       sfondo: "final-bg.jpg",
       card: "final-card.png",
-
       foto: "finale.jpg",
 
-      titolo: "Valentina",
-
-      frase: "¡Te esperamos para vivir juntos una noche inolvidable!",
+     titolo: "Alessia Nahomi",
+      frase: "Ti aspettiamo per condividere insieme questo giorno indimenticabile!",
 
       animazione: "fade",
 
       stile: {
-        coloreTitolo: "#c89b3c",
-        coloreNome: "#7b285c",
-        coloreTesto: "#452c32",
+        coloreTitolo: "#c6a15b",
+        coloreNome: "#914f67",
+        coloreTesto: "#49363c",
 
         ombraTitolo: "0 1px 3px rgba(255,255,255,0.9)",
         ombraNome: "0 2px 5px rgba(255,255,255,0.85)",
         ombraTesto: "0 1px 3px rgba(255,255,255,1)",
 
-        sfondoFrase: "rgba(255,255,255,0.72)"
+        sfondoFrase: "rgba(255,250,247,0.76)"
       }
     }
 
