@@ -5,8 +5,8 @@ const INVITO_CONFIG = {
      ========================================================== */
 
   meta: {
-    title: "Mis XV Años - Alessia Nahomi Gamboa Castillo",
-    description: "Estás invitado a celebrar los XV años de Alessia Nahomi.",
+    title: "",
+    description: "",
     image: "https://invitiwow.com/storybook/alessia_15/preview.jpg?v=1",
     url: "https://invitiwow.com/storybook/alessia_15/"
   },
