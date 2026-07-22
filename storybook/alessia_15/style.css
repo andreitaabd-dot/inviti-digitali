@@ -1998,3 +1998,79 @@ img {
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
+
+
+/* ==========================================================
+   LAYOUT DEFINITIVO CARD A PIENO SCHERMO
+   Tutte le card occupano quasi tutta la sezione, lasciando
+   solo un bordo proporzionale al dispositivo.
+   ========================================================== */
+
+:root {
+  --module-edge: clamp(10px, 2.5vw, 18px);
+}
+
+.story-module {
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+}
+
+.module-overlay {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+
+  padding: var(--module-edge);
+}
+
+.module-container {
+  width: 100%;
+  max-width: none;
+
+  min-height: calc(100dvh - (var(--module-edge) * 2));
+
+  display: flex;
+
+  margin: 0;
+}
+
+.module-card {
+  width: 100%;
+  max-width: none;
+
+  min-height: calc(100dvh - (var(--module-edge) * 2));
+
+  flex: 1 1 auto;
+
+  margin: 0;
+
+  border-radius: clamp(20px, 4vw, 30px);
+}
+
+.module-card-image {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Elimina le dimensioni particolari che restringevano alcuni moduli */
+
+.hero-card,
+.presentation-card,
+.countdown-card,
+.gallery-card,
+.event-card,
+.itinerary-card,
+.information-card,
+.dresscode-card,
+.rsvp-card,
+.ending-card {
+  width: 100%;
+  max-width: none;
+
+  min-height: calc(100dvh - (var(--module-edge) * 2));
+
+  aspect-ratio: auto;
+}
