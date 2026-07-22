@@ -5,8 +5,8 @@ const INVITO_CONFIG = {
      ========================================================== */
 
   meta: {
-     title: "Alessia Nahomi - Mis XV Años",
-    description: "",
+    title: "I miei 15 anni - Alessia Nahomi Gamboa Castillo",
+    description: "Sei invitato a festeggiare i 15 anni di Alessia Nahomi.",
     image: "https://invitiwow.com/storybook/alessia_15/preview.jpg?v=1",
     url: "https://invitiwow.com/storybook/alessia_15/"
   },
@@ -66,16 +66,16 @@ const INVITO_CONFIG = {
      DATI GENERALI EVENTO
      ========================================================== */
 
-  evento: {
-    nome: "Alessia Nahomi Gamboa Castillo",
-    occasione: "Mis XV Años",
+ evento: {
+  nome: "Alessia Nahomi Gamboa Castillo",
+  occasione: "I miei 15 anni",
 
-    giorno: "3",
-    mese: "de octubre de",
-    anno: "2026",
-    giornoSettimana: "Sábado",
-    ora: "15:00"
-  },
+  giorno: "3",
+  mese: "ottobre",
+  anno: "2026",
+  giornoSettimana: "Sabato",
+  ora: "15:00"
+},
 
   /* ==========================================================
      WHATSAPP
@@ -83,8 +83,8 @@ const INVITO_CONFIG = {
 
   whatsapp: {
     numero: "393286412593",
-    messaggio: "Hola, confirmo mi asistencia a los XV años de Alessia Nahomi Gamboa Castillo el 3 de octubre.",
-    testoPulsante: "Confirmar asistencia"
+   messaggio: "Ciao, confermo la mia presenza alla festa per i 15 anni di Alessia Nahomi Gamboa Castillo il 3 ottobre.",
+  testoPulsante: "Conferma la presenza"
   },
 
   /* ==========================================================
@@ -95,7 +95,7 @@ const INVITO_CONFIG = {
     nomeLuogo: "Smeraldo Club",
     indirizzo: "Via Terni, 25, 20814 Varedo MB",
     link: "https://maps.app.goo.gl/FCpznWX9RDGWR1Mr8",
-    testoPulsante: "Ver ubicación"
+    testoPulsante: "Vedi la posizione"
   },
 
   /* ==========================================================
@@ -115,9 +115,9 @@ const INVITO_CONFIG = {
       card: "hero-card.png",
       foto: "hero.jpg",
 
-      titolo: "Mis XV Años",
-      nome: "Alessia Nahomi Gamboa Castillo",
-      frase: "Un sueño, una ilusión y un día inolvidable para celebrar.",
+     titolo: "I miei 15 anni",
+nome: "Alessia Nahomi Gamboa Castillo",
+frase: "Un sogno, un’emozione e un giorno indimenticabile da celebrare.",
 
       animazione: "fade",
 
@@ -144,11 +144,10 @@ const INVITO_CONFIG = {
       sfondo: "presentazione-bg.jpg",
       card: "pergamena.png",
 
-      frase: "A nuestra amada hija en tu quinceañera",
+      frase: "Alla nostra amata figlia, nel giorno dei tuoi 15 anni",
       genitori: "",
 
-      testo: "Que ese día marque el inicio de un camino lleno de amor, alegría y éxito. Eres nuestro mayor orgullo y te deseamos toda la felicidad del mundo. Que siempre sigas tus sueños y recuerda que siempre estaremos aquí para ti. Te amamos con todo nuestro corazón.",
-
+      testo: "Che questo giorno segni l’inizio di un cammino pieno d’amore, gioia e successi. Sei il nostro orgoglio più grande e ti auguriamo tutta la felicità del mondo. Continua sempre a seguire i tuoi sogni e ricorda che saremo sempre qui per te. Ti amiamo con tutto il cuore.",
       animazione: "zoom",
 
       stile: {
@@ -166,25 +165,25 @@ const INVITO_CONFIG = {
        COUNTDOWN
        ========================================== */
 
-    countdown: {
-      attivo: true,
+   countdown: {
+    attivo: true,
 
-      sfondo: "countdown-bg.jpg",
-      card: "countdown-card.png",
+    sfondo: "countdown-bg.jpg",
+    card: "countdown-card.png",
 
-      titolo: "Falta muy poco",
-      dataEvento: "2026-10-03T15:00:00",
+    titolo: "Manca pochissimo",
+    dataEvento: "2026-10-03T15:00:00",
 
-      etichette: {
-        giorni: "Días",
-        ore: "Horas",
-        minuti: "Minutos",
-        secondi: "Segundos"
-      },
-
-      testoConcluso: "¡El gran día ha llegado!",
-      animazione: "fade"
+    etichette: {
+      giorni: "Giorni",
+      ore: "Ore",
+      minuti: "Minuti",
+      secondi: "Secondi"
     },
+
+    testoConcluso: "Il grande giorno è arrivato!",
+    animazione: "fade"
+  },
 
     /* ==========================================
        GALLERIA DISATTIVATA SU RICHIESTA
@@ -213,8 +212,8 @@ const INVITO_CONFIG = {
       sfondo: "evento-bg.jpg",
       card: "evento-card.png",
 
-      titolo: "Detalles del Evento",
-      testo: "Acompáñanos a celebrar este día tan especial.",
+      titolo: "Dettagli dell'evento",
+      testo: "Festeggia con noi questo giorno così speciale.",
 
       mostraData: true,
       mostraOra: true,
@@ -246,26 +245,26 @@ const INVITO_CONFIG = {
       sfondo: "itinerary-bg.jpg",
       card: "itinerary-card.png",
 
-      titolo: "Programa",
-      testo: "Estos serán algunos de los momentos especiales de la celebración.",
+      titolo: "Programma",
+      testo: "Questi saranno alcuni dei momenti speciali della festa.",
 
       eventi: [
         {
           ora: "16:30",
-          titolo: "Brindis",
-          descrizione: "Celebraremos juntos este momento tan especial.",
+          titolo: "Brindisi",
+          descrizione: "Festeggeremo insieme questo momento così speciale.",
           icona: "🥂"
         },
         {
           ora: "19:00",
           titolo: "Cena",
-          descrizione: "Compartiremos una cena especial con familiares y amigos.",
+          descrizione: "Condivideremo una cena speciale con familiari e amici.",
           icona: "🍽️"
         },
         {
           ora: "20:30",
-          titolo: "Hora de la diversión",
-          descrizione: "Música, baile y mucha alegría para disfrutar juntos.",
+          titolo: "È ora di divertirsi",
+          descrizione: "Musica, balli e tanta allegria da vivere insieme.",
           icona: "🎉"
         }
       ],
@@ -310,8 +309,8 @@ const INVITO_CONFIG = {
       sfondo: "kids-bg.jpg",
       card: "kids-card.png",
 
-      titolo: "Niños Bienvenidos",
-      testo: "Los pequeños también forman parte de esta gran celebración.",
+     titolo: "Bambini benvenuti",
+      testo: "Anche i più piccoli fanno parte di questa grande festa.",
 
       animazione: "zoom",
 
@@ -370,9 +369,8 @@ const INVITO_CONFIG = {
       sfondo: "rsvp-bg.jpg",
       card: "rsvp-card.png",
 
-      titolo: "Confirma tu asistencia",
-      testo: "Por favor, confirma tu asistencia hasta el 1 de septiembre.",
-
+     titolo: "Conferma la tua presenza",
+testo: "Per favore, conferma la tua presenza entro il 1° settembre.",
       mostraWhatsapp: true,
       animazione: "zoom"
     },
@@ -388,8 +386,8 @@ const INVITO_CONFIG = {
       card: "final-card.png",
       foto: "finale.jpg",
 
-      titolo: "Alessia Nahomi",
-      frase: "¡Te esperamos para compartir juntos este día inolvidable!",
+     titolo: "Alessia Nahomi",
+      frase: "Ti aspettiamo per condividere insieme questo giorno indimenticabile!",
 
       animazione: "fade",
 
