@@ -184,6 +184,7 @@ function createModuleSection(moduleName, moduleConfig) {
   const overlay = createElement("div", "module-overlay");
   const container = createElement("div", "module-container");
   const card = createElement("div", "module-card");
+  const contentRoot = createElement("div", "module-inner");
 
   setCardBackground(card, moduleConfig.card);
 
@@ -194,13 +195,15 @@ function createModuleSection(moduleName, moduleConfig) {
     moduleConfig.stile || {}
   );
 
+  card.appendChild(contentRoot);
   container.appendChild(card);
   overlay.appendChild(container);
   section.appendChild(overlay);
 
   return {
     section,
-    card
+    card,
+    contentRoot
   };
 }
 
@@ -221,7 +224,7 @@ function buildHero() {
 
   if (config.attivo === false) return;
 
-  const { section, card } = createModuleSection(
+  const { section, card, contentRoot } = createModuleSection(
     "hero",
     config
   );
@@ -241,7 +244,7 @@ function buildHero() {
       : "Foto della festeggiata";
 
     photoWrap.appendChild(photo);
-    card.appendChild(photoWrap);
+    contentRoot.appendChild(photoWrap);
   }
 
   const content = createElement("div", "hero-content");
@@ -276,7 +279,7 @@ function buildHero() {
     content.appendChild(phrase);
   }
 
-  card.appendChild(content);
+  contentRoot.appendChild(content);
   appendModule(section);
 }
 
@@ -289,7 +292,7 @@ function buildPresentation() {
 
   if (config.attivo === false) return;
 
-  const { section, card } = createModuleSection(
+  const { section, card, contentRoot } = createModuleSection(
     "presentation",
     config
   );
@@ -315,7 +318,7 @@ function buildPresentation() {
     const parentsLabel = createElement(
       "p",
       "presentation-label",
-      "Mis padres"
+      "I genitori"
     );
 
     const parents = createElement(
@@ -338,7 +341,7 @@ function buildPresentation() {
     content.appendChild(text);
   }
 
-  card.appendChild(content);
+  contentRoot.appendChild(content);
   appendModule(section);
 }
 
@@ -351,7 +354,7 @@ function buildCountdown() {
 
   if (config.attivo === false) return;
 
-  const { section, card } = createModuleSection(
+  const { section, card, contentRoot } = createModuleSection(
     "countdown",
     config
   );
@@ -365,7 +368,7 @@ function buildCountdown() {
       config.titolo
     );
 
-    card.appendChild(title);
+    contentRoot.appendChild(title);
   }
 
   const countdown = createElement(
@@ -378,19 +381,19 @@ function buildCountdown() {
   const units = [
     {
       key: "days",
-      label: labels.giorni || "Días"
+      label: labels.giorni || "Giorni"
     },
     {
       key: "hours",
-      label: labels.ore || "Horas"
+      label: labels.ore || "Ore"
     },
     {
       key: "minutes",
-      label: labels.minuti || "Minutos"
+      label: labels.minuti || "Minuti"
     },
     {
       key: "seconds",
-      label: labels.secondi || "Segundos"
+      label: labels.secondi || "Secondi"
     }
   ];
 
@@ -422,13 +425,13 @@ function buildCountdown() {
   const completedText = createElement(
     "p",
     "countdown-completed hidden",
-    config.testoConcluso || "¡El gran día ha llegado!"
+    config.testoConcluso || "Il grande giorno è arrivato!"
   );
 
   completedText.id = "countdownCompleted";
 
-  card.appendChild(countdown);
-  card.appendChild(completedText);
+  contentRoot.appendChild(countdown);
+  contentRoot.appendChild(completedText);
   appendModule(section);
 
   startCountdown(config.dataEvento);
@@ -516,7 +519,7 @@ function buildGallery() {
 
   if (!photos.length) return;
 
-  const { section, card } = createModuleSection(
+  const { section, card, contentRoot } = createModuleSection(
     "gallery",
     config
   );
@@ -530,7 +533,7 @@ function buildGallery() {
       config.titolo
     );
 
-    card.appendChild(title);
+    contentRoot.appendChild(title);
   }
 
   if (config.testo) {
@@ -540,7 +543,7 @@ function buildGallery() {
       config.testo
     );
 
-    card.appendChild(text);
+    contentRoot.appendChild(text);
   }
 
   const slider = createElement("div", "gallery-slider");
@@ -605,7 +608,7 @@ function buildGallery() {
   slider.appendChild(stage);
   slider.appendChild(footer);
 
-  card.appendChild(slider);
+  contentRoot.appendChild(slider);
   appendModule(section);
 
   let currentIndex = 0;
@@ -712,7 +715,7 @@ function buildEventInfo() {
   const event = CONFIG.evento || {};
   const maps = CONFIG.maps || {};
 
-  const { section, card } = createModuleSection(
+  const { section, card, contentRoot } = createModuleSection(
     "event",
     config
   );
@@ -726,7 +729,7 @@ function buildEventInfo() {
       config.titolo
     );
 
-    card.appendChild(title);
+    contentRoot.appendChild(title);
   }
 
   if (config.testo) {
@@ -736,7 +739,7 @@ function buildEventInfo() {
       config.testo
     );
 
-    card.appendChild(text);
+    contentRoot.appendChild(text);
   }
 
   const details = createElement(
@@ -756,14 +759,14 @@ function buildEventInfo() {
 
     if (dateText) {
       details.appendChild(
-        createInfoItem("📅", "Fecha", dateText)
+        createInfoItem("📅", "Data", dateText)
       );
     }
   }
 
   if (config.mostraOra !== false && event.ora) {
     details.appendChild(
-      createInfoItem("🕒", "Hora", event.ora)
+      createInfoItem("🕒", "Ora", event.ora)
     );
   }
 
@@ -781,13 +784,13 @@ function buildEventInfo() {
     details.appendChild(
       createInfoItem(
         "📍",
-        "Lugar",
+        "Luogo",
         locationText
       )
     );
   }
 
-  card.appendChild(details);
+  contentRoot.appendChild(details);
 
   if (
     config.mostraMappa !== false &&
@@ -799,13 +802,13 @@ function buildEventInfo() {
     );
 
     mapButton.textContent =
-      maps.testoPulsante || "Ver ubicación";
+      maps.testoPulsante || "Vedi la posizione";
 
     mapButton.href = getMapsLink();
     mapButton.target = "_blank";
     mapButton.rel = "noopener noreferrer";
 
-    card.appendChild(mapButton);
+    contentRoot.appendChild(mapButton);
   }
 
   appendModule(section);
@@ -876,7 +879,7 @@ function buildItinerary() {
     ? config.eventi
     : [];
 
-  const { section, card } = createModuleSection(
+  const { section, card, contentRoot } = createModuleSection(
     "itinerary",
     config
   );
@@ -890,7 +893,7 @@ function buildItinerary() {
       config.titolo
     );
 
-    card.appendChild(title);
+    contentRoot.appendChild(title);
   }
 
   if (config.testo) {
@@ -900,7 +903,7 @@ function buildItinerary() {
       config.testo
     );
 
-    card.appendChild(text);
+    contentRoot.appendChild(text);
   }
 
   const timeline = createElement(
@@ -960,7 +963,7 @@ function buildItinerary() {
     timeline.appendChild(item);
   });
 
-  card.appendChild(timeline);
+  contentRoot.appendChild(timeline);
   appendModule(section);
 }
 
@@ -974,7 +977,7 @@ function buildInformationModule(moduleName) {
 
   if (config.attivo === false) return;
 
-  const { section, card } = createModuleSection(
+  const { section, card, contentRoot } = createModuleSection(
     moduleName,
     config
   );
@@ -982,7 +985,7 @@ function buildInformationModule(moduleName) {
   card.classList.add("information-card");
 
   if (config.icona) {
-    card.appendChild(
+    contentRoot.appendChild(
       createElement(
         "div",
         "information-icon",
@@ -992,7 +995,7 @@ function buildInformationModule(moduleName) {
   }
 
   if (config.titolo) {
-    card.appendChild(
+    contentRoot.appendChild(
       createElement(
         "h2",
         "module-title",
@@ -1002,7 +1005,7 @@ function buildInformationModule(moduleName) {
   }
 
   if (config.testo) {
-    card.appendChild(
+    contentRoot.appendChild(
       createElement(
         "p",
         "module-text",
@@ -1023,7 +1026,7 @@ function buildDresscode() {
 
   if (config.attivo === false) return;
 
-  const { section, card } = createModuleSection(
+  const { section, card, contentRoot } = createModuleSection(
     "dresscode",
     config
   );
@@ -1031,7 +1034,7 @@ function buildDresscode() {
   card.classList.add("dresscode-card");
 
   if (config.titolo) {
-    card.appendChild(
+    contentRoot.appendChild(
       createElement(
         "h2",
         "module-title",
@@ -1041,7 +1044,7 @@ function buildDresscode() {
   }
 
   if (config.testo) {
-    card.appendChild(
+    contentRoot.appendChild(
       createElement(
         "p",
         "module-text",
@@ -1059,19 +1062,19 @@ function buildDresscode() {
     preview.src = config.immagine;
     preview.alt = config.titolo || "Dress Code";
 
-    card.appendChild(preview);
+    contentRoot.appendChild(preview);
   }
 
   if (config.mostraPulsante !== false) {
-  const button = createElement(
+    const button = createElement(
     "button",
     "story-button dresscode-button",
-    config.testoPulsante || "Ver Dress Code"
+    config.testoPulsante || "Vedi il dress code"
   );
 
-  button.type = "button";
+    button.type = "button";
 
-  button.addEventListener("click", () => {
+    button.addEventListener("click", () => {
     openModal({
       title: config.titolo || "Dress Code",
       text: config.testo || "",
@@ -1080,8 +1083,9 @@ function buildDresscode() {
     });
   });
 
-  card.appendChild(button);
-}
+    contentRoot.appendChild(button);
+  }
+
   appendModule(section);
 }
 
@@ -1096,7 +1100,7 @@ function buildRsvp() {
 
   const whatsapp = CONFIG.whatsapp || {};
 
-  const { section, card } = createModuleSection(
+  const { section, card, contentRoot } = createModuleSection(
     "rsvp",
     config
   );
@@ -1104,7 +1108,7 @@ function buildRsvp() {
   card.classList.add("rsvp-card");
 
   if (config.titolo) {
-    card.appendChild(
+    contentRoot.appendChild(
       createElement(
         "h2",
         "module-title",
@@ -1114,7 +1118,7 @@ function buildRsvp() {
   }
 
   if (config.testo) {
-    card.appendChild(
+    contentRoot.appendChild(
       createElement(
         "p",
         "module-text",
@@ -1134,7 +1138,7 @@ function buildRsvp() {
 
     button.textContent =
       whatsapp.testoPulsante ||
-      "Confirmar asistencia";
+      "Conferma la presenza";
 
     button.href =
       `https://wa.me/${whatsapp.numero}` +
@@ -1143,7 +1147,7 @@ function buildRsvp() {
     button.target = "_blank";
     button.rel = "noopener noreferrer";
 
-    card.appendChild(button);
+    contentRoot.appendChild(button);
   }
 
   appendModule(section);
@@ -1158,7 +1162,7 @@ function buildFinale() {
 
   if (config.attivo === false) return;
 
-  const { section, card } = createModuleSection(
+  const { section, card, contentRoot } = createModuleSection(
     "ending",
     config
   );
@@ -1176,7 +1180,7 @@ function buildFinale() {
       ? `Foto di ${config.titolo}`
       : "Foto finale";
 
-    card.appendChild(photo);
+    contentRoot.appendChild(photo);
   }
 
   const content = createElement(
@@ -1204,7 +1208,7 @@ function buildFinale() {
     );
   }
 
-  card.appendChild(content);
+  contentRoot.appendChild(content);
   appendModule(section);
 }
 

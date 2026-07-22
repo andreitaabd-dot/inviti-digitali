@@ -2042,9 +2042,7 @@ img {
 
   min-height: calc(100dvh - (var(--module-edge) * 2));
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex: 1 1 auto;
 
   margin: 0;
 
@@ -2057,4 +2055,209 @@ img {
   background-repeat: no-repeat;
 }
 
+/* Elimina le dimensioni particolari che restringevano alcuni moduli */
 
+.hero-card,
+.presentation-card,
+.countdown-card,
+.gallery-card,
+.event-card,
+.itinerary-card,
+.information-card,
+.dresscode-card,
+.rsvp-card,
+.ending-card {
+  width: 100%;
+  max-width: none;
+
+  min-height: calc(100dvh - (var(--module-edge) * 2));
+
+  aspect-ratio: auto;
+}
+
+
+/* ==========================================================
+   CONTENUTO INTERNO RESPONSIVE
+   Ingrandisce insieme foto, testi, pulsanti e gruppi interni.
+   ========================================================== */
+
+.module-inner {
+  position: relative;
+  z-index: 2;
+
+  width: min(90%, 650px);
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: auto;
+}
+
+.hero-card .module-inner,
+.ending-card .module-inner {
+  width: min(92%, 650px);
+  gap: clamp(20px, 3dvh, 34px);
+}
+
+.presentation-card .module-inner {
+  width: min(78%, 560px);
+}
+
+.countdown-card .module-inner {
+  width: min(96%, 680px);
+}
+
+.event-card .module-inner,
+.itinerary-card .module-inner {
+  width: min(88%, 620px);
+}
+
+.information-card .module-inner,
+.rsvp-card .module-inner {
+  width: min(82%, 560px);
+}
+
+.dresscode-card .module-inner {
+  width: min(88%, 620px);
+}
+
+/* Dimensioni generali più leggibili */
+
+.module-title {
+  font-size: clamp(42px, 10vw, 68px);
+}
+
+.module-text {
+  max-width: 560px;
+  font-size: clamp(17px, 4.5vw, 22px);
+  line-height: 1.6;
+}
+
+.hero-photo-wrap {
+  width: min(82%, 440px);
+}
+
+.hero-name {
+  font-size: clamp(54px, 13vw, 88px);
+}
+
+.hero-kicker {
+  font-size: clamp(28px, 7vw, 42px);
+}
+
+.hero-phrase {
+  max-width: 540px;
+  font-size: clamp(21px, 5.5vw, 29px);
+}
+
+.presentation-content {
+  max-width: 540px;
+}
+
+.presentation-phrase {
+  font-size: clamp(24px, 6.5vw, 36px);
+}
+
+.presentation-text {
+  font-size: clamp(17px, 4.5vw, 22px);
+  line-height: 1.65;
+}
+
+.countdown-grid {
+  width: 100%;
+}
+
+.countdown-value {
+  font-size: clamp(38px, 10vw, 64px);
+}
+
+.countdown-label {
+  font-size: clamp(11px, 3vw, 16px);
+}
+
+.event-details,
+.timeline {
+  width: 100%;
+  max-width: none;
+}
+
+.event-info-item {
+  padding: clamp(16px, 3vw, 22px);
+}
+
+.event-info-value {
+  font-size: clamp(16px, 4.2vw, 21px);
+}
+
+.timeline-title {
+  font-size: clamp(26px, 6.5vw, 36px);
+}
+
+.timeline-description {
+  font-size: clamp(15px, 3.8vw, 19px);
+}
+
+.story-button {
+  min-width: min(250px, 100%);
+  padding: clamp(15px, 3.5vw, 19px) clamp(26px, 6vw, 38px);
+  font-size: clamp(16px, 4vw, 20px);
+}
+
+.dresscode-preview {
+  width: min(78%, 500px);
+  max-height: 72dvh;
+  margin: 0 auto;
+}
+
+.ending-photo {
+  width: min(82%, 450px);
+}
+
+.ending-title {
+  font-size: clamp(54px, 13vw, 88px);
+}
+
+.ending-phrase {
+  max-width: 540px;
+  font-size: clamp(22px, 5.5vw, 30px);
+}
+
+@media (max-width: 430px) {
+  .module-inner {
+    width: 88%;
+  }
+
+  .hero-card .module-inner,
+  .ending-card .module-inner {
+    width: 90%;
+  }
+
+  .presentation-card .module-inner {
+    width: 76%;
+  }
+
+  .countdown-card .module-inner {
+    width: 96%;
+  }
+
+  .event-card .module-inner,
+  .itinerary-card .module-inner {
+    width: 88%;
+  }
+
+  .information-card .module-inner,
+  .rsvp-card .module-inner {
+    width: 82%;
+  }
+
+  .dresscode-card .module-inner {
+    width: 86%;
+  }
+
+  .dresscode-preview {
+    width: min(72vw, 460px);
+  }
+}
