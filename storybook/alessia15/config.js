@@ -5,8 +5,8 @@ const INVITO_CONFIG = {
      ========================================================== */
 
   meta: {
-    title: "\u200B",
-    description: "\u200B",
+    title: "Mis XV Años - Alessia Nahomi",
+    description: "",
     image: "https://invitiwow.com/storybook/alessia15/preview.jpg?v=1",
     url: "https://invitiwow.com/storybook/alessia15/"
   },
