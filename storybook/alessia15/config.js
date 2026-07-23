@@ -6,7 +6,7 @@ const INVITO_CONFIG = {
 
   meta: {
     title: "Mis XV Años - Alessia Nahomi",
-    description: "",
+    description: "",   
     image: "https://invitiwow.com/storybook/alessia15/preview.jpg?v=1",
     url: "https://invitiwow.com/storybook/alessia15/"
   },
@@ -83,7 +83,7 @@ const INVITO_CONFIG = {
 
   whatsapp: {
     numero: "393286412593",
-   messaggio: "Ciao, confermo la mia presenza alla festa per i 15 anni di Alessia Nahomi Gamboa Castillo il 3 ottobre.",
+   messaggio: "Ciao, confermo la mia presenza alla festa per i 15 anni di Alessia Nahomi il 3 ottobre.",
   testoPulsante: "Conferma la presenza"
   },
 
