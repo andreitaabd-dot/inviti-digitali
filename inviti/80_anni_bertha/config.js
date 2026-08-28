@@ -5,22 +5,22 @@ const INVITO_CONFIG = {
 
   tipoEvento: "compleanno_80",
 
-  nomeFesteggiato: "Bertha",
+  nomeFesteggiato: "Bety",
   eta: "80 anni",
 
-  titolo: "80 anni di Bertha",
+  titolo: "80 anni di Bety",
   sottotitolo: "Sei invitato a festeggiare con noi",
 
   descrizione1: "Con grande gioia festeggiamo",
-  descrizione2: "gli 80 anni di Bertha",
+  descrizione2: "gli 80 anni di Bety",
+
+  testoFinale: "Questo invito è riservato a 2 persone.\nTi aspettiamo per condividere insieme una serata speciale.\nÈ gradita la conferma entro il 2 settembre.",
 
   giorno: "19",
   mese: "Settembre",
   anno: "2026",
   giornoSettimana: "Sabato",
   ora: "19:30",
-
-  testoFinale: "Ti aspettiamo per condividere insieme una serata speciale.\nÈ gradita la conferma entro il 2 settembre.",
 
   /* =========================
      LUOGO / MAPPA
