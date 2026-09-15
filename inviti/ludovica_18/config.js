@@ -12,7 +12,7 @@ const INVITO_CONFIG = {
   giorno: "5",
   anno: "2026",
   giornoSettimana: "Sabato",
-  ora: "14:00",
+  ora: "18:00",
 
   testoFinale: "Ti aspetto per creare ricordi indimenticabili.\nAttendo con piacere una tua conferma.",
 
