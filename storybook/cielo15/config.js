@@ -558,23 +558,13 @@ const INVITO_CONFIG = {
            ====================================== */
 
         {
-          domanda:
-            "Qual è il mio cibo preferito?",
-
+          domanda: "Qual è il mio piatto preferito?",
           risposte: [
-            "Risposta A",
-            "Risposta B",
-            "Risposta C"
+            "La pasta",
+            "Riso cinese (Chaufa)",
+            "La carne"
           ],
-
-          /*
-           Indice risposta corretta:
-           0 = prima risposta
-           1 = seconda risposta
-           2 = terza risposta
-          */
-
-          corretta: 0
+          corretta: 1
         },
 
 
@@ -582,17 +572,14 @@ const INVITO_CONFIG = {
            DOMANDA 2
            ====================================== */
 
-        {
-          domanda:
-            "Qual è la cosa che mi piace di più fare?",
-
+       {
+          domanda: "Qual è la mia materia preferita?",
           risposte: [
-            "Risposta A",
-            "Risposta B",
-            "Risposta C"
+            "Spagnolo",
+            "Matematica",
+            "Filosofia"
           ],
-
-          corretta: 1
+          corretta: 0
         },
 
 
@@ -601,15 +588,12 @@ const INVITO_CONFIG = {
            ====================================== */
 
         {
-          domanda:
-            "Qual è il mio colore preferito?",
-
+          domanda: "Qual è la mia stagione preferita?",
           risposte: [
-            "Risposta A",
-            "Risposta B",
-            "Risposta C"
+            "Inverno",
+            "Primavera",
+            "Estate"
           ],
-
           corretta: 2
         }
 
