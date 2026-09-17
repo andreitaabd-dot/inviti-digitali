@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <title>Invito digitale - Giornale</title>
+
+
+  <!-- ======================================================
+       WHATSAPP / FACEBOOK PREVIEW
+       I valori reali verranno letti da config.js
+       ====================================================== -->
+
+  <meta
+    property="og:title"
+    content="Invito digitale"
+  >
+
+  <meta
+    property="og:description"
+    content="Sfoglia il nostro invito"
+  >
+
+  <meta
+    property="og:image"
+    content="preview.jpg"
+  >
+
+  <meta
+    property="og:url"
+    content=""
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    name="description"
+    content="Invito digitale interattivo"
+  >
+
+  <meta
+    name="theme-color"
+    content="#eeeeee"
+  >
+
+
+  <!-- ======================================================
+       FONT
+       ====================================================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600;700&family=UnifrakturMaguntia&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- ======================================================
+       CSS
+       ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- ======================================================
+       LOADING
+       ====================================================== -->
+
+  <div
+    id="loadingScreen"
+    class="loading-screen"
+  >
+
+    <div class="loading-content">
+
+      <div class="loading-newspaper">
+        📰
+      </div>
+
+      <p>
+        Prepariamo il giornale...
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================================
+       MUSICA
+       ====================================================== -->
+
+  <audio
+    id="bgMusic"
+    loop
+    preload="auto"
+  >
+
+    <source
+      id="musicSource"
+      src=""
+      type="audio/mpeg"
+    >
+
+  </audio>
+
+
+  <!-- ======================================================
+       APP
+       ====================================================== -->
+
+  <div
+    id="newspaperApp"
+    class="newspaper-app hidden"
+  >
+
+
+    <!-- ====================================================
+         CONTROLLI IN ALTO
+         ==================================================== -->
+
+    <div
+      id="viewerToolbar"
+      class="viewer-toolbar"
+    >
+
+
+      <!-- ZOOM -->
+
+      <button
+        id="zoomBtn"
+        class="toolbar-btn"
+        type="button"
+        aria-label="Zoom"
+        title="Zoom"
+      >
+
+        <span aria-hidden="true">
+          🔍
+        </span>
+
+      </button>
+
+
+      <!-- FULLSCREEN -->
+
+      <button
+        id="fullscreenBtn"
+        class="toolbar-btn"
+        type="button"
+        aria-label="Schermo intero"
+        title="Schermo intero"
+      >
+
+        <span aria-hidden="true">
+          ⛶
+        </span>
+
+      </button>
+
+
+      <!-- AUDIO -->
+
+      <button
+        id="audioBtn"
+        class="toolbar-btn"
+        type="button"
+        aria-label="Musica"
+        title="Musica"
+      >
+
+        <span
+          id="audioIcon"
+          aria-hidden="true"
+        >
+          🔊
+        </span>
+
+      </button>
+
+
+    </div>
+
+
+    <!-- ====================================================
+         VIEWER DEL GIORNALE
+         ==================================================== -->
+
+    <main
+      id="viewer"
+      class="viewer"
+    >
+
+
+      <!-- FRECCIA SINISTRA -->
+
+      <button
+        id="prevBtn"
+        class="navigation-btn navigation-prev"
+        type="button"
+        aria-label="Pagina precedente"
+      >
+
+        <span aria-hidden="true">
+          ❮
+        </span>
+
+      </button>
+
+
+      <!-- LIBRO -->
+
+      <div
+        id="bookViewport"
+        class="book-viewport"
+      >
+
+        <div
+          id="book"
+          class="book"
+        >
+
+          <!--
+            LE PAGINE NON VENGONO SCRITTE QUI.
+
+            script.js le creerà automaticamente
+            leggendo:
+
+            INVITO_CONFIG.ordinePagine
+
+            e
+
+            INVITO_CONFIG.pagine
+          -->
+
+        </div>
+
+      </div>
+
+
+      <!-- FRECCIA DESTRA -->
+
+      <button
+        id="nextBtn"
+        class="navigation-btn navigation-next"
+        type="button"
+        aria-label="Pagina successiva"
+      >
+
+        <span aria-hidden="true">
+          ❯
+        </span>
+
+      </button>
+
+
+    </main>
+
+
+    <!-- ====================================================
+         NUMERO PAGINA
+         verrà mostrato solo se attivato nel config
+         ==================================================== -->
+
+    <div
+      id="pageIndicator"
+      class="page-indicator hidden"
+      aria-live="polite"
+    >
+    </div>
+
+
+  </div>
+
+
+  <!-- ======================================================
+       RSVP
+       MODULO CONFERMA PARTECIPAZIONE
+       ====================================================== -->
+
+  <div
+    id="rsvpModal"
+    class="modal hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="rsvpModalTitle"
+  >
+
+
+    <!-- SFONDO -->
+
+    <div
+      id="rsvpBackdrop"
+      class="modal-backdrop"
+      data-close-rsvp
+    >
+    </div>
+
+
+    <!-- FINESTRA -->
+
+    <div class="modal-panel rsvp-panel">
+
+
+      <!-- CHIUDI -->
+
+      <button
+        id="rsvpCloseBtn"
+        class="modal-close"
+        type="button"
+        aria-label="Chiudi"
+        data-close-rsvp
+      >
+
+        ×
+
+      </button>
+
+
+      <!-- TESTATA -->
+
+      <div class="rsvp-header">
+
+        <p class="rsvp-kicker">
+          RSVP
+        </p>
+
+        <h2 id="rsvpModalTitle">
+          Conferma la tua presenza
+        </h2>
+
+        <p
+          id="rsvpSubtitle"
+          class="rsvp-subtitle"
+        >
+        </p>
+
+      </div>
+
+
+      <!-- FORM -->
+
+      <form
+        id="rsvpForm"
+        class="rsvp-form"
+        novalidate
+      >
+
+
+        <!--
+          I CAMPI VERRANNO GENERATI DA script.js
+          LEGGENDO config.js
+
+          Nome
+          Cognome
+          Telefono
+          Sì / No
+          Numero adulti
+          Numero bambini
+          Allergie
+          Note
+          Privacy
+        -->
+
+        <div
+          id="rsvpFields"
+          class="rsvp-fields"
+        >
+        </div>
+
+
+        <!-- MESSAGGI -->
+
+        <div
+          id="rsvpMessage"
+          class="rsvp-message hidden"
+          role="status"
+          aria-live="polite"
+        >
+        </div>
+
+
+        <!-- INVIA -->
+
+        <button
+          id="rsvpSubmitBtn"
+          class="rsvp-submit"
+          type="submit"
+        >
+
+          Invia conferma
+
+        </button>
+
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================================
+       ZOOM PAGINA
+       ====================================================== -->
+
+  <div
+    id="zoomModal"
+    class="zoom-modal hidden"
+  >
+
+    <div
+      class="zoom-backdrop"
+      data-close-zoom
+    >
+    </div>
+
+
+    <button
+      id="zoomCloseBtn"
+      class="zoom-close"
+      type="button"
+      aria-label="Chiudi zoom"
+      data-close-zoom
+    >
+
+      ×
+
+    </button>
+
+
+    <div
+      id="zoomContent"
+      class="zoom-content"
+    >
+    </div>
+
+  </div>
+
+
+  <!-- ======================================================
+       TOAST
+       es: "IBAN copiato"
+       ====================================================== -->
+
+  <div
+    id="toast"
+    class="toast hidden"
+    role="status"
+    aria-live="polite"
+  >
+  </div>
+
+
+  <!-- ======================================================
+       CONFIGURAZIONE
+       ====================================================== -->
+
+  <script src="config.js"></script>
+
+
+  <!-- ======================================================
+       SCRIPT PRINCIPALE
+       ====================================================== -->
+
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>
