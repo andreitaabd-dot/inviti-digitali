@@ -253,6 +253,149 @@
       box-shadow:0 10px 30px rgba(0,0,0,0.25);
     }
 
+    .card-badge{
+      display:inline-block;
+      margin:0 auto 14px;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(255,209,102,0.16);
+      border:1px solid rgba(255,209,102,0.35);
+      color:#ffe29a;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.3px;
+    }
+
+    .card-center{
+      text-align:center;
+    }
+
+    .custom-box{
+      margin-top:34px;
+      padding:28px 24px;
+      border-radius:26px;
+      background:linear-gradient(135deg,rgba(125,211,252,0.12),rgba(255,154,198,0.12));
+      border:1px solid rgba(255,255,255,0.15);
+      text-align:center;
+      box-shadow:0 14px 35px rgba(0,0,0,0.12);
+    }
+
+    .custom-box h3{
+      font-size:27px;
+      margin-bottom:12px;
+    }
+
+    .custom-box p{
+      max-width:820px;
+      margin:0 auto;
+      font-size:17px;
+      line-height:1.75;
+      opacity:.96;
+    }
+
+    .personalization-box{
+      margin-top:28px;
+      padding:30px 24px;
+      border-radius:28px;
+      background:rgba(255,255,255,0.09);
+      border:1px solid rgba(255,255,255,0.13);
+      text-align:center;
+    }
+
+    .personalization-box h3{
+      font-size:28px;
+      margin-bottom:12px;
+    }
+
+    .personalization-box p{
+      max-width:850px;
+      margin:0 auto;
+      line-height:1.75;
+      font-size:17px;
+      opacity:.96;
+    }
+
+    .demo-card{
+      text-decoration:none;
+      color:white;
+      display:flex;
+      flex-direction:column;
+      height:100%;
+    }
+
+    .demo-card img{
+      width:100%;
+      aspect-ratio:1200 / 630;
+      object-fit:cover;
+      border-radius:18px;
+      margin-top:14px;
+      display:block;
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .demo-card p{
+      margin-top:16px;
+      flex:1;
+    }
+
+    .demo-button{
+      margin-top:18px;
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      padding:12px 18px;
+      border-radius:999px;
+      background:#25D366;
+      color:white;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow:0 10px 24px rgba(37,211,102,0.22);
+    }
+
+    .demo-card.disabled{
+      cursor:default;
+      opacity:.78;
+    }
+
+    .demo-card.disabled:hover{
+      transform:none;
+    }
+
+    .demo-placeholder{
+      width:100%;
+      aspect-ratio:1200 / 630;
+      border-radius:18px;
+      margin-top:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:24px;
+      background:linear-gradient(135deg,rgba(196,181,253,.20),rgba(255,154,198,.18));
+      border:1px dashed rgba(255,255,255,.28);
+      font-size:20px;
+      font-weight:700;
+      box-shadow:0 10px 30px rgba(0,0,0,0.18);
+    }
+
+    .demo-button.secondary{
+      background:rgba(255,255,255,.16);
+      box-shadow:none;
+      border:1px solid rgba(255,255,255,.16);
+    }
+
+    .video-preview{
+      width:100%;
+      aspect-ratio:9 / 16;
+      max-height:520px;
+      object-fit:contain;
+      background:rgba(0,0,0,.22);
+      border-radius:18px;
+      margin-top:14px;
+      display:block;
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    }
+
     .final-note{
       text-align:center;
       margin-top:40px;
@@ -361,91 +504,149 @@
     </h2>
 
     <p class="section-text">
-      Ogni invito è personalizzato con tema, testi,
-      animazioni, conferma WhatsApp e posizione Google Maps.
+      Scegli il modello di partenza che preferisci: ogni invito viene poi personalizzato
+      con tema, testi, immagini, animazioni, pulsanti e contenuti dedicati al tuo evento.
     </p>
 
     <div class="cards">
 
       <div class="card">
+        <div class="card-center"><span class="card-badge">CLASSICO</span></div>
         <h3>Invito Base</h3>
         <div class="price">10€</div>
-
         <p>
           Apertura della busta animata e invito digitale completo.
-          Include conferma WhatsApp e pulsante Maps.
+          Include conferma WhatsApp e pulsante Google Maps.
         </p>
       </div>
 
       <div class="card">
+        <div class="card-center"><span class="card-badge">CON INTRO VIDEO</span></div>
         <h3>Invito Premium</h3>
         <div class="price">15€</div>
-
         <p>
-          Include un video introduttivo prima dell’apertura
-          per un effetto ancora più coinvolgente e un album foto condiviso
-          dove gli invitati possono caricare foto e video della festa.
+          Include un video introduttivo prima dell’apertura, per un effetto ancora più coinvolgente,
+          e un album condiviso dove gli invitati possono caricare foto e video della festa.
         </p>
       </div>
 
       <div class="card">
+        <div class="card-center"><span class="card-badge">NUOVO</span></div>
+        <h3>Storybook</h3>
+        <div class="price">20€</div>
+        <p>
+          Un invito narrativo e scenografico diviso in sezioni.
+          Ideale per creare un’esperienza più ricca e personalizzata, con contenuti diversi lungo la pagina.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-center"><span class="card-badge">INTERATTIVO</span></div>
+        <h3>Storybook + Trivia</h3>
+        <div class="price">23€</div>
+        <p>
+          Tutto lo Storybook con in più un gioco Trivia personalizzato,
+          pensato per coinvolgere gli invitati prima dell’evento.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-center"><span class="card-badge">NUOVO</span></div>
+        <h3>Invito Giornale</h3>
+        <div class="price">20€</div>
+        <p>
+          Un invito originale in stile giornale digitale, da sfogliare come una vera pubblicazione
+          con storia, evento, luoghi e contenuti personalizzati.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-center"><span class="card-badge">VIDEO</span></div>
         <h3>Invito Video</h3>
         <div class="price">20€</div>
-
         <p>
-          Esperienza completamente video,
-          più scenografica e super d’impatto.
+          Esperienza completamente video, più scenografica e super d’impatto.
         </p>
       </div>
 
     </div>
 
+    <div class="personalization-box">
+      <h3>Il modello è solo il punto di partenza</h3>
+      <p>
+        Gli inviti non sono strutture fisse. Possiamo adattare testi, immagini, colori, pulsanti e contenuti
+        alle esigenze della tua festa. Nei modelli Storybook, in particolare, le sezioni possono essere
+        nascoste quando non servono oppure possiamo aggiungerne di nuove in base a ciò che vuoi raccontare.
+      </p>
+    </div>
+
+    <div class="custom-box">
+      <h3>Hai visto un invito che ti piace su TikTok o online?</h3>
+      <p>
+        Mandaci il link, un video o uno screenshot: possiamo realizzare un invito dello stesso tipo o stile,
+        personalizzato per il tuo evento. Il prezzo viene definito in base alla richiesta e alle funzionalità desiderate.
+      </p>
+    </div>
+
     <h2 class="section-title" style="margin-top:60px;">
-      Esempi di inviti
+      Prova gli inviti dal vivo
     </h2>
 
     <p class="section-text">
-      Guarda alcune anteprime dei nostri inviti digitali.
+      Non guardare solo un video: apri gli esempi e prova direttamente animazioni, pulsanti e sezioni come farà il tuo invitato.
     </p>
 
     <div class="cards">
 
-      <a href="inviti/demo/base/preview.mp4" class="card video-card">
-
+      <a href="https://invitiwow.com/inviti/primo-anno-battesimo/" target="_blank" rel="noopener" class="card demo-card">
         <h3>Invito Base</h3>
-
-        <video autoplay muted loop playsinline controls>
-          <source src="inviti/demo/base/preview.mp4" type="video/mp4">
-        </video>
-
+        <img src="https://invitiwow.com/inviti/primo-anno-battesimo/preview.jpg?v=1" alt="Esempio invito digitale Base">
+        <p>Apri un esempio completo e prova direttamente l’esperienza dell’invito.</p>
+        <span class="demo-button">Apri l’invito ↗</span>
       </a>
 
-      <a href="inviti/demo/premium/preview.mp4" class="card video-card">
-
-        <h3>Invito Premium</h3>
-
-        <video autoplay muted loop playsinline controls>
-          <source src="inviti/demo/premium/preview.mp4" type="video/mp4">
-        </video>
-
+      <a href="https://invitiwow.com/inviti/giulia_rossa_18/" target="_blank" rel="noopener" class="card demo-card">
+        <h3>Premium</h3>
+        <img src="https://invitiwow.com/inviti/giulia_rossa_18/preview.jpg?v=1" alt="Esempio invito Premium Giulia 18 anni">
+        <p>Guarda un invito Premium completo con intro video, animazioni e funzioni interattive.</p>
+        <span class="demo-button">Apri Premium ↗</span>
       </a>
 
-      <a href="inviti/demo/video/preview.mp4" class="card video-card">
+      <a href="https://invitiwow.com/storybook/15-annos/" target="_blank" rel="noopener" class="card demo-card">
+        <h3>Storybook</h3>
+        <img src="https://invitiwow.com/storybook/15-annos/preview.jpg?v=1" alt="Esempio invito Storybook 15 anni">
+        <p>Scopri uno Storybook completo, organizzato in sezioni e personalizzabile in ogni parte.</p>
+        <span class="demo-button">Apri lo Storybook ↗</span>
+      </a>
 
+      <div class="card demo-card disabled">
+        <h3>Storybook + Trivia</h3>
+        <div class="demo-placeholder">Demo in preparazione</div>
+        <p>La versione con Trivia personalizzato è disponibile. Aggiungeremo presto anche un esempio dimostrativo.</p>
+        <span class="demo-button secondary">Demo in arrivo</span>
+      </div>
+
+      <a href="https://invitiwow.com/inviti/GIORNALE_a&amp;r/" target="_blank" rel="noopener" class="card demo-card">
+        <h3>Invito Giornale</h3>
+        <img src="https://invitiwow.com/inviti/GIORNALE_a&amp;r/preview.jpg?v=1" alt="Esempio invito digitale Giornale">
+        <p>Sfoglia un invito in stile giornale e guarda come funziona su desktop e smartphone.</p>
+        <span class="demo-button">Apri il Giornale ↗</span>
+      </a>
+
+      <a href="inviti/demo/video/preview.mp4" target="_blank" rel="noopener" class="card demo-card">
         <h3>Invito Video</h3>
-
-        <video autoplay muted loop playsinline controls>
+        <video class="video-preview" autoplay muted loop playsinline preload="metadata">
           <source src="inviti/demo/video/preview.mp4" type="video/mp4">
         </video>
-
+        <p>Guarda direttamente un esempio di invito completamente video.</p>
+        <span class="demo-button">Guarda il Video ↗</span>
       </a>
 
     </div>
 
     <p class="final-note">
-      Per ordinare bastano:
-      nome, età o tipo di evento,
-      data, ora, luogo e tema desiderato.
+      Per ordinare bastano nome, età o tipo di evento, data, ora, luogo e tema desiderato.
+      Se hai già visto uno stile che ti piace, inviaci anche il link o uno screenshot.
     </p>
 
     <p class="footer">
