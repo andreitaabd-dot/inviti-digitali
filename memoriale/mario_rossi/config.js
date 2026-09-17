@@ -67,7 +67,7 @@ const MEMORIALE_CONFIG = {
     titolo: "Memoriale di Mario Rossi",
     descrizione: "In ricordo di Mario Rossi",
     immagine: "preview.jpg?v=1",
-    url: "https://invitiwow.com/inviti/memoriale_esempio1/"
+    url: "https://invitiwow.com/memoriale/mario_rossi/"
   },
 
   // MUSICA
