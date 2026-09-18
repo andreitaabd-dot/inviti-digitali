@@ -677,7 +677,7 @@ const INVITO_CONFIG = {
       titolo: "Dress Code",
 
       testo:
-        "Abbigliamento elegante nei toni del bordeaux.",
+        "Abbigliamento elegante. Il colore bordeaux è riservato alla festeggiata.",
 
       immagine: "dresscode.jpg",
 
