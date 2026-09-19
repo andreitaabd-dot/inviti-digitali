@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <title>Marco & Kelly • Ci sposiamo!</title>
+
+  <!-- WHATSAPP / FACEBOOK PREVIEW -->
+  <meta property="og:title" content="Marco & Kelly • Ci sposiamo!" />
+  <meta property="og:description" content="26 settembre 2026 • Apri il nostro invito di matrimonio" />
+  <meta property="og:image" content="preview.jpg" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="website" />
+
+  <meta name="description" content="Invito al matrimonio di Marco e Kelly" />
+  <meta name="theme-color" content="#f7f1e7" />
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Allura&family=Alex+Brush&family=Tangerine:wght@400;700&family=Parisienne&family=Sacramento&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Nunito:wght@300;400;600;700&family=Dancing+Script:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Merriweather:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ICONA AUDIO -->
+  <div id="tapAudioHint" class="tap-audio-hint hidden">🔊</div>
+
+  <!-- MUSICA -->
+  <audio id="bgMusic" loop preload="auto">
+    <source id="musicSource" src="" type="audio/mpeg" />
+  </audio>
+
+  <!-- EFFETTI -->
+  <div id="effectsRoot"></div>
+
+  <!-- COVER -->
+  <section id="cover" class="screen cover-screen">
+
+    <div class="cover-card">
+
+      <!-- COLOMBE SOPRA LA BUSTA -->
+      <div id="coverDecorationWrap" class="cover-decoration-wrap hidden">
+        <img
+          id="coverDecoration"
+          class="cover-decoration"
+          alt="Decorazione matrimonio"
+        />
+      </div>
+
+      <!-- BUSTA -->
+      <div class="envelope-wrapper">
+
+        <div id="envelope" class="envelope">
+
+          <div class="envelope-glow"></div>
+
+          <img
+            id="envelopeImg"
+            class="envelope-img"
+            alt="Busta matrimonio Marco e Kelly"
+          />
+
+        </div>
+
+      </div>
+
+      <!-- APERTURA -->
+      <button
+        id="openBtn"
+        class="open-btn"
+        type="button"
+      >
+        Apri l'invito
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- INVITO -->
+  <main
+    id="invite"
+    class="screen invite-screen hidden"
+  >
+
+    <article class="invite-card">
+
+      <div class="invite-inner">
+
+        <!-- TITOLO -->
+        <h1 id="titolo"></h1>
+
+        <p
+          id="sottotitolo"
+          class="subtitle"
+        ></p>
+
+
+        <!-- NOMI / TESTO -->
+        <div class="main-text">
+
+          <p id="descrizione1"></p>
+
+          <p
+            id="descrizione2"
+            class="name-highlight"
+          ></p>
+
+        </div>
+
+
+        <!-- DATA -->
+        <div class="event-date">
+
+          <div class="line"></div>
+
+          <div class="date-center">
+
+            <span
+              id="mese"
+              class="month"
+            ></span>
+
+            <span
+              id="giorno"
+              class="day"
+            ></span>
+
+            <span
+              id="anno"
+              class="year"
+            ></span>
+
+          </div>
+
+          <div class="line"></div>
+
+        </div>
+
+
+        <!-- GIORNO / ORA -->
+        <div class="event-info">
+
+          <div
+            id="boxGiorno"
+            class="info-box"
+          >
+            <span id="giornoSettimana"></span>
+          </div>
+
+          <div
+            id="boxOra"
+            class="info-box"
+          >
+            <span id="ora"></span>
+          </div>
+
+        </div>
+
+
+        <!-- CERIMONIA -->
+        <div
+          id="luogoBox"
+          class="place-box hidden"
+        >
+
+          <strong id="luogoNome"></strong>
+
+          <span id="indirizzoTesto"></span>
+
+        </div>
+
+
+        <!-- TESTO RICEVIMENTO -->
+        <p
+          id="testoFinale"
+          class="footer-text"
+        ></p>
+
+
+        <!--
+          PULSANTI GENERATI DALLO SCRIPT:
+
+          CONFERMA
+          INDIRIZZO
+          SALVA LA DATA
+        -->
+        <div
+          id="actions"
+          class="actions"
+        ></div>
+
+      </div>
+
+    </article>
+
+  </main>
+
+
+  <!--
+    MODALE DRESS CODE
+
+    La manteniamo nel template anche se
+    questo matrimonio non la utilizza.
+
+    Così il template Base resta compatibile.
+  -->
+  <div
+    id="dresscodeModal"
+    class="modal hidden"
+  >
+
+    <div
+      class="modal-backdrop"
+      data-close-modal
+    ></div>
+
+    <div class="modal-content">
+
+      <button
+        class="modal-close"
+        type="button"
+        data-close-modal
+      >
+        ×
+      </button>
+
+      <h2 id="dresscodeTitle"></h2>
+
+      <p id="dresscodeText"></p>
+
+      <img
+        id="dresscodeImage"
+        class="modal-image hidden"
+        alt="Dress code"
+      />
+
+    </div>
+
+  </div>
+
+
+  <!-- FLASH APERTURA BUSTA -->
+  <div
+    id="flash"
+    class="flash-overlay"
+  ></div>
+
+
+  <!-- CONFIGURAZIONE -->
+  <script src="config.js"></script>
+
+  <!-- LOGICA INVITO -->
+  <script src="script.js"></script>
+
+</body>
+</html>
