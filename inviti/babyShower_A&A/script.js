@@ -71,6 +71,60 @@
 
   const t = C.tema || {};
 
+  /* =========================================================
+   FONT DINAMICI DAL CONFIG
+========================================================= */
+
+  function loadGoogleFont(fontValue) {
+
+    if (!fontValue) return;
+
+    const fontName = fontValue
+      .split(',')[0]
+      .replace(/['"]/g, '')
+      .trim();
+
+    if (!fontName) return;
+
+    const id =
+      'google-font-' +
+      fontName
+        .toLowerCase()
+        .replace(/\s+/g, '-');
+
+    if (document.getElementById(id)) return;
+
+    const link = document.createElement('link');
+
+    link.id = id;
+    link.rel = 'stylesheet';
+    link.href =
+      'https://fonts.googleapis.com/css2?family=' +
+      encodeURIComponent(fontName).replace(/%20/g, '+') +
+      ':wght@400;500;600;700;800&display=swap';
+
+    document.head.appendChild(link);
+  }
+
+  loadGoogleFont(t.fontTitolo);
+  loadGoogleFont(t.fontNome);
+  loadGoogleFont(t.fontTesto);
+
+  document.documentElement.style.setProperty(
+    '--font-title',
+    t.fontTitolo || "'Bangers', cursive"
+  );
+
+  document.documentElement.style.setProperty(
+    '--font-name',
+    t.fontNome || "'Great Vibes', cursive"
+  );
+
+  document.documentElement.style.setProperty(
+    '--font-text',
+    t.fontTesto || "'Montserrat', sans-serif"
+  );
+
   document.documentElement.style.setProperty(
     '--bg',
     t.coloreSfondoFallback || '#eaf7ff'
@@ -478,7 +532,7 @@
                     <div class="reference-image-side">
 
                         ${img(
-       C.luogo.immagine,
+      C.luogo.immagine,
       'reference-location-image',
       ''
     )}
@@ -578,19 +632,19 @@
 
       if (C.regali.immagineLista) {
 
-    html += `
+        html += `
         <button
             type="button"
             class="btn reference-gift-button"
             id="openGiftModal"
         >
             ${esc(
-                C.regali.testoBottone ||
-                'LISTA DE REGALOS'
-            )}
+          C.regali.testoBottone ||
+          'LISTA DE REGALOS'
+        )}
         </button>
     `;
-}
+      }
     }
 
 
@@ -673,7 +727,7 @@
                     <div class="reference-image-side">
 
                         ${img(
-       C.rsvp.immagine,
+      C.rsvp.immagine,
       'reference-rsvp-image',
       ''
     )}
@@ -794,7 +848,7 @@
   )}
 
                 ${img(
-      C.finale?.immagineDecorazione,
+    C.finale?.immagineDecorazione,
     'final-baby',
     ''
   )}
@@ -830,10 +884,10 @@
    MODAL LISTA REGALOS
 ========================================================= */
 
-if (
+  if (
     C.regali?.attivo &&
     C.regali?.immagineLista
-) {
+  ) {
 
     html += `
         <div
@@ -860,15 +914,15 @@ if (
                 </button>
 
                 ${img(
-                    C.regali.immagineLista,
-                    'gift-modal-image',
-                    'Lista de regalos'
-                )}
+      C.regali.immagineLista,
+      'gift-modal-image',
+      'Lista de regalos'
+    )}
 
             </div>
         </div>
     `;
-}
+  }
 
 
   /* =========================================================
@@ -921,11 +975,11 @@ if (
    APERTURA / CHIUSURA MODAL REGALOS
 ========================================================= */
 
-const giftModal = $('#giftModal');
-const openGiftModal = $('#openGiftModal');
-const closeGiftModal = $('#closeGiftModal');
+  const giftModal = $('#giftModal');
+  const openGiftModal = $('#openGiftModal');
+  const closeGiftModal = $('#closeGiftModal');
 
-function apriGiftModal() {
+  function apriGiftModal() {
 
     if (!giftModal) return;
 
@@ -933,9 +987,9 @@ function apriGiftModal() {
     giftModal.setAttribute('aria-hidden', 'false');
 
     document.body.classList.add('modal-open');
-}
+  }
 
-function chiudiGiftModal() {
+  function chiudiGiftModal() {
 
     if (!giftModal) return;
 
@@ -943,37 +997,37 @@ function chiudiGiftModal() {
     giftModal.setAttribute('aria-hidden', 'true');
 
     document.body.classList.remove('modal-open');
-}
+  }
 
-openGiftModal?.addEventListener(
+  openGiftModal?.addEventListener(
     'click',
     apriGiftModal
-);
+  );
 
-closeGiftModal?.addEventListener(
+  closeGiftModal?.addEventListener(
     'click',
     chiudiGiftModal
-);
+  );
 
-giftModal
+  giftModal
     ?.querySelector('.gift-modal-backdrop')
     ?.addEventListener(
-        'click',
-        chiudiGiftModal
+      'click',
+      chiudiGiftModal
     );
 
-document.addEventListener(
+  document.addEventListener(
     'keydown',
     event => {
 
-        if (
-            event.key === 'Escape' &&
-            giftModal?.classList.contains('active')
-        ) {
-            chiudiGiftModal();
-        }
+      if (
+        event.key === 'Escape' &&
+        giftModal?.classList.contains('active')
+      ) {
+        chiudiGiftModal();
+      }
     }
-);
+  );
 
 
   /* =========================================================

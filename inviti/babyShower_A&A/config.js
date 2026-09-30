@@ -8,7 +8,7 @@ const INVITO_CONFIG = {
   ========================================================= */
 
   evento: {
-    nome: "XXXXXXX",
+    nome: "Liam",
     genitori: "Arturo y Andrea",
 
     titolo: "BABY SHOWER",
@@ -394,7 +394,7 @@ const INVITO_CONFIG = {
       "'Bangers', cursive",
 
     fontNome:
-      "'Great Vibes', cursive",
+      "'Allura', cursive",
 
     fontTesto:
       "'Montserrat', sans-serif",
