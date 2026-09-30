@@ -8,7 +8,7 @@ const INVITO_CONFIG = {
   ========================================================= */
 
   evento: {
-    nome: "Liam",
+    nome: "XXXXXXX",
     genitori: "Arturo y Andrea",
 
     titolo: "BABY SHOWER",
