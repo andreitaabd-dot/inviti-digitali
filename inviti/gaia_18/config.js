@@ -34,7 +34,7 @@ const INVITO_CONFIG = {
      WHATSAPP
   ========================= */
 
-  whatsappNumero: "393484029675",
+  whatsappNumero: "393881769329",
   whatsappMessaggio: "Ciao! Confermo la mia presenza ai 18 anni di Gaia",
 
   /* =========================
