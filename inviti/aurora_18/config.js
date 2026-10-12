@@ -16,7 +16,7 @@ const INVITO_CONFIG = {
 
   testoFinale: "Ti aspetto per creare ricordi indimenticabili.\nè gradita la conferma entro il 25 giugno.",
 
-  whatsappNumero: "393313518192",
+  whatsappNumero: "393881769329",
   whatsappMessaggio: "Ciao! Confermo la mia presenza ai 18 anni di Aurora",
 
   indirizzoMaps: "Via Macchie Rio, 65, 86029 Trivento CB",
