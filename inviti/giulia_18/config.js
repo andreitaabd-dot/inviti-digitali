@@ -16,7 +16,7 @@ const INVITO_CONFIG = {
 
   testoFinale: "Ti aspetto per creare ricordi indimenticabili.\nAttendo con piacere una tua conferma.",
 
-  whatsappNumero: "393923683555",
+  whatsappNumero: "393881769329",
   whatsappMessaggio: "Ciao! Confermo la mia presenza ai 18 anni di Giulia",
 
   indirizzoMaps: "SS 7 Ter - Via Roma - Complanare Nord - 74027 San Giorgio Jonico (TA)",
