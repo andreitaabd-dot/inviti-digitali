@@ -2,7 +2,7 @@ const INVITO_CONFIG = {
    nomeFesteggiato: "Galietti Nicola",
   eta: "18 anni",
 
-  titolo: "Nicola",
+  titolo: "Saverio",
   sottotitolo: "Ti aspetto per festeggiare insieme",
 
   descrizione1: "Una serata elegante per un momento speciale",
