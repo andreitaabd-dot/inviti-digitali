@@ -1,5 +1,5 @@
 const INVITO_CONFIG = {
-   nomeFesteggiato: "Galietti Nicola",
+   nomeFesteggiato: "Galietti Saverio",
   eta: "18 anni",
 
   titolo: "Saverio",
