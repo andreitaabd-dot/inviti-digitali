@@ -16,7 +16,7 @@ const INVITO_CONFIG = {
 
   testoFinale: "Ti aspetto per festeggiare insieme.\nConferma la tua presenza entro il 30 maggio!",
 
-  whatsappNumero: "393510589479",
+  whatsappNumero: "393881769329",
   whatsappMessaggio: "Ciao! Confermo la mia presenza ai 18 anni di Nicola",
 
   indirizzoMaps: "Villa Maggiore, Torremaggiore, Foggia",
