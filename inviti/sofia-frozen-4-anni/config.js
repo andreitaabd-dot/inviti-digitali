@@ -112,9 +112,9 @@ const INVITO_CONFIG = {
   ========================= */
 
   introVideo: {
-    attivo: true,
+    attivo: false,
 
-    file: "intro.mp4"
+    //file: "intro.mp4"
   },
 
 
@@ -147,13 +147,12 @@ const INVITO_CONFIG = {
      NON UTILIZZATA
   ========================= */
 
-  musica: {
-    attiva: false,
-
-    // file: "music.mp3",
-    // mostraIconaAudio: true,
-    // icona: "🔊"
-  },
+ musica: {
+  attiva: true,
+  file: "music.mp3",
+  mostraIconaAudio: true,
+  icona: "🔊"
+},
 
 
   /* =========================
