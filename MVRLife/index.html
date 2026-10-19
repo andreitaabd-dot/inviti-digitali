@@ -211,6 +211,15 @@ h1 .accent{
   .close{padding:28px 18px;margin-top:50px}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
+
+/* Evento in evidenza: aggiunta senza modificare le sezioni esistenti */
+.event-feature{max-width:690px;margin:28px auto 18px;padding:20px;border:1px solid rgba(66,217,255,.5);border-radius:30px;background:linear-gradient(145deg,rgba(66,217,255,.13),rgba(131,109,255,.16));box-shadow:0 18px 60px rgba(0,0,0,.24);text-align:center;position:relative;z-index:2}
+.event-feature .event-label{display:inline-block;margin:0 0 15px;padding:8px 15px;border-radius:999px;background:var(--gold);color:var(--navy);font-weight:900;font-size:13px;letter-spacing:.05em}
+.event-feature img{display:block;width:100%;height:auto;border-radius:19px;box-shadow:0 14px 40px rgba(0,0,0,.28)}
+.event-feature .event-book{display:flex;justify-content:center;align-items:center;gap:10px;max-width:480px;margin:18px auto 0;padding:16px 20px;border-radius:999px;background:#20c866;color:#fff;text-decoration:none;font-weight:900;font-size:clamp(16px,3vw,21px);box-shadow:0 12px 32px rgba(32,200,102,.28);transition:transform .2s}
+.event-feature .event-book:hover{transform:translateY(-3px)}
+.event-feature .event-note{font-size:13px;color:var(--muted);margin:11px 0 0}
+@media(max-width:560px){.event-feature{padding:12px;border-radius:22px;margin:20px auto 6px}.event-feature img{border-radius:14px}}
 </style>
 </head>
 <body>
@@ -219,6 +228,15 @@ h1 .accent{
     <div class="brand">VIAGGIA <span>DI PIÙ</span></div>
     <div class="mini-contact">Andrea · 3881769329</div>
   </header>
+
+
+  <!-- Evento del 25 ottobre: locandina e prenotazione WhatsApp -->
+  <section class="event-feature" aria-label="Evento Travel Opportunity a Collegno">
+    <p class="event-label">✈️ EVENTO IN EVIDENZA · 25 OTTOBRE</p>
+    <img src="travel-opportunity-collegno.png" alt="Travel Opportunity a Collegno, domenica 25 ottobre 2026. Posti limitati, prenotazione obbligatoria. Aperitivo 12 euro." loading="eager">
+    <a class="event-book" href="https://wa.me/393881769329?text=Ciao%20Andrea%21%20Vorrei%20prenotare%20un%20posto%20per%20il%20Travel%20Opportunity%20del%2025%20ottobre%20a%20Collegno." target="_blank" rel="noopener">💬 PRENOTA IL TUO POSTO →</a>
+    <p class="event-note">Posti limitati · Prenotazione necessaria · Aperitivo 12 €</p>
+  </section>
 
   <section class="hero">
     <div class="hero-copy">
