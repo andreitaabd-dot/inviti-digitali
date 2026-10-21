@@ -11,10 +11,10 @@ const INVITO_CONFIG = {
   eta: "42 años",
 
   titolo: "¡Adriana celebra sus 42 años!",
-  sottotitolo: "¡Estás invitado a celebrar conmigo!",
+  //sottotitolo: "¡Estás invitado a celebrar conmigo!",
 
-  descrizione1: "Con mucha alegría quiero compartir contigo",
-  descrizione2: "una noche especial llena de música, risas y diversión.",
+  //descrizione1: "Con mucha alegría quiero compartir contigo",
+  //descrizione2: "una noche especial llena de música, risas y diversión.",
 
   giorno: "24",
   mese: "Octubre",
@@ -22,7 +22,7 @@ const INVITO_CONFIG = {
   giornoSettimana: "Sábado",
   ora: "8:00 p. m.",
 
-  testoFinale: "¡Tu presencia hará esta noche aún más especial! ¡Te espero!",
+  testoFinale: "¡Te espero!",
 
   /* =========================
      LUGAR / MAPA
@@ -111,7 +111,7 @@ const INVITO_CONFIG = {
     decorazioneTop: {
       attiva: true,
       immagine: "personaggio.png",
-      width: "100px",
+      width: "150px",
       top: "1px",
       left: "50%"
     },
