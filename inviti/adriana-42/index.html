@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <title>¡Adriana celebra sus 42 años! | Invitación</title>
+
+  <!-- WHATSAPP / FACEBOOK PREVIEW -->
+  <meta property="og:title" content="¡Adriana celebra sus 42 años!" />
+  <meta property="og:description" content="Sábado 24 de octubre de 2026 · 8:00 p. m. · Arequipa, Perú. ¡Abre tu invitación y confirma tu asistencia!" />
+  <meta property="og:image" content="https://invitiwow.com/inviti/adriana-42/preview.jpg?v=1" />
+  <meta property="og:url" content="https://invitiwow.com/inviti/adriana-42/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_PE" />
+
+  <!-- DESCRIPCIÓN Y COLOR -->
+  <meta name="description" content="Adriana celebra sus 42 años. Sábado 24 de octubre a las 8:00 p. m. en La casa del Abu Paty, Arequipa, Perú." />
+  <meta name="theme-color" content="#C8142F" />
+
+  <!-- VISTA PREVIA ADICIONAL -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="¡Adriana celebra sus 42 años!" />
+  <meta name="twitter:description" content="Sábado 24 de octubre · 8:00 p. m. · ¡Te espero!" />
+  <meta name="twitter:image" content="https://invitiwow.com/inviti/adriana-42/preview.jpg?v=1" />
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Allura&family=Alex+Brush&family=Tangerine:wght@400;700&family=Parisienne&family=Sacramento&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Nunito:wght@300;400;600;700&family=Dancing+Script:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- VIDEO INTRO PREMIUM -->
+  <video id="introVideo" class="hidden" muted playsinline preload="auto">
+    <source id="introSource" src="" type="video/mp4" />
+  </video>
+
+  <!-- ICONO DE AUDIO -->
+  <div id="tapAudioHint" class="tap-audio-hint hidden">🔊</div>
+
+  <!-- MÚSICA DE FONDO -->
+  <audio id="bgMusic" loop preload="auto">
+    <source id="musicSource" src="" type="audio/mpeg" />
+  </audio>
+
+  <!-- EFECTOS ANIMADOS -->
+  <div id="effectsRoot"></div>
+
+  <!-- PORTADA CON SOBRE -->
+  <section id="cover" class="screen cover-screen">
+    <div class="cover-card">
+
+      <!-- DECORACIÓN SOBRE EL SOBRE -->
+      <div id="coverDecorationWrap" class="cover-decoration-wrap hidden">
+        <img id="coverDecoration" class="cover-decoration" alt="Decoración de la invitación" />
+      </div>
+
+      <!-- SOBRE ANIMADO -->
+      <div class="envelope-wrapper">
+        <div id="envelope" class="envelope">
+          <div class="envelope-glow"></div>
+          <img id="envelopeImg" class="envelope-img" alt="Sobre de la invitación" />
+        </div>
+      </div>
+
+      <!-- BOTÓN ABRIR -->
+      <button id="openBtn" class="open-btn" type="button">
+        Abrir invitación
+      </button>
+
+    </div>
+  </section>
+
+  <!-- INVITACIÓN PRINCIPAL -->
+  <main id="invite" class="screen invite-screen hidden">
+    <article class="invite-card">
+      <div class="invite-inner">
+
+        <!-- TÍTULO -->
+        <h1 id="titolo"></h1>
+        <p id="sottotitolo" class="subtitle"></p>
+
+        <!-- MENSAJE -->
+        <div class="main-text">
+          <p id="descrizione1"></p>
+          <p id="descrizione2" class="name-highlight"></p>
+        </div>
+
+        <!-- FECHA -->
+        <div class="event-date">
+          <div class="line"></div>
+
+          <div class="date-center">
+            <span id="mese" class="month"></span>
+            <span id="giorno" class="day"></span>
+            <span id="anno" class="year"></span>
+          </div>
+
+          <div class="line"></div>
+        </div>
+
+        <!-- DÍA Y HORA -->
+        <div class="event-info">
+          <div id="boxGiorno" class="info-box">
+            <span id="giornoSettimana"></span>
+          </div>
+
+          <div id="boxOra" class="info-box">
+            <span id="ora"></span>
+          </div>
+        </div>
+
+        <!-- LUGAR -->
+        <div id="luogoBox" class="place-box hidden">
+          <strong id="luogoNome"></strong>
+          <span id="indirizzoTesto"></span>
+        </div>
+
+        <!-- MENSAJE FINAL -->
+        <p id="testoFinale" class="footer-text"></p>
+
+        <!-- BOTONES WHATSAPP / MAPA / CALENDARIO -->
+        <!-- LOS ICONOS SE CARGAN DESDE /icons/ CON CONFIG.JS -->
+        <div id="actions" class="actions"></div>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- MODAL DRESS CODE - DESACTIVADO EN CONFIG -->
+  <div id="dresscodeModal" class="modal hidden">
+    <div class="modal-backdrop" data-close-modal></div>
+
+    <div class="modal-content">
+      <button class="modal-close" type="button" data-close-modal>×</button>
+      <h2 id="dresscodeTitle"></h2>
+      <p id="dresscodeText"></p>
+      <img id="dresscodeImage" class="modal-image hidden" alt="Código de vestimenta" />
+    </div>
+  </div>
+
+  <!-- TRANSICIÓN -->
+  <div id="flash" class="flash-overlay"></div>
+
+  <!-- CONFIGURACIÓN -->
+  <script src="config.js"></script>
+
+  <!-- FUNCIONALIDAD -->
+  <script src="script.js"></script>
+
+</body>
+</html>
