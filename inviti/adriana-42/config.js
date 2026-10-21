@@ -10,7 +10,7 @@ const INVITO_CONFIG = {
   nomeFesteggiato: "Adriana",
   eta: "42 años",
 
-  titolo: "¡Adriana celebra sus 42 años!",
+  titolo: "¡Adris celebra sus 42 años!",
   //sottotitolo: "¡Estás invitado a celebrar conmigo!",
 
   //descrizione1: "Con mucha alegría quiero compartir contigo",
