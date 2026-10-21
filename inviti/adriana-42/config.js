@@ -37,7 +37,7 @@ const INVITO_CONFIG = {
 
   whatsappNumero: "51989339190",
 
-  whatsappMessaggio: "¡Hola, Adriana! Confirmo mi asistencia a tu cumpleaños de 42 años el sábado 24 de octubre a las 8:00 p. m. ¡Nos vemos!",
+  whatsappMessaggio: "¡Hola, Adris! Confirmo mi asistencia a tu cumpleaños de 42 años el sábado 24 de octubre a las 8:00 p. m. ¡Nos vemos!",
 
   /* =========================
      GUARDAR FECHA / CALENDARIO
@@ -45,7 +45,7 @@ const INVITO_CONFIG = {
 
   calendario: {
     attivo: true,
-    titolo: "Cumpleaños 42 de Adriana",
+    titolo: "Cumpleaños 42 de Adris",
     descrizione: "Celebración en La casa del Abu Paty.",
     inizio: "20261024T200000",
 
