@@ -1,0 +1,31 @@
+ANDREA | TEAM TROPICANA — SITO MODULARE
+
+APERTURA
+Apri index.html con Chrome o Edge. Per vedere il sito non serve installare nulla.
+
+PERSONALIZZAZIONE
+Apri config.js con VS Code o Blocco note e modifica:
+- whatsappNumber: numero completo internazionale senza +
+- videos: collegamenti dei quattro video (file mp4, YouTube o Vimeo)
+- photoUrl: percorso della tua foto, per esempio assets/andrea.jpg
+- communityPhotoUrl: foto della community
+- faqAnswers: le sei risposte originali alle FAQ, non disponibili negli screenshot ricevuti
+- privacyUrl e termsUrl: pagine legali da predisporre
+- applicationEndpoint: indirizzo del servizio che riceve e salva le candidature
+
+CANDIDATURE
+Il modulo è completo a livello di interfaccia e validazione, ma NON invia dati finché non si collega un backend e una privacy policy. È una misura intenzionale: non fingiamo che le candidature siano salvate o inviate.
+L'endpoint previsto accetta un POST con Content-Type application/json e deve restituire HTTP 2xx; deve supportare CORS sul dominio del sito. Può essere un piccolo backend, una funzione serverless o un servizio configurato ad hoc. Non inserire password o token segreti nel frontend.
+
+PRIMA DI PUBBLICARE
+1. Inserire WhatsApp e quattro video.
+2. Inserire foto personali e della community (con autorizzazione delle persone ritratte).
+3. Recuperare le risposte testuali esatte delle FAQ dal sito originale, con autorizzazione a riutilizzarle.
+4. Verificare le informazioni commerciali e il piano compensi con fonti ufficiali aggiornate.
+5. Configurare ricezione sicura candidature, informativa privacy, termini e dati del titolare.
+6. Verificare cookie e privacy policy se si incorporano video di terze parti o si aggiungono analytics.
+
+NOTA
+Il layout è ispirato agli screenshot forniti, non una copia del codice originale. Alcune affermazioni numeriche non verificabili sono state volutamente sostituite con formulazioni prudenti.
+
+FAQ: le sei risposte sono ora in config.js (faqAnswers) con formattazione HTML. Testi trascritti dalle immagini fornite; verificare prezzi, certificazioni e garanzie sui documenti ufficiali prima della pubblicazione.
