@@ -618,6 +618,7 @@
                 <div id="modulo-comunicazione"></div>
                 <div id="modulo-onboarding"></div>
                 <div id="modulo-backoffice"></div>
+                <div id="modulo-welfare"></div>
                 <div id="modulo-faq"></div>
             </div>
         </div>
@@ -639,6 +640,7 @@
     <script src="contenuti/comunicazione.js"></script>
     <script src="contenuti/onboarding.js"></script>
     <script src="contenuti/backoffice.js"></script>
+    <script src="contenuti/welfare.js"></script>
     <script src="contenuti/faq.js"></script>
     <script>
         const sections = [...document.querySelectorAll('.section')], toc = document.getElementById('toc'), search = document.getElementById('search'), buttons = [...document.querySelectorAll('.filter')], count = document.getElementById('count'); let current = 'all'; sections.forEach(s => { let a = document.createElement('a'); a.href = '#' + s.id; a.textContent = s.querySelector('h2').textContent; toc.append(a) }); function update() { let q = search.value.trim().toLocaleLowerCase('it'); let n = 0; sections.forEach(s => { let ok = (current === 'all' || s.dataset.group === current) && s.textContent.toLocaleLowerCase('it').includes(q); s.classList.toggle('hidden', !ok); if (ok) n++ }); count.textContent = n + ' sezioni visibili' } buttons.forEach(b => b.addEventListener('click', () => { current = b.dataset.filter; buttons.forEach(x => x.classList.toggle('active', x === b)); update() })); search.addEventListener('input', update); update();
