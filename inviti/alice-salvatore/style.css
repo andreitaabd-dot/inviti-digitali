@@ -1,0 +1,1215 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #e9e7e5;
+    color: var(--testo);
+    font-family: var(--fontTesto);
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+/* CONTENITORE PRINCIPALE */
+
+.invito {
+    --testo: #211022;
+    --viola: #2b102c;
+    --arancio: #d57d45;
+    --pesca: #f1c9aa;
+    --lilla: #d9c7df;
+    --rosa: #e9c6c9;
+    --avorio: #fffdf9;
+    --fontTitolo: 'Great Vibes', cursive;
+    --fontTesto: 'Montserrat', sans-serif;
+
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    max-width: 600px;
+    min-width: 0;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: var(--avorio);
+    overflow: hidden;
+    box-shadow: 0 4px 45px #0001;
+}
+
+/* COPERTINA */
+
+.hero {
+    position: relative;
+    background: transparent;
+}
+
+.photo-placeholder {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 180px;
+    background: #f2efeb;
+    border: 1px dashed #b7a9aa;
+    color: #8c7c80;
+    text-align: center;
+    overflow: hidden;
+}
+
+.photo-placeholder img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-placeholder.has-image {
+    border: 0;
+    background: transparent;
+}
+
+.photo-placeholder.has-image span {
+    display: none;
+}
+
+/* FOTO DEGLI SPOSI */
+
+.hero .photo-placeholder {
+    height: clamp(230px, 65vw, 390px);
+}
+
+.hero [data-image="copertina"] img {
+    object-position: center top;
+
+    -webkit-mask-image: linear-gradient(to bottom,
+            #000 0%,
+            #000 58%,
+            transparent 100%);
+
+    mask-image: linear-gradient(to bottom,
+            #000 0%,
+            #000 58%,
+            transparent 100%);
+}
+
+/* NOMI DEGLI SPOSI */
+
+.hero-label {
+    position: relative;
+    z-index: 2;
+    margin-top: -60px;
+    padding: 0 8px 8px;
+    text-align: center;
+    background: transparent;
+}
+
+.hero-label h1 {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: clamp(38px, 8vw, 60px);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: 0;
+    color: var(--viola);
+    margin: 0;
+    white-space: normal;
+}
+
+#data {
+    margin: 5px 0 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(10px, 2.4vw, 13px);
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--viola);
+}
+
+/* TESTO INTRODUTTIVO */
+
+.intro {
+    position: relative;
+    padding: 8px 9% 20px;
+    text-align: center;
+    background: transparent;
+}
+
+.intro h2 {
+    margin: 0 0 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(17px, 4vw, 24px);
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--viola);
+}
+
+.intro p {
+    margin: 0 auto 12px;
+    max-width: 470px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(15px, 3.5vw, 17px);
+    font-weight: 600;
+    line-height: 1.7;
+    color: #211022;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, .85);
+}
+
+.intro p:last-child {
+    margin-bottom: 0;
+}
+
+/* FOTO DA BAMBINI */
+
+.childhood {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 18px;
+    padding: 18px 7% 40px;
+    background: transparent;
+}
+
+.childhood .photo-placeholder {
+    aspect-ratio: 4 / 5;
+    min-height: 0;
+    border: 7px solid white;
+    background: white;
+    box-shadow: 0 6px 20px #0002;
+}
+
+.childhood .photo-placeholder:first-child {
+    transform: rotate(-3deg);
+}
+
+.childhood .photo-placeholder:last-child {
+    transform: rotate(3deg);
+}
+
+/* TITOLI DELLE SEZIONI */
+
+.section-heading {
+    margin: 25px 0 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--viola);
+}
+
+/* CERIMONIA E RICEVIMENTO */
+
+.venue {
+    padding: 25px 8% 40px;
+    border-bottom: 1px solid #c7b8bb66;
+    background: transparent;
+}
+
+.venue h2 {
+    margin: 0 0 10px;
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(34px, 6vw, 46px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--viola);
+}
+
+.venue p {
+    margin: 5px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.venue a {
+    display: inline-block;
+    margin: 14px 0;
+    color: var(--viola);
+    text-underline-offset: 4px;
+}
+
+.venue-photo {
+    height: 230px;
+    margin-top: 18px;
+}
+
+/* RSVP ED EXTRA */
+
+.rsvp,
+.extra {
+    padding: 40px 9%;
+    text-align: center;
+    background: transparent;
+}
+
+.rsvp h2,
+.extra h2 {
+    margin: 0 0 15px;
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(34px, 6vw, 46px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--viola);
+}
+
+/* MODULO */
+
+form {
+    display: grid;
+    gap: 16px;
+    margin-top: 25px;
+    text-align: left;
+}
+
+form label {
+    display: grid;
+    gap: 6px;
+}
+
+input:not([type=radio]),
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c8b8b8;
+    border-radius: 8px;
+    background: #ffffffd9;
+    color: var(--testo);
+    font: inherit;
+}
+
+fieldset {
+    display: grid;
+    gap: 8px;
+    padding: 0;
+    border: 0;
+}
+
+fieldset label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button {
+    padding: 15px 18px;
+    border: 0;
+    border-radius: 9px;
+    background: var(--viola);
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.iban {
+    overflow-wrap: anywhere;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 40px;
+    text-align: center;
+    color: var(--arancio);
+}
+
+/* PULSANTE MUSICA */
+
+#audio-toggle {
+    position: fixed;
+    right: max(14px, calc((100vw - 600px) / 2 + 14px));
+    bottom: calc(15px + env(safe-area-inset-bottom));
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+/* SMARTPHONE PICCOLI */
+
+@media (max-width: 380px) {
+    .hero-label h1 {
+        font-size: clamp(32px, 9vw, 38px);
+    }
+
+    .childhood {
+        gap: 9px;
+        padding-inline: 5%;
+    }
+
+    .intro {
+        padding-inline: 7%;
+    }
+
+    .venue {
+        padding-inline: 6%;
+    }
+}
+
+/* DESKTOP */
+
+@media (min-width: 800px) {
+    .invito {
+        margin: 30px auto;
+        border-radius: 14px;
+    }
+}
+
+/* ACCESSIBILITÀ */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* BRINDISI SPRITZ ANIMATO */
+
+.spritz-brindisi {
+    position: fixed;
+    z-index: 50;
+    width: 190px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+.spritz-brindisi.attivo {
+    animation: spritzApparizione 3s ease-in-out forwards;
+}
+
+.spritz-calice {
+    position: absolute;
+    width: var(--spritz-size, 85px);
+    height: auto;
+    max-height: 145px;
+    object-fit: contain;
+    transform-origin: center bottom;
+}
+
+.spritz-sinistro {
+    right: 50%;
+    transform: translateX(-25px) rotate(-15deg);
+}
+
+.spritz-destro {
+    left: 50%;
+    transform: translateX(25px) rotate(15deg);
+}
+
+.spritz-brindisi.attivo .spritz-sinistro {
+    animation: spritzSinistro 3s ease-in-out forwards;
+}
+
+.spritz-brindisi.attivo .spritz-destro {
+    animation: spritzDestro 3s ease-in-out forwards;
+}
+
+@keyframes spritzApparizione {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    15%,
+    80% {
+        opacity: 1;
+    }
+}
+
+@keyframes spritzSinistro {
+
+    0%,
+    15% {
+        transform: translateX(-25px) rotate(-15deg);
+    }
+
+    40%,
+    55% {
+        transform: translateX(8px) rotate(8deg);
+    }
+
+    80%,
+    100% {
+        transform: translateX(-25px) rotate(-15deg);
+    }
+}
+
+@keyframes spritzDestro {
+
+    0%,
+    15% {
+        transform: translateX(25px) rotate(15deg);
+    }
+
+    40%,
+    55% {
+        transform: translateX(-8px) rotate(-8deg);
+    }
+
+    80%,
+    100% {
+        transform: translateX(25px) rotate(15deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .spritz-brindisi {
+        display: none;
+    }
+}
+
+
+/* SPRITZ CASUALI AI BORDI */
+
+.spritz-brindisi.spritz-ai-bordi {
+    position: fixed;
+    width: 95px;
+    height: 90px;
+    right: auto !important;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+    pointer-events: none;
+}
+
+.spritz-ai-bordi .spritz-calice {
+    width: var(--spritz-size, 40px);
+    max-height: 85px;
+}
+
+.spritz-ai-bordi.attivo {
+    animation: spritzApparizione 3s ease-in-out forwards;
+}
+
+.spritz-ai-bordi.attivo .spritz-sinistro {
+    animation: spritzSinistro 3s ease-in-out forwards;
+}
+
+.spritz-ai-bordi.attivo .spritz-destro {
+    animation: spritzDestro 3s ease-in-out forwards;
+}
+
+/* Titolo IL GRAN GIORNO */
+.section-label {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Sezioni facoltative configurabili */
+.invito section[hidden] {
+    display: none !important;
+}
+
+/* CONTRASTO TESTI: non altera dimensioni o disposizione degli elementi */
+.invito .intro p,
+.invito .venue p,
+.invito .venue a,
+.invito .rsvp p,
+.invito .extra p {
+    color: #211022;
+    font-weight: 400;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, .9);
+}
+
+.invito .venue p,
+.invito .venue a,
+.invito .rsvp p,
+.invito .extra p {
+    font-size: 15px;
+}
+
+.invito form label,
+.invito form legend {
+    color: #211022;
+    font-weight: 600;
+    font-size: 15px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, .9);
+}
+
+.invito .hero-label h1,
+.invito h2 {
+    color: #240b25;
+    -webkit-text-stroke: .35px #240b25;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, .85);
+}
+
+.venue h2 {
+    white-space: pre-line;
+}
+
+/* === FINITURA ALICE E SALVATORE: doppio sfondo e apertura === */
+body {
+    color: #28152b;
+}
+
+.invito {
+    --fontTitolo: 'Great Vibes', cursive;
+    --fontTesto: 'Montserrat', sans-serif;
+    padding: 18px 12px 28px;
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+}
+
+.invito-inner {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    margin-inline: auto;
+    background-color: rgba(255, 253, 249, .83);
+    border: 1px solid rgba(255, 255, 255, .7);
+    border-radius: 22px;
+    box-shadow: 0 10px 35px rgba(53, 26, 43, .13);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.invito-inner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: var(--invito-bg, none);
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    background-position: center top;
+    opacity: .12;
+    pointer-events: none;
+}
+
+.invito-inner>* {
+    position: relative;
+}
+
+.hero-label {
+    margin-top: -44px;
+    padding: 0 10px 14px;
+}
+
+.hero-label h1 {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: clamp(42px, 9vw, 78px);
+    white-space: normal;
+    line-height: 1.35;
+}
+
+.invito .intro h2 {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: clamp(35px, 7.4vw, 49px);
+    line-height: 1.25;
+    font-weight: 400;
+}
+
+.invito .venue h2,
+.invito .rsvp h2,
+.invito .extra h2 {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: clamp(38px, 8vw, 52px);
+    font-weight: 400;
+}
+
+.intro {
+    padding: 14px 8% 25px;
+}
+
+.invito .intro p {
+    font-size: clamp(14px, 2.6vw, 16px);
+    line-height: 1.75;
+    font-weight: 400;
+    color: #251426;
+    text-shadow: none;
+}
+
+.intro p+p {
+    margin-top: 16px;
+}
+
+.invito .venue p,
+.invito .venue a,
+.invito .extra p,
+.invito .rsvp p {
+    color: #251426;
+    font-size: 15px;
+    font-weight: 400;
+    text-shadow: none;
+}
+
+.invito form label,
+.invito form legend {
+    color: #251426;
+    font-size: 14px;
+    font-weight: 600;
+    text-shadow: none;
+}
+
+.section-heading {
+    font-size: clamp(19px, 4.3vw, 25px);
+    margin: 20px 0 4px;
+    letter-spacing: .15em;
+}
+
+.venue {
+    padding: 25px 8% 34px;
+}
+
+.venue h2 {
+    white-space: pre-line;
+}
+
+.venue-photo {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.rsvp,
+.extra {
+    padding: 35px 8%;
+}
+
+#form-status {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* APERTURA: card centrata e busta proporzionata */
+.opening {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    padding: 16px;
+    overflow-x: clip;
+    overflow-y: auto;
+    background: #fff8f1 url('assets/sfondo-acquerello.png') center / cover no-repeat;
+    transition: opacity .6s ease, visibility .6s;
+}
+
+.opening::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 250, 246, .33);
+    pointer-events: none;
+}
+
+.opening-inner {
+    position: relative;
+    flex: 0 1 520px;
+    min-width: 0;
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    padding: clamp(12px, 3vw, 22px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(8px, 1.6dvh, 16px);
+    text-align: center;
+    border-radius: 22px;
+    background: rgba(255, 253, 249, .79);
+    box-shadow: 0 15px 55px #3a18322b;
+}
+
+.opening-kicker,
+.opening h1 {
+    display: none;
+}
+
+.envelope-button {
+    display: block;
+    flex: 0 1 auto;
+    width: min(100%, 460px, calc((100dvh - 185px) * 1.5));
+    min-width: 0;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.envelope-art {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 8px 10px #4c23343b);
+}
+
+.envelope-art::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: url('assets/busta.png') center / contain no-repeat;
+}
+
+/* Le parti della vecchia busta non vengono più visualizzate */
+.envelope-front,
+.envelope-flap,
+.envelope-letter,
+.envelope-seal {
+    display: none !important;
+}
+
+.opening-caption {
+    margin: 0;
+    max-width: 100%;
+    color: #4b2c42;
+    font-size: clamp(12px, 2.5vw, 15px);
+    overflow-wrap: break-word;
+}
+
+.open-cta {
+    flex-shrink: 0;
+    max-width: 100%;
+    padding: 12px 28px;
+    border-radius: 30px;
+    background: #572e4d;
+}
+
+.opening.is-opening .open-cta {
+    opacity: .5;
+}
+
+.opening.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.toast-intro {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fffaf4 url('assets/sfondo-acquerello.png') center/cover no-repeat;
+}
+
+.toast-intro.active {
+    display: flex;
+}
+
+.toast-intro::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 252, 247, .65);
+}
+
+.toast-glasses {
+    position: relative;
+    width: 270px;
+    height: 230px;
+}
+
+.toast-glasses img {
+    position: absolute;
+    bottom: 0;
+    width: 115px;
+    height: 200px;
+    object-fit: contain;
+    transform-origin: bottom center;
+    filter: drop-shadow(0 7px 6px #0002);
+}
+
+.toast-left {
+    left: 25px;
+    animation: clinkLeft 1.65s ease-in-out both;
+}
+
+.toast-right {
+    right: 25px;
+    animation: clinkRight 1.65s ease-in-out both;
+}
+
+.toast-intro p {
+    position: relative;
+    font: 400 40px 'Great Vibes', cursive;
+    color: #512447;
+    margin: 0;
+    animation: cheersText 1.65s both;
+}
+
+@keyframes clinkLeft {
+    0% {
+        transform: translateX(-70px) rotate(-20deg);
+        opacity: 0
+    }
+
+    28% {
+        opacity: 1
+    }
+
+    55%,
+    70% {
+        transform: translateX(26px) rotate(13deg);
+        opacity: 1
+    }
+
+    100% {
+        transform: translateX(0) rotate(0);
+        opacity: 0
+    }
+}
+
+@keyframes clinkRight {
+    0% {
+        transform: translateX(70px) rotate(20deg);
+        opacity: 0
+    }
+
+    28% {
+        opacity: 1
+    }
+
+    55%,
+    70% {
+        transform: translateX(-26px) rotate(-13deg);
+        opacity: 1
+    }
+
+    100% {
+        transform: translateX(0) rotate(0);
+        opacity: 0
+    }
+}
+
+@keyframes cheersText {
+
+    0%,
+    35% {
+        opacity: 0;
+        transform: translateY(12px)
+    }
+
+    60%,
+    80% {
+        opacity: 1;
+        transform: none
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+.tap-audio-hint {
+    position: fixed;
+    z-index: 120;
+    right: max(18px, calc((100vw - 600px)/2 + 18px));
+    bottom: 80px;
+    font-size: 31px;
+    pointer-events: none;
+    animation: audioPulse 1.1s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px #0005);
+}
+
+.tap-audio-hint[hidden] {
+    display: none !important;
+}
+
+@keyframes audioPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1)
+    }
+
+    50% {
+        opacity: .25;
+        transform: scale(1.2)
+    }
+}
+
+#audio-toggle[hidden] {
+    display: none !important;
+}
+
+@media (max-width:380px) {
+    .invito {
+        padding: 9px 6px 16px
+    }
+
+    .intro {
+        padding-inline: 7%
+    }
+
+    .hero-label h1 {
+        font-size: 37px
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+
+    .toast-glasses img,
+    .toast-intro p,
+    .tap-audio-hint {
+        animation: none !important
+    }
+}
+
+/* DIMENSIONI COMUNI AI MODELLI INVITI WOW: contenuto sempre centrato */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+body {
+    margin: 0;
+}
+
+.invito {
+    width: min(100%, 600px);
+    margin-inline: auto;
+}
+
+.invito-inner {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+}
+
+.invito-inner img {
+    max-width: 100%;
+}
+
+.invito-inner>*,
+.hero,
+.intro,
+.venue,
+.rsvp,
+.extra {
+    min-width: 0;
+    max-width: 100%;
+}
+
+@media (max-width: 380px) {
+    .opening {
+        padding: 10px;
+    }
+
+    .opening-inner {
+        padding: 12px;
+    }
+
+    .open-cta {
+        padding: 10px 18px;
+    }
+}
+
+
+/* =========================================================
+   ALICE E SALVATORE
+   CIN CIN RALLENTATO + TRANSIZIONE ACQUERELLO
+   Parametri controllati da config.js tramite script.js
+   ========================================================= */
+
+/* 1. CIN CIN PRINCIPALE */
+
+.toast-intro.active .toast-left {
+    animation: clinkLeftSlow
+        var(--brindisi-durata, 3800ms)
+        ease-in-out both;
+}
+
+.toast-intro.active .toast-right {
+    animation: clinkRightSlow
+        var(--brindisi-durata, 3800ms)
+        ease-in-out both;
+}
+
+.toast-intro.active p {
+    animation: cheersTextSlow
+        var(--brindisi-durata, 3800ms)
+        ease-in-out both;
+}
+
+/* Avvicinamento lento, contatto e pausa,
+   poi allontanamento graduale */
+
+@keyframes clinkLeftSlow {
+    0% {
+        transform: translateX(-70px) rotate(-20deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    40% {
+        transform: translateX(26px) rotate(13deg);
+        opacity: 1;
+    }
+
+    68% {
+        transform: translateX(26px) rotate(13deg);
+        opacity: 1;
+    }
+
+    88% {
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+}
+
+@keyframes clinkRightSlow {
+    0% {
+        transform: translateX(70px) rotate(20deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    40% {
+        transform: translateX(-26px) rotate(-13deg);
+        opacity: 1;
+    }
+
+    68% {
+        transform: translateX(-26px) rotate(-13deg);
+        opacity: 1;
+    }
+
+    88% {
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+}
+
+@keyframes cheersTextSlow {
+    0%, 30% {
+        opacity: 0;
+        transform: translateY(14px) scale(.9);
+    }
+
+    43%, 70% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-8px) scale(1.05);
+    }
+}
+
+/* 2. TRANSIZIONE ACQUERELLO */
+
+
+/* 2. DISSOLVENZA MORBIDA DOPO IL CIN CIN */
+
+.toast-intro {
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Elimina gli effetti colorati precedenti */
+.toast-intro::after {
+    content: none !important;
+}
+
+/* Dissolvenza uniforme di calici e sfondo */
+.toast-intro.in-transizione[data-transizione="dissolvenza"] {
+    animation: dissolvenzaInvito
+        var(--transizione-durata, 1200ms)
+        ease-in-out forwards;
+}
+
+@keyframes dissolvenzaInvito {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+/* Il brindisi rimane sotto
+   all'effetto acquerello */
+
+.toast-intro .toast-glasses,
+.toast-intro > p {
+    z-index: 2;
+}
+
+/* 3. SPRITZ CASUALI AI BORDI */
+
+.spritz-brindisi.attivo,
+.spritz-ai-bordi.attivo {
+    animation-duration: var(--brindisi-durata, 3000ms);
+}
+
+.spritz-brindisi.attivo .spritz-sinistro,
+.spritz-brindisi.attivo .spritz-destro,
+.spritz-ai-bordi.attivo .spritz-sinistro,
+.spritz-ai-bordi.attivo .spritz-destro {
+    animation-duration: var(--brindisi-durata, 3000ms);
+}
+
+/* 4. LISTA NOZZE */
+
+#lista-nozze .iban {
+    margin-top: 18px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+#lista-nozze .iban p {
+    margin: 8px auto;
+    line-height: 1.6;
+}
+
+/* 5. ACCESSIBILITÀ */
+
+@media (prefers-reduced-motion: reduce) {
+    .toast-intro.active .toast-left,
+    .toast-intro.active .toast-right,
+    .toast-intro.active p,
+    .toast-intro.in-transizione::after {
+        animation: none !important;
+    }
+}
