@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <meta content="#09243d" name="theme-color" />
+    <title>Travel Advantage · Andrea Bustamante | Team tropicana</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --navy: #09243d;
+            --blue: #0878b9;
+            --aqua: #1bc7c0;
+            --gold: #f7b64d;
+            --paper: #f6f9fb;
+            --ink: #15334b;
+            --muted: #667d8d
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            font-family: 'DM Sans', system-ui, sans-serif;
+            background: var(--paper);
+            color: var(--ink)
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', system-ui, sans-serif;
+            letter-spacing: -.025em
+        }
+
+        a {
+            color: inherit
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #fffefef2;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #dfe9ed
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 13px 22px
+        }
+
+        .brand {
+            font-family: Outfit, sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            white-space: nowrap;
+            color: var(--navy)
+        }
+
+        .brand span {
+            color: var(--blue)
+        }
+
+        .nav small {
+            margin-left: auto;
+            color: var(--muted)
+        }
+
+        .hero {
+            background: radial-gradient(circle at 83% 15%, #0a9dba 0%, transparent 35%), linear-gradient(120deg, #07223d, #0b5376 75%, #107a88);
+            color: white;
+            overflow: hidden
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 85px 25px 95px;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            align-items: center;
+            gap: 55px
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: .18em;
+            color: #9de9e4;
+            font-size: 12px;
+            font-weight: 800
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 6vw, 78px);
+            line-height: 1.04;
+            margin: 20px 0
+        }
+
+        .hero p {
+            max-width: 560px;
+            color: #d6ecf3;
+            font-size: 18px;
+            line-height: 1.7
+        }
+
+        .hero-photo {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px #001a35a6;
+            transform: rotate(2deg);
+            border: 6px solid #ffffff24
+        }
+
+        .hero-photo img {
+            display: block;
+            width: 100%;
+            max-height: 490px;
+            object-fit: cover;
+            object-position: top
+        }
+
+        .pill {
+            display: inline-block;
+            background: #ffffff1e;
+            border: 1px solid #ffffff55;
+            padding: 9px 14px;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 12px
+        }
+
+        .cta {
+            display: inline-block;
+            background: var(--gold);
+            color: #17314b;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 14px;
+            padding: 15px 22px;
+            margin-top: 20px
+        }
+
+        .shell {
+            max-width: 1200px;
+            margin: auto;
+            padding: 45px 22px 90px
+        }
+
+        .intro {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: end
+        }
+
+        .intro h2 {
+            font-size: 37px;
+            margin: 10px 0
+        }
+
+        .intro p {
+            max-width: 650px;
+            color: var(--muted);
+            line-height: 1.6
+        }
+
+        .tools {
+            display: flex;
+            gap: 12px;
+            margin: 26px 0 30px;
+            flex-wrap: wrap
+        }
+
+        .search {
+            width: min(430px, 100%);
+            border: 1px solid #d4e2e8;
+            border-radius: 13px;
+            padding: 14px 17px;
+            font: inherit;
+            background: white
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px
+        }
+
+        .filter {
+            border: 1px solid #d4e3e9;
+            background: #fff;
+            color: #33536a;
+            border-radius: 50px;
+            padding: 11px 15px;
+            cursor: pointer;
+            font: inherit;
+            font-size: 13px
+        }
+
+        .filter.active {
+            background: var(--navy);
+            color: white
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 30px
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 86px;
+            align-self: start;
+            background: white;
+            border: 1px solid #e4ecf1;
+            border-radius: 18px;
+            padding: 20px
+        }
+
+        .sidebar strong {
+            display: block;
+            margin-bottom: 13px
+        }
+
+        .sidebar a {
+            display: block;
+            text-decoration: none;
+            color: #577286;
+            padding: 9px 4px;
+            font-size: 13px
+        }
+
+        .sidebar a:hover {
+            color: var(--blue)
+        }
+
+        .sections {
+            display: grid;
+            gap: 28px
+        }
+
+        .section {
+            background: #fff;
+            border: 1px solid #e1ebf0;
+            border-radius: 24px;
+            overflow: hidden;
+            scroll-margin-top: 90px;
+            box-shadow: 0 10px 34px #123b5510
+        }
+
+        .section-head {
+            padding: 30px 33px 20px
+        }
+
+        .section-head .kicker {
+            font-size: 12px;
+            letter-spacing: .13em;
+            color: #118c9d;
+            font-weight: 800;
+            text-transform: uppercase
+        }
+
+        .section-head h2 {
+            font-size: 32px;
+            margin: 9px 0
+        }
+
+        .section-head p {
+            line-height: 1.7;
+            color: #647e8d;
+            max-width: 720px
+        }
+
+        .section-body {
+            padding: 0 33px 30px
+        }
+
+        .tiles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px
+        }
+
+        .tile {
+            padding: 20px;
+            border-radius: 16px;
+            background: #f2f8fb;
+            border: 1px solid #e4eff3
+        }
+
+        .tile h3 {
+            font-size: 20px;
+            margin: 6px 0
+        }
+
+        .tile p,
+        .tile li {
+            font-size: 14px;
+            line-height: 1.65;
+            color: #536d7d
+        }
+
+        .tile .price {
+            font-size: 28px;
+            color: #063c62;
+            font-family: Outfit;
+            font-weight: 800
+        }
+
+        .tile .sub {
+            font-size: 12px;
+            color: #6d8794
+        }
+
+        .tile.gold {
+            background: #fff8e8;
+            border-color: #f7e5b5
+        }
+
+        .tile.blue {
+            background: #eef7ff
+        }
+
+        .tile.purple {
+            background: #f7f0ff
+        }
+
+        .fact {
+            background: #ecf9f8;
+            border-left: 4px solid var(--aqua);
+            padding: 17px 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 18px 0;
+            line-height: 1.65
+        }
+
+        .caution {
+            background: #fff8e8;
+            border-left-color: #f4b44b
+        }
+
+        .source {
+            font-size: 12px;
+            color: #748c99;
+            margin-top: 15px
+        }
+
+        .image-block {
+            margin: 15px 0 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center
+        }
+
+        .image-block img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 28px #16354b20
+        }
+
+        .image-block p {
+            line-height: 1.7;
+            color: #506a7b
+        }
+
+        details {
+            border: 1px solid #e0ebef;
+            border-radius: 13px;
+            margin: 10px 0;
+            background: #fff
+        }
+
+        summary,
+        summary {
+            cursor: pointer
+        }
+
+        summary {
+            padding: 17px 18px;
+            font-weight: 700;
+            list-style: none
+        }
+
+        summary:after {
+            content: '+';
+            float: right;
+            color: #1594a1;
+            font-size: 21px
+        }
+
+        details[open] summary:after {
+            content: '−'
+        }
+
+        details>div {
+            padding: 0 18px 18px;
+            color: #536d7e;
+            line-height: 1.7;
+            font-size: 14px
+        }
+
+        ul {
+            padding-left: 20px;
+            line-height: 1.75
+        }
+
+        .steps {
+            counter-reset: steps;
+            display: grid;
+            gap: 12px
+        }
+
+        .step {
+            padding: 17px 20px;
+            border: 1px solid #e2ecf0;
+            border-radius: 14px;
+            background: #f8fbfc
+        }
+
+        .step b {
+            color: #087b96
+        }
+
+        .quote {
+            font-size: 24px;
+            line-height: 1.4;
+            font-family: Outfit;
+            font-weight: 600;
+            color: #0c526f;
+            padding: 26px;
+            border-radius: 16px;
+            background: #ecf9f8
+        }
+
+        .links a {
+            display: inline-block;
+            margin: 5px 8px 5px 0;
+            border-radius: 12px;
+            padding: 12px 15px;
+            background: #eff7fa;
+            text-decoration: none;
+            color: #0c587d;
+            font-weight: 700;
+            font-size: 13px
+        }
+
+        .hidden {
+            display: none !important
+        }
+
+        .footer {
+            padding: 38px 22px;
+            background: #08253c;
+            color: #c4dce7;
+            text-align: center;
+            font-size: 13px
+        }
+
+        .footer strong {
+            color: #fff
+        }
+
+        #count {
+            color: #68818e;
+            font-size: 13px
+        }
+
+        .tag {
+            font-size: 11px;
+            color: #087f8b;
+            background: #e8f8f6;
+            padding: 5px 9px;
+            border-radius: 30px;
+            font-weight: 700
+        }
+
+        .section:target {
+            outline: 2px solid #7edbd4
+        }
+
+        @media(max-width:850px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                padding: 55px 22px
+            }
+
+            .hero-photo {
+                display: none
+            }
+
+            .layout {
+                grid-template-columns: 1fr
+            }
+
+            .sidebar {
+                display: block;
+                position: static
+            }
+
+            .tiles {
+                grid-template-columns: 1fr
+            }
+
+            .image-block {
+                grid-template-columns: 1fr
+            }
+
+            .intro {
+                display: block
+            }
+
+            .section-head {
+                padding: 24px 21px 12px
+            }
+
+            .section-body {
+                padding: 0 21px 24px
+            }
+
+            .nav small {
+                display: none
+            }
+
+            .hero h1 {
+                font-size: 52px
+            }
+        }
+
+        @media(prefers-reduced-motion:no-preference) {
+            .section {
+                animation: rise .5s ease both
+            }
+
+            @keyframes rise {
+                from {
+                    opacity: .5;
+                    transform: translateY(10px)
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0)
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <div class="brand">✦ Travel <span>Advantage</span></div><small>Atlante del team · Andrea Bustamante | Team tropicana</small>
+        </div>
+    </header>
+    <div class="hero">
+        <div class="hero-inner">
+            <div>
+                <div class="eyebrow">La nostra biblioteca digitale</div>
+                <h1>Conosci.<br />Viaggia.<br />Condividi.</h1>
+                <p>Il nostro atlante in costruzione: tutti gli argomenti già organizzati, pronti per essere sviluppati
+                    uno alla volta con immagini, esempi e infografiche.</p><span class="pill">📚 14 argomenti da
+                    approfondire insieme</span><br /><a class="cta" href="#esplora">Esplora la guida ↓</a>
+            </div>
+            <div class="hero-photo"><img alt="Infografica illustrata Travel Advantage" src="assets/viaggi.webp" /></div>
+        </div>
+    </div>
+    <main class="shell" id="esplora">
+        <div class="intro">
+            <div>
+                <div class="eyebrow" style="color:#0a8593">ESPLORA PER ARGOMENTO</div>
+                <h2>Indice della guida</h2>
+                <p>Questo è l’indice completo della guida. I contenuti verranno pubblicati un argomento alla volta, dopo
+                    averli approfonditi e verificati.</p>
+            </div><span id="count"></span>
+        </div>
+        <div class="tools"><input aria-label="Cerca nella guida" class="search" id="search"
+                placeholder="🔎 Cerca: VIP, punti, inviti, garanzie…" type="search" />
+            <div class="filters"><button class="filter active" data-filter="all">Tutto</button><button class="filter"
+                    data-filter="viaggi">Viaggi</button><button class="filter"
+                    data-filter="business">Business</button><button class="filter"
+                    data-filter="formazione">Formazione</button></div>
+        </div>
+        <div class="layout">
+            <aside class="sidebar"><strong>Indice della guida</strong>
+                <div id="toc"></div>
+                <hr style="border:0;border-top:1px solid #e4eef2;margin:20px 0" /><span class="tag">Struttura iniziale ·
+                    novembre 2026</span>
+            </aside>
+            <div class="sections" id="sections">
+                <div id="modulo-piattaforma"></div>
+                <div id="modulo-abbonamenti"></div>
+                <div id="modulo-punti"></div>
+                <div id="modulo-crediti"></div>
+                <div id="modulo-guest"></div>
+                <div id="modulo-prenotazioni"></div>
+                <div id="modulo-garanzie"></div>
+                <div id="modulo-ambassador"></div>
+                <div id="modulo-compensi"></div>
+                <div id="modulo-qualifiche"></div>
+                <div id="modulo-comunicazione"></div>
+                <div id="modulo-onboarding"></div>
+                <div id="modulo-backoffice"></div>
+                <div id="modulo-welfare"></div>
+                <div id="modulo-faq"></div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer"><strong>Travel Advantage · Andrea Bustamante | Team tropicana </strong>
+        <p>Conoscere. Utilizzare. Condividere. · Materiale informativo non ufficiale, aggiornabile nel tempo.</p>
+    </footer>
+    <script>window.registraSezione = function (id, html) { const node = document.getElementById("modulo-" + id); if (node) node.outerHTML = html; };</script>
+    <script src="contenuti/piattaforma.js"></script>
+    <script src="contenuti/abbonamenti.js"></script>
+    <script src="contenuti/punti.js"></script>
+    <script src="contenuti/crediti.js"></script>
+    <script src="contenuti/guest.js"></script>
+    <script src="contenuti/prenotazioni.js"></script>
+    <script src="contenuti/garanzie.js"></script>
+    <script src="contenuti/ambassador.js"></script>
+    <script src="contenuti/compensi.js"></script>
+    <script src="contenuti/qualifiche.js"></script>
+    <script src="contenuti/comunicazione.js"></script>
+    <script src="contenuti/onboarding.js"></script>
+    <script src="contenuti/backoffice.js"></script>
+    <script src="contenuti/welfare.js"></script>
+    <script src="contenuti/faq.js"></script>
+    <script>
+        const sections = [...document.querySelectorAll('.section')], toc = document.getElementById('toc'), search = document.getElementById('search'), buttons = [...document.querySelectorAll('.filter')], count = document.getElementById('count'); let current = 'all'; sections.forEach(s => { let a = document.createElement('a'); a.href = '#' + s.id; a.textContent = s.querySelector('h2').textContent; toc.append(a) }); function update() { let q = search.value.trim().toLocaleLowerCase('it'); let n = 0; sections.forEach(s => { let ok = (current === 'all' || s.dataset.group === current) && s.textContent.toLocaleLowerCase('it').includes(q); s.classList.toggle('hidden', !ok); if (ok) n++ }); count.textContent = n + ' sezioni visibili' } buttons.forEach(b => b.addEventListener('click', () => { current = b.dataset.filter; buttons.forEach(x => x.classList.toggle('active', x === b)); update() })); search.addEventListener('input', update); update();
+    </script>
+</body>
+
+</html>
