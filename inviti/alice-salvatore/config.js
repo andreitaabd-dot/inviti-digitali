@@ -31,11 +31,15 @@ const INVITO_CONFIG = {
   introduzione: {
     titolo: "Sì, ci sposiamo!",
     paragrafi: [
-      "Ci sono storie che meritano di essere festeggiate con le persone del cuore. La nostra è una di queste.",
+      "Ci sono storie che meritano di essere festeggiate con le persone del cuore. ",
+      
+      "La nostra è una di queste.",
 
       "Con gioia vi invitiamo a condividere il giorno in cui il nostro amore diventerà una promessa per la vita.",
 
-      "Per festeggiare abbiamo scelto un tema che ci rappresenta: colorato, allegro e frizzante... lo Spritz! 🍹",
+      "Per festeggiare abbiamo scelto un tema che ci rappresenta: colorato, allegro e frizzante... ",
+      
+      "lo Spritz! 🍹",
 
       "Sarà una giornata piena di sorrisi, brindisi e sfumature vivaci. Se vi fa piacere, lasciatevi ispirare dai colori dell'invito per il vostro abbigliamento: basterà anche un piccolo dettaglio per rendere ancora più speciale l'atmosfera delle nostre nozze.",
 
@@ -82,7 +86,7 @@ transizione: {
 
   cerimonia: {
     attivo: true,
-    titolo: "Cerimonia &\nWedding Party",
+    titolo: "Cerimonia & Wedding Party",
     nome: "Monferrato Resort",
     data: "Sabato 26 giugno 2027",
     ora: "Ore 16:00",

@@ -1213,3 +1213,13 @@ body {
         animation: none !important;
     }
 }
+
+
+/* ALICE E SALVATORE - TITOLI SU UNA SOLA RIGA */
+
+.invito .venue h2 {
+    white-space: nowrap;
+    font-size: clamp(25px, 7vw, 46px);
+    text-align: center;
+}
+
