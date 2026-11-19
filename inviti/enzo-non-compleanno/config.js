@@ -208,9 +208,9 @@ const INVITO_CONFIG = {
 
     description: "Quest'anno festeggio prima di partire per il Perù! Una festa SUPER speciale con i miei amici Gialli! 💚💜",
 
-    image: "https://invitiwow.com/inviti/enzo_non_compleanno/preview.jpg?v=1",
+     image: "https://invitiwow.com/inviti/enzo-non-compleanno/preview.jpg?v=1",
 
-    url: "https://invitiwow.com/inviti/enzo_non_compleanno/"
+    url: "https://invitiwow.com/inviti/enzo-non-compleanno/"
   }
 
 };
